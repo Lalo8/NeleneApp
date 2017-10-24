@@ -30,6 +30,10 @@
     </div>
   </div>
 </nav>
+<div class="subnavbar is-primary">
+<h1>NEL℈NE</h1>
+</div>
+
 <section>
 <div class="container">
     <router-view></router-view>
@@ -63,5 +67,18 @@ export default {
 
 .container {
   margin-top:50px;
+}
+
+
+.subnavbar{
+  height:200px;
+  text-align: center;
+  background-color: #795CD2;
+}
+
+.subnavbar h1 {
+  padding-top : 30px;
+  font-size:80px;
+  color: white;
 }
 </style>

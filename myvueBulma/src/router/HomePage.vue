@@ -1,15 +1,14 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
+    <h1 class="title" >{{ msg }}</h1>
+    <div class="homecategory">
+     <div class="cat">
+      <a href="https://nelene.herokuapp.com/"><h1>At a glance</h1></a>
+     </div>
+     <div class="cat">
+      <a href=""><h1>Customized</h1></a>
+     </div>
+    </div>
     <h2>Ecosystem</h2>
     <ul>
       <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
@@ -22,7 +21,6 @@
 
 <script>
 export default {
-  name: 'Home',
   data () {
     return {
       msg: 'Let\'s take a look at african tech ecosystem !'
@@ -36,7 +34,9 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
-
+.title {
+  font-size: 40px;
+}
 ul {
   list-style-type: none;
   padding: 0;
@@ -50,4 +50,18 @@ li {
 a {
   color: #42b983;
 }
+
+.homecategory{
+   height: 600px;
+    width: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.cat {
+  padding: 200px;
+  font-size: 50px;
+}
+
 </style>
