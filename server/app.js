@@ -11,7 +11,7 @@ const User = require('./models/user');
 const config = require('./config');
 const { Strategy, ExtractJwt } = require('passport-jwt');
 
-mongoose.connect('mongodb://localhost/blog-lab', { useMongoClient: true });
+mongoose.connect('mongodb://localhost/nelene', { useMongoClient: true });
 
 const app = express();
 
@@ -20,6 +20,7 @@ const app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 
 if (app.get('env') === 'development') {
   app.use(
@@ -58,9 +59,9 @@ const strategy = new Strategy(
 passport.use(strategy);
 
 const authRoutes = require('./routes/auth');
-
+const organisationsRouter = require ('./routes/org-routes');
 app.use('/api', authRoutes);
-
+app.use('/api/organisations', organisationsRouter);
 // This is an example of protected route
 app.get(
   '/api/secret',
