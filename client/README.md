@@ -1,4 +1,4 @@
-# myvuebulma
+# client
 
 > A Vue.js project
 
