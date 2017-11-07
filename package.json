@@ -1,2 +1,21 @@
-"postinstall": "cd server && npm install",
-"start": "cd server && npm start"
+{
+  "name": "NeleneApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd server && npm install",
+    "start": "cd server && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lalo8/NeleneApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lalo8/NeleneApp/issues"
+  },
+  "homepage": "https://github.com/Lalo8/NeleneApp#readme"
+}
