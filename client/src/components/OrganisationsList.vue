@@ -1,7 +1,7 @@
 <template>
         <ul :class="{
-                small: small
-            }">
+                 small:$route.path === '/overview'
+             }">
             <organisation-card
                 v-for="(organisation, index) in organisations"
                 :key="organisation._id"
@@ -29,7 +29,7 @@ export default {
         },
         small: {
             type: Boolean,
-            default: false,
+            default: false
         }
     },
     methods: {
@@ -50,22 +50,23 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
- 
+ overflow: auto;
+/* position: absolute; */
+margin-bottom: 2px;
+padding-bottom: 100px;
 }
 .small{
-padding:1rem 4px 5px 45px;
-overflow: auto;
-/* position: absolute; */
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-margin-bottom: 2px;
-background-color:#FBF4FF;
-max-height: 750px;
-padding-bottom: 100px;
+ padding:1rem 4px 5px 45px;
+  overflow: auto;
+  /* position: absolute; */
+  top: 0;
+  background-color:#FBF4FF;
+  max-height: 750px;
+  padding-bottom: 100px;
+  
+ } 
+  
 
-} 
 .container2 {
     margin: auto;
     max-width: 1280px;

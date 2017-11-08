@@ -84,7 +84,7 @@
         </div>
       </nav>
     <section>
-      <div :class="{container:container, smallcontainer: $route.path === '/overview', }">
+      <div :class="{container:container, smallcontainer: $route.path === '/overview' }">
         <router-view>
         </router-view> 
       </div>

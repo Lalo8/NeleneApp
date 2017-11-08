@@ -1,12 +1,12 @@
 <template>
     <li>
         <div class="newCard">
-            <div class="card" :class="{smallcard :smallcard}">
+            <div class="card">
                 <div class="card-image" >
-                    <figure class="image is-3by2" :class="{smallimg :smallimg}" v-if="organisation.type === 'social business'">
+                    <figure class="image is-3by2" v-if="organisation.type === 'social business'">
                         <img src="../assets/social.png" alt="Placeholder image">
                     </figure>
-                    <figure class="image is-3by2" :class="{smallimg :smallimg}"  v-if="organisation.type === 'tech'">
+                    <figure class="image is-3by2" v-if="organisation.type === 'tech'">
                         <img src="../assets/tech2.png" alt="Placeholder image">
                     </figure>
                 </div>
@@ -17,29 +17,23 @@
                         <img :src="organisation.img" alt="Placeholder image">
                         </figure>
                     </div>
-                    <div class="media-content" :class="{smallcontent :smallcontent}">
+                    <div class="media-content">
                         <p class="title is-5">{{organisation.name}}</p>
                         <p class="subtitle is-7">{{organisation.author}}</p>
                     </div>
                     </div>
-                    <div class="content" :class="{smallcontent :smallcontent}">
+                    <div class="content">
                         <p>{{organisation.description}}</p>
                         <router-link class="button is-primary is-outlined is-small" :to="'/organisations/view/'+ organisation._id">
                             Let's know more
                         </router-link>
                         <br>
                         <br>
-                        <div v-if="smallcard">
+                        <div>
                             <b-tag rounded type="is-danger is-small">{{organisation.category}}</b-tag>
                             <b-tag rounded type="is-warning is-small">{{organisation.type}}</b-tag>
                             <!-- <b-tag v-for="need in organisation.needs" :key="need" rounded type="is-warning is-medium">{{need}}</b-tag> -->
                             <b-tag rounded type="is-info is-small">{{organisation.country}}</b-tag>
-                        </div>
-                        <div v-else>
-                            <b-tag rounded type="is-danger is-medium">{{organisation.category}}</b-tag>
-                            <b-tag rounded type="is-warning is-medium">{{organisation.type}}</b-tag>
-                            <!-- <b-tag v-for="need in organisation.needs" :key="need" rounded type="is-warning is-medium">{{need}}</b-tag> -->
-                            <b-tag rounded type="is-info is-medium">{{organisation.country}}</b-tag>
                         </div>
                     </div>
                 </div>
@@ -59,29 +53,29 @@ export default {
   props: {
     organisation: Object,
     editable: Boolean,
-    smallcard: {
-      type: Boolean,
-      default: true,
-    },
-    smallimg: {
-      type: Boolean,
-      default: true,
-    },
-    smallcontent: {
-      type: Boolean,
-      default: true,
-    }
+    // smallcard: {
+    //   type: Boolean,
+    //   default: true,
+    // },
+    // smallimg: {
+    //   type: Boolean,
+    //   default: true,
+    // },
+    // smallcontent: {
+    //   type: Boolean,
+    //   default: true,
+    // }
   },
   methods: {
       remove() {
           this.$emit('delete')
       }
   }
-    
 };
 </script>
 
 <style scoped>
+    
 .newCard{
     display: flex;
 
@@ -96,18 +90,19 @@ export default {
     width : 100%;
 }
 .card{
-  max-width: 23rem;
-   background-color: white;
-  border-radius: 0.25rem;
-  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  &:hover {
-    .card__image {
-      filter: contrast(100%);
-    }
-  }
+max-width: 20rem;
+max-height: 32rem;
+background-color: white;
+border-radius: 0.25rem;
+box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+display: flex;
+flex-direction: column;
+overflow: hidden;
+&:hover {
+.card__image {
+    filter: contrast(100%);
+}
+}
 }
 .card-footer{
   margin-top: 10px;
@@ -125,23 +120,22 @@ li{
   }
 }
 
-.smallcard{
-    max-width: 20rem;
-    max-height: 32rem;
-}
-.smallimg {
-    padding-top: 60%;
-}
-/* .smallcontent{
+.card-content{
     height: 300px
+}
 
-} */
-
-.smallcontent p.title{
+.media-content p.title{
 font-size: 15px;
 
 }
-.smallcontent p{
+.media-content p{
+font-size: 13px;
+} 
+.content p.title{
+font-size: 15px;
+
+}
+.content p{
 font-size: 13px;
 } 
 
