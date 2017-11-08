@@ -1,7 +1,5 @@
 <template>
-        <ul :class="{
-                small: small
-            }">
+        <ul>
             <organisation-card
                 v-for="(organisation, index) in organisations"
                 :key="organisation._id"
@@ -27,10 +25,6 @@ export default {
             type: Boolean,
             default: false
         },
-        small: {
-            type: Boolean,
-            default: false,
-        }
     },
     methods: {
         deleteOrganisation(organisation, index) {
@@ -50,10 +44,7 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
- 
-}
-.small{
-padding:1rem 4px 5px 45px;
+  padding:1rem 4px 5px 45px;
 overflow: auto;
 /* position: absolute; */
 top: 0;
@@ -65,7 +56,8 @@ background-color:#FBF4FF;
 max-height: 750px;
 padding-bottom: 100px;
 
-} 
+ 
+}
 .container2 {
     margin: auto;
     max-width: 1280px;
