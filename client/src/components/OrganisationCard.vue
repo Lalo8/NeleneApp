@@ -75,6 +75,12 @@ export default {
 </script>
 
 <style scoped>
+<<<<<<< HEAD
+=======
+.image {
+     padding-top: 60%;  
+  }
+>>>>>>> 190825e98f99b6aee9f4f33f806ddeaa304cc268
     
 .newCard{
     display: flex;
@@ -120,13 +126,28 @@ li{
   }
 }
 
+<<<<<<< HEAD
 .card-content{
+=======
+/* .smallcard{
+    max-width: 20rem;
+    max-height: 32rem;
+} */
+
+/* .smallcontent{
+>>>>>>> 190825e98f99b6aee9f4f33f806ddeaa304cc268
     height: 300px
 }
 
 .media-content p.title{
 font-size: 15px;
 
+<<<<<<< HEAD
+=======
+.media-content p.title{
+font-size: 15px;
+
+>>>>>>> 190825e98f99b6aee9f4f33f806ddeaa304cc268
 }
 .media-content p{
 font-size: 13px;
