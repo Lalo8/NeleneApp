@@ -75,9 +75,9 @@ props: {
 <style scoped>
 .map {
   height: 600px;
-  width: 100%;
+  width: 114%;
 }
 .small {
-  height: 923px;
+  height: 853px;
 }
 </style>
