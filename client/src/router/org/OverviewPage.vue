@@ -60,7 +60,7 @@ export default {
 
 .splitex{
 display: flex;
-padding-top:2rem;
+padding-top:0rem;
 flex-direction: row;
 background-color:#FBF4FF;
 height: 100%;
