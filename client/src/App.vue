@@ -84,7 +84,7 @@
         </div>
       </nav>
     <section>
-      <div class="container":class="{smallcontainer: $route.path === '/overview' }">
+      <div>
         <router-view>
         </router-view> 
       </div>
@@ -215,11 +215,7 @@ z-index: 600;
 
 }
 
-.container {
-  margin-top:50px;
-  padding-top: 15px;
-  margin-bottom: 7rem;
-}
+
 .smallcontainer{
 margin: 0px;
 }
