@@ -1,5 +1,5 @@
 <template> 
-  <div>
+  <div class="container">
     <div class="maintitle">
       <h1>Discover here the African entrepreunarial ecosystem at a glance !</h1>
        <div class="trait"></div>
@@ -58,6 +58,11 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  margin-top:50px;
+  padding-top: 15px;
+  margin-bottom: 7rem;
+}
 footer {
   width: 400px;
   margin: 40px auto;

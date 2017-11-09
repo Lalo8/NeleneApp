@@ -1,5 +1,5 @@
 <template>
-    <div class= "splitex">
+    <div class="splitex">
       <div class="filter">
         <filter-bar :organisations="organisations" @filter="filteredOrganisations = $event">
         </filter-bar>
@@ -58,12 +58,6 @@ export default {
 
 <style scoped>
 
-.container.smallcontainer{
-padding-top: 0px;
-}
-.container{
-    margin: 0px;
-}
 .splitex{
 display: flex;
 padding-top:2rem;
