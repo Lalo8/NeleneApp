@@ -80,6 +80,7 @@ export default {
 .left{
   width: 450px;
   height: 100%;
+  padding-top: 4rem;
 }
 .right{
   height: 100%;
