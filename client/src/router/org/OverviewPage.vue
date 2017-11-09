@@ -73,7 +73,7 @@ export default {
     /* text-align: center; */
     width: 500px;
     margin: auto;
-    top: 98px;
+    top: 100px;
     background-color: rgba(54, 25, 25, 0.3);
   
 }
