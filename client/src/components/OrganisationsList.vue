@@ -53,7 +53,7 @@ export default {
  overflow: auto;
 /* position: absolute; */
 margin-bottom: 2px;
-padding-bottom: 100px;
+padding-bottom: 31px;
 }
 .small{
  padding:1rem 4px 5px 45px;
@@ -62,16 +62,8 @@ padding-bottom: 100px;
   top: 0;
   background-color:#FBF4FF;
   max-height: 750px;
-  padding-bottom: 100px;
+  padding-bottom: 60px;
   
  } 
 
-
-.container2 {
-    margin: auto;
-    max-width: 1280px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin-bottom: 6rem;
-}
 </style>

@@ -205,6 +205,7 @@ z-index: 600;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 0px;
+  height:100%;
 }
 .profile {
   color: white;
@@ -249,11 +250,10 @@ z-index: 600;
 width:100%;
 height: 70px;
 background-color: #795CD2;
-text-align : center;
-padding-top : 20px;
-color : white;
+text-align: center;
+padding-top: 20px;
+color: white;
 bottom:0;
-position:fixed;
 }
 
 </style>

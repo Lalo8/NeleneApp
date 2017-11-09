@@ -60,13 +60,10 @@ export default {
 <style scoped>
 .container {
   margin-top:50px;
-  padding-top: 15px;
-  margin-bottom: 7rem;
 }
 footer {
   width: 400px;
-  margin: 40px auto;
-  padding-bottom: 6rem;
+  margin: 61px auto;
 }
 .searchbar{
 margin: 30px auto;
