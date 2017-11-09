@@ -78,6 +78,6 @@ props: {
   width: 114%;
 }
 .small {
-  height: 923px;
+  height: 852px;
 }
 </style>

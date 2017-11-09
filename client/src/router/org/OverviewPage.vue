@@ -59,7 +59,7 @@ export default {
 <style scoped>
 .splitex{
 display: flex;
-padding-top:3rem;
+padding-top:2rem;
 flex-direction: row;
 background-color:#FBF4FF;
 height: 100%;

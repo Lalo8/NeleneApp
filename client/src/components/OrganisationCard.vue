@@ -1,5 +1,5 @@
 <template>
-    <li>
+    <li class="sublist">
         <div class="newCard">
             <div class="card">
                 <div class="card-image" >
@@ -108,7 +108,7 @@ overflow: hidden;
   margin-top: 10px;
   border: none;
 }
-li{
+.sublist {
   display: flex;
   margin-left: -16px;
   padding: 1rem;

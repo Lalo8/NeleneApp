@@ -1,5 +1,5 @@
 <template>
-        <ul :class="{
+        <ul class="list" :class="{
                  small:$route.path === '/overview'
              }">
             <organisation-card
@@ -44,7 +44,7 @@ export default {
 
 <style scoped>
 
-ul {
+.list{
   display: flex;
   flex-wrap: wrap;
   list-style: none;
