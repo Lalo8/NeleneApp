@@ -70,7 +70,7 @@ footer {
 margin: 30px auto;
 max-width: 700px;
 }
-.card{
+/* .card{
   max-width: 25rem;
    background-color: white;
   border-radius: 0.25rem;
@@ -83,7 +83,7 @@ max-width: 700px;
       filter: contrast(100%);
     }
   }
-}
+} */
 
 ul {
   display: flex;

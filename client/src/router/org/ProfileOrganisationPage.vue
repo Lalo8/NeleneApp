@@ -125,7 +125,7 @@ p {
 
 }
 
-.card,article {
+.cardprofile,article {
   width: 80%;
   margin: 30px auto;
   margin-bottom: 8rem;
