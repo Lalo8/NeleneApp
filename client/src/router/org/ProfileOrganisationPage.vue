@@ -3,7 +3,7 @@
         <div class="banner">
             {{organisation.name}}
         </div>
-        <div class="card">
+        <div class="cardprofile">
                 <p class="title">Activity</p> 
                 <div class="trait"></div>
                 <p class="subtitle">{{organisation.description}}</p>
@@ -89,7 +89,7 @@ margin-left: 3rem;
 .subtitle {
   font-size: 18px;
 }
- .card{
+ .cardprofile{
   padding: 50px;
     margin-top: 40px;
     margin-bottom: 50px;

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <section>
-      <div class="card" v-if="organisation">
+      <div class="cardedit" v-if="organisation">
         <form @submit.prevent="editOrganisation">
           <b-field label="Profile Picture">
           </b-field>
@@ -125,7 +125,7 @@ export default {
     margin-bottom: 7rem;
 }
 
- .card{
+ .cardedit{
   padding: 50px;
     margin-top: 30px;
     margin-bottom: 50px;
