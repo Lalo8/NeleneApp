@@ -89,10 +89,6 @@ width: 1458px;
   width: 1100px;
   
 }
-.container{
-  margin: 0px;
-}
-
 .searchbar{
 max-width: 600px;
 }
