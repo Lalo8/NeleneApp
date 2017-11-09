@@ -5,7 +5,9 @@
              <div class="trait"></div>
             <p>In order for the organisation page to be useful, please enter as many details as possible  </p>
         </div>
-         <div class="card">
+         <div :class="{
+                 cardform:$route.path === '/organisations/add'
+             }">
             <organisation-form @submit="addNewOrganisation"></organisation-form>
        
             <section>
@@ -50,7 +52,7 @@ export default {
 
 </script>
 
-<style scoped >
+<style scoped>
 .trait
 {
 background-color:rgb(121,92,210);
@@ -76,7 +78,7 @@ margin : 0px;
     padding-top: 15px;
     margin-bottom: 7rem;
 }
-.card{
+.cardform{
   padding: 50px;
     margin-top: 30px;
     margin-bottom: 50px;
