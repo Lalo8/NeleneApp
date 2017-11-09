@@ -59,23 +59,22 @@ export default {
 <style scoped>
 
 .splitex{
-display: flex;
-flex-direction: row;
-background-color:#FBF4FF;
-height: 100%;
-width: 1458px;
+    display: flex;
+    flex-direction: row;
+    background-color:#FBF4FF;
+    height: 100%;
+    width: 1458px;
 }
 .filter{
-  margin-top: 4rem;
-  position: absolute;
-  padding:20px;
-  z-index: 700;
-  left: 700px;
-  /* text-align: center; */
-  width: 500px;
-  margin: auto;
-  top: 54px;
-  background-color: rgba(54, 25, 25, 0.3);
+    position:absolute;
+    padding:20px;
+    z-index:700;
+    left:700px;
+    /* text-align: center; */
+    width: 500px;
+    margin: auto;
+    top: 98px;
+    background-color: rgba(54, 25, 25, 0.3);
   
 }
 .left{
