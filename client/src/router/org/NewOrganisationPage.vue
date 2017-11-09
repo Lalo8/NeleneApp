@@ -5,9 +5,7 @@
              <div class="trait"></div>
             <p>In order for the organisation page to be useful, please enter as many details as possible  </p>
         </div>
-         <div :class="{
-                 cardform:$route.path === '/organisations/add'
-             }">
+         <div class="cardform">
             <organisation-form @submit="addNewOrganisation"></organisation-form>
        
             <section>
