@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="containeredit">
     <section>
       <div class="cardedit" v-if="organisation">
         <form @submit.prevent="editOrganisation">
@@ -119,7 +119,7 @@ export default {
 </script>
 
 <style>
-.container{
+.containeredit{
     padding: 20px;
     padding-top: 15px;
     margin-bottom: 7rem;

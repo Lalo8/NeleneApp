@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="containernew">
         <div class="header">
             <h1 class= "title">Let's create a new organisation !</h1>
              <div class="trait"></div>
@@ -71,7 +71,7 @@ margin : 0px;
 .header p {
     margin-top: 15px;
 }
-.container{
+.containernew{
     padding: 20px;
     padding-top: 15px;
     margin-bottom: 7rem;
