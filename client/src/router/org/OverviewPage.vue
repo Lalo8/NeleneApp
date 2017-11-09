@@ -57,6 +57,13 @@ export default {
 </script>
 
 <style scoped>
+
+.container.smallcontainer{
+padding-top: 0px;
+}
+.container{
+    margin: 0px;
+}
 .splitex{
 display: flex;
 padding-top:2rem;

@@ -84,7 +84,7 @@
         </div>
       </nav>
     <section>
-      <div :class="{container:container, smallcontainer: $route.path === '/overview' }">
+      <div class="container":class="{smallcontainer: $route.path === '/overview' }">
         <router-view>
         </router-view> 
       </div>
@@ -132,13 +132,6 @@
 <script>
 import { logout, checkUser,getOrganisation } from '@/api/auth'
 export default {
-  props:{
-    container: {
-      type: Boolean,
-      default: true,
-    },
-
-  },
   name: 'app',
   data () {
     return {
@@ -248,6 +241,7 @@ margin: 0px;
 
 
 .navbar-link::after {
+    border-color: none;
     border:0;
     border-right: 0;
     border-top: 0;
