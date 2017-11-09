@@ -112,7 +112,7 @@ h1 {
 
 .maintitle {
   text-align: center;
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 .trait {
   background-color: rgb(121,92,210);

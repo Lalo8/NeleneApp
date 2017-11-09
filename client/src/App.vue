@@ -230,20 +230,7 @@ z-index: 600;
 .navbar-link::after {
     border-color: none;
     border:0;
-    border-right: 0;
-    border-top: 0;
-    content: " ";
-    display: block;
-    height: 0.5em;
-    pointer-events: none;
-    position: absolute;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    width: 0.5em;
-    margin-top: -0.375em;
-    right: 1.125em;
-    top: 50%;
-}
+} 
 
 .mainfooter{
 
