@@ -191,7 +191,6 @@ document.addEventListener('DOMContentLoaded', function () {
   color: white; 
   font-size: 30px;
   font-weight: bold;
-
 }
 .navbar {
 position:fixed;
@@ -199,8 +198,6 @@ left:0px;
 top:0px;
 width: 100%;
 z-index: 600;
-
-
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -212,12 +209,6 @@ z-index: 600;
 .profile {
   color: white;
   margin-right: 10px;
-
-}
-
-
-.smallcontainer{
-margin: 0px;
 }
 
 .subnavbar{
@@ -234,7 +225,6 @@ margin: 0px;
 .subnavbar img {
   max-width : 35%;
 }
-
 
 .navbar-link::after {
     border-color: none;
@@ -264,8 +254,6 @@ padding-top : 20px;
 color : white;
 bottom:0;
 position:fixed;
-
-
 }
 
 </style>
