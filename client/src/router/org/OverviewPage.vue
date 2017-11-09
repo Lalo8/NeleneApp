@@ -60,13 +60,10 @@ export default {
 
 .splitex{
 display: flex;
-padding-top:0rem;
 flex-direction: row;
 background-color:#FBF4FF;
 height: 100%;
 width: 1458px;
-
-
 }
 .filter{
   margin-top: 4rem;
@@ -92,14 +89,6 @@ width: 1458px;
 }
 .searchbar{
 max-width: 600px;
-}
-.split{
-  display:flex;
-  flex-direction: column;
-  height : 100%;
-  padding: 10px;
-  padding-top: 2rem;
-      
 }
 .overviewcontainer{
   display: flex;
