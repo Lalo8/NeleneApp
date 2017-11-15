@@ -130,117 +130,113 @@
 </template>
 
 <script>
-import { logout, checkUser,getOrganisation } from '@/api/auth'
+import { logout, checkUser, getOrganisation } from "@/api/auth";
 export default {
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
-      email:'',
-      password:'',
-      name:'',
-      active:false,
-      organisations:[],
-      isAdmin:true,
+      email: "",
+      password: "",
+      name: "",
+      active: false,
+      organisations: [],
+      isAdmin: true,
       navigation: null
-    }
+    };
   },
-  created () {
-    checkUser(this.$root)
+  created() {
+    checkUser(this.$root);
   },
   methods: {
-    logout () {
-      logout(this.$root)
-      this.$router.push('/')
-    },
+    logout() {
+      logout(this.$root);
+      this.$router.push("/");
+    }
 
     // toggled() {
     //   this.active =!this.active;
     // }
-  },
-  
-}
-document.addEventListener('DOMContentLoaded', function () {
-
+  }
+};
+document.addEventListener("DOMContentLoaded", function() {
   // Get all "navbar-burger" elements
-  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+  var $navbarBurgers = Array.prototype.slice.call(
+    document.querySelectorAll(".navbar-burger"),
+    0
+  );
 
   // Check if there are any navbar burgers
   if ($navbarBurgers.length > 0) {
-
     // Add a click event on each of them
-    $navbarBurgers.forEach(function ($el) {
-      $el.addEventListener('click', function () {
-
+    $navbarBurgers.forEach(function($el) {
+      $el.addEventListener("click", function() {
         // Get the target from the "data-target" attribute
         var target = $el.dataset.target;
         var $target = document.getElementById(target);
 
         // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-        $el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-
+        $el.classList.toggle("is-active");
+        $target.classList.toggle("is-active");
       });
     });
   }
-
 });
 </script>
 
 <style>
 .titlelogo {
-  color: white; 
+  color: white;
   font-size: 30px;
   font-weight: bold;
 }
 .navbar {
-position:fixed;
-left:0px;
-top:0px;
-width: 100%;
-z-index: 600;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 600;
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 0px;
-  height:100%;
+  height: 100%;
 }
 .profile {
   color: white;
   margin-right: 10px;
 }
 
-.subnavbar{
-  height:200px;
+.subnavbar {
+  height: 200px;
   text-align: center;
-  background-color: #795CD2;
+  background-color: #795cd2;
 }
 
 .subnavbar h1 {
-  padding-top : 30px;
-  font-size:80px;
+  padding-top: 30px;
+  font-size: 80px;
   color: white;
 }
 .subnavbar img {
-  max-width : 35%;
+  max-width: 35%;
 }
 
 .navbar-link::after {
-    border-color: none;
-    border:0;
-} 
-
-.mainfooter{
-
-width:100%;
-height: 70px;
-background-color: #795CD2;
-text-align: center;
-padding-top: 20px;
-color: white;
-bottom:0;
+  border-color: none;
+  border: none;
 }
 
+.mainfooter {
+  width: 100%;
+  height: 70px;
+  background-color: #795cd2;
+  text-align: center;
+  padding-top: 20px;
+  color: white;
+  bottom: 0;
+  position: absolute;
+}
 </style>

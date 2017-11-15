@@ -75,7 +75,7 @@ export default {
     margin: auto;
     top: 100px;
     background-color: rgba(54, 25, 25, 0.3);
-  
+
 }
 .left{
   width: 450px;
@@ -85,7 +85,7 @@ export default {
 .right{
   height: 100%;
   width: 1100px;
-  
+
 }
 .searchbar{
 max-width: 600px;
@@ -95,14 +95,14 @@ max-width: 600px;
   flex-direction: row;
 }
 .result{
-text-align:center;
+  text-align:center;
   font-size: 35px;
   font-weight: bold;
   background-color:#FBF4FF;
   padding-top: 3rem;
   padding-bottom: 3rem;
   color: #795CD2;
-   
+
 }
 .result span {
   font-weight: bold;

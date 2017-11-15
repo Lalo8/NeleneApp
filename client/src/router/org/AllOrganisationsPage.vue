@@ -9,6 +9,7 @@
     </div>
     <div class="noresult" v-if="filteredOrganisations.length===0">
             No result : do another research
+    <br><img src="https://res.cloudinary.com/hiwkem5s6/image/upload/c_scale,h_167,w_257/v1510244774/erroremoji.jpg">
     </div>
 
     <!-- <filter-bar :organisations="organisations"></filter-bar> -->
@@ -62,8 +63,8 @@ export default {
   margin-top:50px;
 }
 footer {
-  width: 400px;
-  margin: 61px auto;
+  text-align: center;
+  margin-bottom : 50px;
 }
 .searchbar{
 margin: 30px auto;
@@ -112,7 +113,7 @@ h1 {
 
 .maintitle {
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 4rem;
 }
 .trait {
   background-color: rgb(121,92,210);

@@ -68,33 +68,35 @@
 </template>
 
 <script>
-import { signup } from '@/api/auth'
+import { signup } from "@/api/auth";
 
 export default {
-  data () {
+  data() {
     return {
-      email: '',
-      password: '',
-      name: '',
+      email: "",
+      password: "",
+      name: "",
       error: null
-    }
+    };
   },
   methods: {
-    signup () {
-      this.error = null
+    signup() {
+      this.error = null;
       signup({
         email: this.email,
         name: this.name,
         password: this.password
-      }).then(() => {
-        this.$router.push('/login')
-      }).catch(err => {
-        this.error = 'Error happened during sign-up'
-        console.error('Signup err', err)
       })
+        .then(() => {
+          this.$router.push("/login");
+        })
+        .catch(err => {
+          this.error = "Error happened during sign-up";
+          console.error("Signup err", err);
+        });
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -103,16 +105,16 @@ export default {
   margin: auto;
   margin-top: 40px;
 }
-  form {
-    margin: auto;
-  }
-.modal-card{
+form {
+  margin: auto;
+}
+.modal-card {
   max-width: 30rem;
   margin: auto;
-  margin-top: 8rem;
-   background-color: white;
+  margin-top: 12rem;
+  background-color: white;
   border-radius: 0.25rem;
-  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -123,7 +125,7 @@ export default {
   }
 }
 
-button{
-    margin: auto;
+button {
+  margin: auto;
 }
 </style>

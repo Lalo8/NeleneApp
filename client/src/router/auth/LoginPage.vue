@@ -31,32 +31,34 @@
 </template>
 
 <script>
-
-import { login } from '@/api/auth'
+import { login } from "@/api/auth";
 export default {
-  data () {
+  data() {
     return {
-      email:'',
-      password:'',
-      name: '',
+      email: "",
+      password: "",
+      name: "",
       error: null
-    }
+    };
   },
- methods: {
-    login () {
-      this.error = null
-      login(this.email, this.password, this.$root).then(data => {
-        if (data)this.$router.push('/')
-        else {
-          this.error = 'Seems like you entered a wrong username/password. Try again.'
-        }
-      }).catch( err => {
-        this.error = 'Error happened during Log-in'
-        console.error('Login error ', err)
-      })
+  methods: {
+    login() {
+      this.error = null;
+      login(this.email, this.password, this.$root)
+        .then(data => {
+          if (data) this.$router.push("/");
+          else {
+            this.error =
+              "Seems like you entered a wrong username/password. Try again.";
+          }
+        })
+        .catch(err => {
+          this.error = "Error happened during Log-in";
+          console.error("Login error ", err);
+        });
+    }
   }
-}
-}
+};
 </script>
 
 <style scoped>
@@ -66,13 +68,13 @@ export default {
   margin-top: 40px;
 }
 
-.modal-card{
+.modal-card {
   max-width: 30rem;
   margin: auto;
-  margin-top: 10rem;
-   background-color: white;
+  margin-top: 13rem;
+  background-color: white;
   border-radius: 0.25rem;
-  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -83,7 +85,7 @@ export default {
   }
 }
 
-button{
-    margin: auto;
+button {
+  margin: auto;
 }
 </style>
