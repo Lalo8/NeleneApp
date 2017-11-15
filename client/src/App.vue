@@ -184,6 +184,10 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <style>
+body,
+html {
+  height: 100%;
+}
 .titlelogo {
   color: white;
   font-size: 30px;
