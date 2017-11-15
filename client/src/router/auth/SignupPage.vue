@@ -111,7 +111,7 @@ form {
 .modal-card {
   max-width: 30rem;
   margin: auto;
-  margin-top: 12rem;
+  margin-top: 10rem;
   background-color: white;
   border-radius: 0.25rem;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
