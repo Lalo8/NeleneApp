@@ -237,7 +237,6 @@ html {
   max-width: 35%;
 }
 .navbar-link:after {
-  border-color: none;
   border: none;
 }
 .mainfooter {
