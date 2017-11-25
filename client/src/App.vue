@@ -236,6 +236,10 @@ html {
 .subnavbar img {
   max-width: 35%;
 }
+.navbar.is-primary .navbar-end .navbar-link:after,
+.navbar.is-primary .navbar-start .navbar-link:after {
+  border: none;
+}
 .navbar-link:after {
   border: none;
 }
