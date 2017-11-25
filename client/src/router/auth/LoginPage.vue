@@ -62,6 +62,9 @@ export default {
 </script>
 
 <style scoped>
+form {
+  padding-top: 3rem;
+}
 .errormsg {
   width: 400px;
   margin: auto;

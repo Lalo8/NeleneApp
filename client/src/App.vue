@@ -88,9 +88,9 @@
         <router-view>
         </router-view> 
       </div>
-    <div class="mainfooter">
+    <footer class="mainfooter">
       Made with <i class="em em-smile"></i> by Elodie WANANG // Ironhack Final Project 
-    </div>
+    </footer> 
        <!-- <aside class="menu" v-if="$root.user">
                   <p class="menu-label">
                     General
@@ -132,6 +132,12 @@
 <script>
 import { logout, checkUser, getOrganisation } from "@/api/auth";
 export default {
+  props: {
+    smallcard: {
+      type: Boolean,
+      default: true
+    }
+  },
   name: "app",
   data() {
     return {
@@ -184,9 +190,12 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <style>
-body,
+body {
+  margin-bottom: 80px;
+}
 html {
-  height: 100%;
+  min-height: 100%;
+  position: relative;
 }
 .titlelogo {
   color: white;
@@ -232,7 +241,6 @@ html {
   border-color: none;
   border: none;
 }
-
 .mainfooter {
   width: 100%;
   height: 70px;
@@ -242,5 +250,13 @@ html {
   color: white;
   bottom: 0;
   position: absolute;
+}
+
+.mainfooter1 {
+  height: 70px;
+  background-color: #795cd2;
+  text-align: center;
+  padding-top: 20px;
+  color: white;
 }
 </style>
