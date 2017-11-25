@@ -236,8 +236,7 @@ html {
 .subnavbar img {
   max-width: 35%;
 }
-
-.navbar-link::after {
+.navbar-link:after {
   border-color: none;
   border: none;
 }
