@@ -52,7 +52,7 @@
 export default {
   props: {
     organisation: Object,
-    editable: Boolean,
+    editable: Boolean
     // smallcard: {
     //   type: Boolean,
     //   default: true,
@@ -67,76 +67,71 @@ export default {
     // }
   },
   methods: {
-      remove() {
-          this.$emit('delete')
-      }
+    remove() {
+      this.$emit("delete");
+    }
   }
 };
 </script>
 
 <style scoped>
-    
-.newCard{
-    display: flex;
-
+.newCard {
+  display: flex;
 }
 .optionAdmin {
-    flex-direction: column;
-    height: 100%;
+  flex-direction: column;
+  height: 100%;
 }
 
-.commandA{
-    height: 50%;
-    width : 100%;
+.commandA {
+  height: 50%;
+  width: 100%;
 }
-.card{
-max-width: 20rem;
-max-height: 32rem;
-background-color: white;
-border-radius: 0.25rem;
-box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
-display: flex;
-flex-direction: column;
-overflow: hidden;
-&:hover {
-.card__image {
-    filter: contrast(100%);
+.card {
+  max-width: 20rem;
+  max-height: 32rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  &:hover {
+    .card__image {
+      filter: contrast(100%);
+    }
+  }
 }
-}
-}
-.card-footer{
+.card-footer {
   margin-top: 10px;
   border: none;
 }
 .sublist {
   display: flex;
-  margin-left: -16px;
-  padding: 1rem;
-  @media(min-width: 40rem) {
+  margin-right: -13px;
+  padding: 0.8rem;
+  @media (min-width: 40rem) {
     width: 50%;
   }
-  @media(min-width: 56rem) {
+  @media (min-width: 56rem) {
     width: 33.3333%;
   }
 }
 
-.card-content{
-    height: 300px
+.card-content {
+  height: 300px;
 }
 
-.media-content p.title{
-font-size: 15px;
-
+.media-content p.title {
+  font-size: 15px;
 }
-.media-content p{
-font-size: 13px;
-} 
-.content p.title{
-font-size: 15px;
-
+.media-content p {
+  font-size: 13px;
 }
-.content p{
-font-size: 13px;
-} 
-
+.content p.title {
+  font-size: 15px;
+}
+.content p {
+  font-size: 13px;
+}
 </style>
