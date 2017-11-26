@@ -24,51 +24,50 @@
 </template>
 
 <script>
-import {getOrganisations} from '@/api/organisations'
-import OrganisationsList from '@/components/OrganisationsList'
-import FilterBar from '@/components/FilterBar'
+import { getOrganisations } from "@/api/organisations";
+import OrganisationsList from "@/components/OrganisationsList";
+import FilterBar from "@/components/FilterBar";
 export default {
   components: {
     OrganisationsList,
-    FilterBar,
+    FilterBar
   },
   props: {
-    searched: '',
+    searched: ""
   },
   data() {
     return {
       organisations: [],
       filteredOrganisations: [],
       errors: [],
-      selected: null, 
-    }
+      selected: null
+    };
   },
   methods: {
     filter() {
-      this.$emit('filter', this.filterBy(this.organisations, this.searched))
+      this.$emit("filter", this.filterBy(this.organisations, this.searched));
     }
   },
   created() {
     getOrganisations().then(organisations => {
-      this.organisations = organisations
-      this.filteredOrganisations = organisations
-    })
+      this.organisations = organisations;
+      this.filteredOrganisations = organisations;
+    });
   }
-}
-
+};
 </script>
 
 <style scoped>
 .container {
-  margin-top:50px;
+  margin-top: 50px;
 }
 footer {
   text-align: center;
-  margin-bottom : 50px;
+  margin-bottom: 120px;
 }
-.searchbar{
-margin: 30px auto;
-max-width: 700px;
+.searchbar {
+  margin: 30px auto;
+  max-width: 700px;
 }
 /* .card{
   max-width: 23rem;
@@ -93,20 +92,20 @@ ul {
   padding: 0;
 }
 
-li{
+li {
   display: flex;
   padding: 1rem;
-  @media(min-width: 40rem) {
+  @media (min-width: 40rem) {
     width: 50%;
   }
-  @media(min-width: 56rem) {
+  @media (min-width: 56rem) {
     width: 33.3333%;
   }
 }
 
 h1 {
   font-size: 30px;
-  margin:auto;
+  margin: auto;
   margin-bottom: 1rem;
   font-weight: bold;
 }
@@ -116,7 +115,7 @@ h1 {
   padding-top: 4rem;
 }
 .trait {
-  background-color: rgb(121,92,210);
+  background-color: rgb(121, 92, 210);
   height: 4pt;
   width: 13%;
   margin-left: 60rem;
@@ -124,8 +123,8 @@ h1 {
 }
 
 .noresult {
-  text-align:center;
+  text-align: center;
   font-size: 30px;
-  font-weight:bold;
+  font-weight: bold;
 }
 </style>
