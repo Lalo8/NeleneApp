@@ -23,86 +23,81 @@
 
 <script>
 import { getOrganisations } from "@/api/organisations";
-import MapOrg from '@/components/MapOrg';
-import FilterBar from '@/components/FilterBar';
-import OrganisationsList from '@/components/OrganisationsList'
-
+import MapOrg from "@/components/MapOrg";
+import FilterBar from "@/components/FilterBar";
+import OrganisationsList from "@/components/OrganisationsList";
 
 export default {
-   components: {
-        MapOrg,
-        FilterBar,
-        OrganisationsList
-    },
-	data () {
-		return {
-			center: {
-				lat:  3.319292,
-				lng: 4.4218547,
+  components: {
+    MapOrg,
+    FilterBar,
+    OrganisationsList
+  },
+  data() {
+    return {
+      center: {
+        lat: 3.319292,
+        lng: 4.4218547
       },
-      searched:'',
-			userPosition: null,
+      searched: "",
+      userPosition: null,
       zoom: 4,
-      organisations:[],
-      filteredOrganisations:[]
-		}
+      organisations: [],
+      filteredOrganisations: []
+    };
   },
   created() {
     getOrganisations().then(organisations => {
-      this.organisations = organisations,
-      this.filteredOrganisations = organisations
-    })
-  },
-}
+      (this.organisations = organisations),
+        (this.filteredOrganisations = organisations);
+    });
+  }
+};
 </script>
 
 <style scoped>
-
-.splitex{
-    display: flex;
-    flex-direction: row;
-    background-color:#FBF4FF;
-    height: 100%;
-    width: 1458px;
+.splitex {
+  display: flex;
+  flex-direction: row;
+  background-color: #fbf4ff;
+  height: 100%;
+  width: 1458px;
 }
-.filter{
-    position:absolute;
-    padding:20px;
-    z-index:700;
-    left:700px;
-    /* text-align: center; */
-    width: 500px;
-    margin: auto;
-    top: 100px;
-    background-color: rgba(54, 25, 25, 0.3);
-
+.filter {
+  position: absolute;
+  padding: 20px;
+  z-index: 700;
+  left: 700px;
+  /* text-align: center; */
+  width: 500px;
+  margin: auto;
+  top: 100px;
+  background-color: rgba(54, 25, 25, 0.3);
 }
-.left{
+.left {
   width: 450px;
   height: 100%;
-  padding-top: 4rem;
+  padding-top: 1rem;
 }
-.right{
+.right {
   height: 100%;
   width: 1100px;
-
 }
-.searchbar{
-max-width: 600px;
+.searchbar {
+  max-width: 600px;
 }
-.overviewcontainer{
+.overviewcontainer {
   display: flex;
   flex-direction: row;
 }
-.result{
-  text-align:center;
+.result {
+  text-align: center;
   font-size: 35px;
   font-weight: bold;
-  background-color:#FBF4FF;
+  background-color: #fbf4ff;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  color: #795CD2;
-
+  color: #795cd2;
 }
 .result span {
   font-weight: bold;
