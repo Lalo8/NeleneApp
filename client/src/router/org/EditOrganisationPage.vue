@@ -3,21 +3,23 @@
     <section>
       <div class="cardedit" v-if="organisation">
         <form @submit.prevent="editOrganisation">
-          <b-field label="Profile Picture">
+         <p v-if="organisation.img !== undefined" style="font-weight: bold">Your current profile picture</p>
+         <br>
+          <img :src="organisation.img" style="width:300px !important; height: 100px !important; object-fit: cover !important">
+                <br><br>
+          <b-field label="Add a new profile picture">
           </b-field>
             <div class="field">
-              <div class="file is-warning is-boxed is-centered">
-                <label class="file-label">
-                  <input class="file-input" type="file" name="resume">
-                  <span class="file-cta">
-                    <span class="file-icon">
-                      <i class="fa fa-cloud-upload"></i>
-                    </span>
-                    <span class="file-label">
-                      Upload your file 
-                    </span>
+              <b-upload v-model="files" drag-drop>
+                <a class="button is-primary">
+                  <b-icon icon="upload"></b-icon>
+                  <span>Click to upload</span>
+                </a>
+             </b-upload>
+              <div v-if="files && files.length">
+                  <span class="file-name">
+                      {{ files[0].name }}
                   </span>
-                </label>
               </div>
             </div>
           <b-field label="Name">
@@ -119,29 +121,30 @@ export default {
 </script>
 
 <style>
-.containeredit{
-    padding: 20px;
-    padding-top: 15px;
-    margin-bottom: 7rem;
+.containeredit {
+  padding: 20px;
+  padding-top: 15px;
+  margin-bottom: 7rem;
+  margin-top: 60px;
 }
 
- .cardedit{
+.cardedit {
   padding: 50px;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    max-width: 60rem;
-    background-color: white;
-    border-radius: 0.25rem;
-    -webkit-box-shadow: 0 20px 40px -14px rgba(121,92,210,0.9);
-    box-shadow: 0 20px 40px -14px rgba(121,92,210,1);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin: auto;
-    overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  max-width: 60rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 20px 40px -14px rgba(121, 92, 210, 0.9);
+  box-shadow: 0 20px 40px -14px rgba(121, 92, 210, 1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: auto;
+  overflow: hidden;
 }
 </style>

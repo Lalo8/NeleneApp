@@ -9,26 +9,25 @@
 </template>
 
 <script>
-import { getOrganisations,getOrganisationsByOwner } from '@/api/organisations'
-import OrganisationsList from '@/components/OrganisationsList'
+import { getOrganisations, getOrganisationsByOwner } from "@/api/organisations";
+import OrganisationsList from "@/components/OrganisationsList";
 
 export default {
   components: {
-    OrganisationsList,
+    OrganisationsList
   },
   data() {
     return {
       organisations: [],
       errors: []
-    }
+    };
   },
   created() {
     getOrganisationsByOwner(this.$root.user._id).then(organisations => {
       this.organisations = organisations;
     });
   }
-}
-
+};
 </script>
 
 <style scoped>
@@ -36,7 +35,6 @@ footer {
   width: 400px;
   margin: 40px auto;
 }
-
 
 ul {
   display: flex;
@@ -46,21 +44,20 @@ ul {
   padding: 0;
 }
 
-li{
+li {
   display: flex;
   padding: 1rem;
-  @media(min-width: 40rem) {
+  @media (min-width: 40rem) {
     width: 50%;
   }
-  @media(min-width: 56rem) {
+  @media (min-width: 56rem) {
     width: 33.3333%;
   }
 }
 .container3 {
-    margin: auto;
-    max-width: 1242px;
-    padding-bottom: 1rem;
-    margin-bottom: 6rem;
+  margin: auto;
+  max-width: 1242px;
+  padding-top: 8rem;
 }
 </style>
 /* <ul>

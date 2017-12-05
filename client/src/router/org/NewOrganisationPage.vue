@@ -14,86 +14,79 @@
     </div> 
 </template>
 <script>
-import { addNewOrganisation } from '@/api/organisations'
-import OrganisationForm from '@/components/OrganisationForm'
+import { addNewOrganisation } from "@/api/organisations";
+import OrganisationForm from "@/components/OrganisationForm";
 export default {
-    components: {
-    OrganisationForm,
+  components: {
+    OrganisationForm
   },
-    data() {
-        return {
-            errors: [],
-            selectedOptions: []
-        }
-    },
-    methods: {
-        
-        addNewOrganisation(organisation) {
-            // this.organisation.name = "Paps"
-            // this.organisation.description = "Geolocation delivery service app"
-            // this.organisation.contact = "contact@paps.com"
-            // this.organisation.address = "2 ruoe"
-            // this.organisation.country = "Sénégal"
-            // this.organisation.city = "Dakar"
-            // this.organisation.category = "startup"
-            // this.organisation.needs = "seed funding"
-            // this.organisation.ownerId = "59f0ab43c12c7c4a2bfc0918"
-            addNewOrganisation(organisation).then(organisation => {
-                console.log("Organisation created: ", organisation)
-                this.$router.push('/');
-            })
-            
-        }
+  data() {
+    return {
+      errors: [],
+      selectedOptions: []
+    };
+  },
+  methods: {
+    addNewOrganisation(organisation) {
+      // this.organisation.name = "Paps"
+      // this.organisation.description = "Geolocation delivery service app"
+      // this.organisation.contact = "contact@paps.com"
+      // this.organisation.address = "2 ruoe"
+      // this.organisation.country = "Sénégal"
+      // this.organisation.city = "Dakar"
+      // this.organisation.category = "startup"
+      // this.organisation.needs = "seed funding"
+      // this.organisation.ownerId = "59f0ab43c12c7c4a2bfc0918"
+      addNewOrganisation(organisation).then(organisation => {
+        console.log("Organisation created: ", organisation);
+        this.$router.push("/");
+      });
     }
   }
-
-
+};
 </script>
 
 <style scoped>
-.trait
-{
-background-color:rgb(121,92,210);
-height: 4pt;
-width: 22%;
-margin-left: 38rem;
-margin-top: -5px;
+.trait {
+  background-color: rgb(121, 92, 210);
+  height: 4pt;
+  width: 22%;
+  margin-left: 38rem;
+  margin-top: -5px;
 }
-.title{
-margin : 0px;
+.title {
+  margin: 0px;
 }
-.header{
-    text-align: center;
-    margin-top: 3rem;
-   ;
+.header {
+  text-align: center;
+  margin-top: 6rem;
 }
 
 .header p {
-    margin-top: 15px;
+  margin-top: 15px;
 }
-.containernew{
-    padding: 20px;
-    padding-top: 15px;
-    margin-bottom: 7rem;
+.containernew {
+  padding: 20px;
+  padding-top: 15px;
+  margin-bottom: 7rem;
 }
-.cardform{
+.cardform {
   padding: 50px;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    max-width: 60rem;
-    background-color: white;
-    border-radius: 0.25rem;
-    -webkit-box-shadow: 0 20px 40px -14px rgba(121,92,210,0.9);
-    box-shadow: 0 20px 40px -14px rgba(121,92,210,1);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin: auto;
-    overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  max-width: 60rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 20px 40px -14px rgba(121, 92, 210, 0.9);
+  box-shadow: 0 20px 40px -14px rgba(121, 92, 210, 1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: auto;
+  overflow: hidden;
 }
-
 </style>

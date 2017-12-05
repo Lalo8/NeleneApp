@@ -7,6 +7,7 @@ import AllOrganisationsPage from "@/router/org/AllOrganisationsPage";
 import NewOrganisationPage from "@/router/org/NewOrganisationPage";
 import ProfileOrganisationPage from "@/router/org/ProfileOrganisationPage";
 import ProfileUserPage from "@/router/profiles/ProfileUserPage";
+import UserPage from "@/router/profiles/UserPage";
 import EditOrganisationPage from "@/router/org/EditOrganisationPage";
 import AdminPage from "@/router/profiles/AdminPage";
 import OverviewPage from "@/router/org/OverviewPage";
@@ -78,9 +79,20 @@ const router = new Router({
         // the meta object can contain any information
         // about the route that you may want to use
         // elsewhere, like in beforeEach
-        requiresNonAuth: true
+        requiresAuth: true
       }
     },
+    {
+      path: "/account",
+      component: UserPage,
+      meta: {
+        // the meta object can contain any information
+        // about the route that you may want to use
+        // elsewhere, like in beforeEach
+        requiresAuth: true
+      }
+    },
+
     {
       path: "/admin",
       component: AdminPage,

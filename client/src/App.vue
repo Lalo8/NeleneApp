@@ -37,7 +37,10 @@
                 </router-link> 
                  <router-link v-if="$root.user" to="/organisations/add" class="navbar-link">
                  Add an organisation
-                </router-link>  
+                </router-link>
+                <router-link v-if="$root.user" to="/account" class="navbar-link">
+                 My account
+                </router-link>    
                  <a v-if="$root.user" class="navbar-link"@click.prevent="logout"href="#">Logout</a> 
 
                 <b-dropdown v-model="navigation" v-if="$root.user"position="is-bottom-left">
@@ -46,18 +49,18 @@
                       </b-icon> 
                       <span class="profile">My profile</span>
                     </a>
-                    <b-dropdown-item custom>
+                    <!--<b-dropdown-item custom>
                       <b-icon icon="person">
                       </b-icon>
                       Logged as <b>{{$root.user.name}}</b>
                     </b-dropdown-item>
                     <hr class="dropdown-divider">
           
-                    <!-- <b-dropdown-item value="home" v-if="$root.user.isAdmin">
+                    <b-dropdown-item value="home" v-if="$root.user.isAdmin">
                       <b-icon icon="home">
                       </b-icon>
                         <a href='/admin'>All organisations</a>  
-                    </b-dropdown-item> -->
+                    </b-dropdown-item>
                     <b-dropdown-item value="home">
                       <b-icon icon="home">
                       </b-icon>
@@ -77,7 +80,7 @@
                       <b-icon icon="sign-out">
                       </b-icon> 
                         <a @click.prevent="logout"href="#">Logout</a> 
-                    </b-dropdown-item>
+                    </b-dropdown-item> -->
                 </b-dropdown>
             </div>
           </div>
@@ -89,7 +92,7 @@
         </router-view> 
       </div>
     <footer class="mainfooter">
-      Made with <i class="em em-smile"></i> by Elodie WANANG // Ironhack Final Project 
+      Made with <i class="em em-smile"></i> by Elodie WANANG // Get in touch ! <i class="fa fa-arrow-right"></i> elodie.wanang@gmail.com
     </footer> 
        <!-- <aside class="menu" v-if="$root.user">
                   <p class="menu-label">

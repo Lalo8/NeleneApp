@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="$emit('submit', organisation)">
-        <b-field>
-        <b-upload v-model="files" drag-drop>
+    <b-field>
+       <b-upload v-model="files" drag-drop>
             <a class="button is-primary">
                 <b-icon icon="upload"></b-icon>
                 <span>Click to upload</span>
@@ -67,54 +67,50 @@
 </template>
 
 <script>
-
 export default {
   props: {
-      displayInputLocation: {
-          type:Boolean,
-          default:false
-      }
+    displayInputLocation: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
-      return {
-          picture: '',
-          imgUrl: '',
-          files: [],
-            name: "",
-            description: "",
-            contact: "",
-            type: "",
-            address: "",
-            country: "",
-            city: "",
-            category: "",
-            needs: [],
-          
-      } 
+    return {
+      picture: "",
+      imgUrl: "",
+      files: [],
+      name: "",
+      description: "",
+      contact: "",
+      type: "",
+      address: "",
+      country: "",
+      city: "",
+      category: "",
+      needs: []
+    };
   },
   computed: {
-      organisation () {
-          return {
-              name: this.name,
-              description: this.description,
-              contact: this.contact,
-              address: this.address,
-              country: this.country,
-              city: this.city,
-              category: this.category,
-              needs: this.needs,
-              type: this.type,
-              img: this.files[0],
-          }
-      }
+    organisation() {
+      return {
+        name: this.name,
+        description: this.description,
+        contact: this.contact,
+        address: this.address,
+        country: this.country,
+        city: this.city,
+        category: this.category,
+        needs: this.needs,
+        type: this.type,
+        img: this.files[0]
+      };
+    }
   }
-}
+};
 </script>
 <style>
 .form {
-    max-width: 600px;
-    margin: auto;
+  max-width: 600px;
+  margin: auto;
 }
-
-
 </style>

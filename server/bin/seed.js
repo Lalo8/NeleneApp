@@ -10,8 +10,14 @@ mongoose.connect(process.env.MONGODB_URI, {
 const admin = new User({
   name: "Elodie",
   email: "elodie.wanang@gmail.com",
+  city: "France",
+  shortdescription: " Eager to help Afrcain SMEs !",
+  country: "Paris",
+  expertise: "Marketing",
   status: "entrepreneur",
-  isAdmin: true
+  isAdmin: true,
+  img:
+    "https://res.cloudinary.com/hiwkem5s6/image/upload/v1512324000/image_CV_mei6hb.jpg"
 });
 
 // const admin2 = new User({

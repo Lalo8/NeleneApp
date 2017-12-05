@@ -14,22 +14,26 @@
 </template>
 
 <script>
-import { getOrganisations,removeOrganisation, editOrganisation} from '@/api/organisations'
-import OrganisationsList from '@/components/OrganisationsList'
+import {
+  getOrganisations,
+  removeOrganisation,
+  editOrganisation
+} from "@/api/organisations";
+import OrganisationsList from "@/components/OrganisationsList";
 
 export default {
-components: {
-    OrganisationsList,
+  components: {
+    OrganisationsList
   },
   data() {
     return {
       organisations: [],
       errors: [],
       selected: null,
-      name: '',
+      name: "",
       organisation: {}
-    }
-},
+    };
+  },
 
   // computed: {
   //           filteredDataObj() {
@@ -44,31 +48,30 @@ components: {
 
   created() {
     getOrganisations().then(organisations => {
-      this.organisations = organisations
-    })
+      this.organisations = organisations;
+    });
   }
-}
-
+};
 </script>
 
 <style scoped>
-h1{
-    font-size: 40px;
-    margin: 30px auto;
-    font-weight: bold;
+h1 {
+  font-size: 40px;
+  margin: 30px auto;
+  font-weight: bold;
 }
 .title {
-    text-align: center;
-    margin-top: 150px;
+  text-align: center;
+  margin-top: 150px;
 }
 
 footer {
   width: 400px;
   margin: 40px auto;
 }
-.searchbar{
-margin: 30px auto;
-max-width: 700px;
+.searchbar {
+  margin: 30px auto;
+  max-width: 700px;
 }
 /* .card{
   max-width: 25rem;
@@ -94,37 +97,34 @@ ul {
   margin-right: 42px;
 }
 
-li{
+li {
   display: flex;
   padding: 1rem;
-  @media(min-width: 40rem) {
+  @media (min-width: 40rem) {
     width: 50%;
   }
-  @media(min-width: 56rem) {
+  @media (min-width: 56rem) {
     width: 33.3333%;
   }
 }
-.card-content{
-    padding-bottom : 0px;
+.card-content {
+  padding-bottom: 0px;
 }
 .card-footer {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 span.icon {
-    color: #dbdbdb;
-    height: 1.5em;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    width: 1.60em;
-    z-index: 4;
+  color: #dbdbdb;
+  height: 1.5em;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 1.6em;
+  z-index: 4;
 }
 .container3 {
-    margin: auto;
-    max-width: 1230px;
-    padding-bottom: 1rem;
-    margin-bottom: 6rem;
-    margin-right: 38px;
+  margin: auto;
+  max-width: 1230px;
 }
 </style>
  /* <ul>

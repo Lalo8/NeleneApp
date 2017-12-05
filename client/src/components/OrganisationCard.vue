@@ -42,7 +42,7 @@
             </div>
             <div class="optionAdmin" v-if="editable">
                 <router-link :to="'/organisations/edit/'+ organisation._id" class="button commandA is-warning is-small">Edit</router-link>
-                <button v-if="$root.user.isAdmin" @click="remove" class="button commandA card-footer-item is-danger is-small" >Delete</button>
+                <button v-if="$root.user.isAdmin" @click="remove" class="button commandA is-danger is-small" >Delete</button>
             </div>
         </div>
     </li>
@@ -79,14 +79,10 @@ export default {
   display: flex;
 }
 .optionAdmin {
+  display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
-.commandA {
-  height: 50%;
-  width: 100%;
-}
 .card {
   max-width: 20rem;
   max-height: 32rem;
