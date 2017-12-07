@@ -69,6 +69,7 @@ const incubators = [
     city: "Ouagadougou",
     category: "incubator",
     status: "accepted",
+    type: "social business",
     img:
       "https://res.cloudinary.com/hiwkem5s6/image/upload/v1509984516/lafabrique_gnwsvr.png",
     location: { type: "Point", coordinates: [36.805311, -1.2702478] }

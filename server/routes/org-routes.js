@@ -51,7 +51,8 @@ router.post(
       city,
       category,
       needs,
-      location
+      location,
+      type
     } = req.body;
     const ownerId = req.user ? req.user._id : null;
 
@@ -66,6 +67,7 @@ router.post(
       needs,
       ownerId,
       location,
+      type,
       img: req.file.secure_url
     });
 
@@ -93,7 +95,8 @@ router.delete("/:id", (req, res, next) => {
       city,
       category,
       needs,
-      location
+      location,
+      type
     } = req.body;
     const changes = {
       name,
@@ -104,7 +107,8 @@ router.delete("/:id", (req, res, next) => {
       city,
       category,
       needs,
-      location
+      location,
+      type
     };
 
     Object.keys(changes).forEach(key => {

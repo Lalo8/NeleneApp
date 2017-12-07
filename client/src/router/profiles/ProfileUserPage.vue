@@ -1,5 +1,8 @@
 <template> 
   <div>
+    <div class="title">
+      <h1>Your organisations</h1>
+    </div>
     <div class="container3">
       <organisations-list :organisations="organisations" editable>
       <organisation-card></organisation-card>

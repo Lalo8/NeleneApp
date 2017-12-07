@@ -5,7 +5,7 @@
         <form @submit.prevent="editOrganisation">
          <p v-if="organisation.img !== undefined" style="font-weight: bold">Your current profile picture</p>
          <br>
-          <img :src="organisation.img" style="width:300px !important; height: 100px !important; object-fit: cover !important">
+          <img :src="organisation.img" style="width:700px !important; height: 150px !important; object-fit: cover !important">
                 <br><br>
           <b-field label="Add a new profile picture">
           </b-field>
@@ -78,8 +78,8 @@
                 <option value="seed funding">seed funding</option>     
             </b-select>
           </b-field>
-            <b-field label="Type of activity">
-            <b-select placeholder="organisation.type">
+            <b-field label="Type of activity" >
+            <b-select placeholder="organisation.type" v-model="organisation.type">
                 <option value="tech">tech</option>
                 <option value="social business">social business</option>
             </b-select>

@@ -55,7 +55,7 @@
             </b-select>
         </b-field>
         <b-field label="Type of activity">
-            <b-select placeholder="Select the type of activity your are focused on"  v-model="type">
+            <b-select placeholder="Select the type of activity your are focused on" v-model="type">
                 <option value="tech">tech</option>
                 <option value="social business">social business</option>
             </b-select>
