@@ -1,18 +1,26 @@
 <template>
   <form @submit.prevent="$emit('submit', organisation)">
-    <b-field>
-       <b-upload v-model="files" drag-drop>
-            <a class="button is-primary">
-                <b-icon icon="upload"></b-icon>
-                <span>Click to upload</span>
-            </a>
-        </b-upload>
-        <div v-if="files && files.length">
-            <span class="file-name">
-                {{ files[0].name }}
-            </span>
-        </div>
-    </b-field>
+    <div v-if="getURL==='/organisations/edit/:id'">
+        <p v-if="organisation.img !== undefined" style="font-weight: bold">Your current profile picture</p>
+        <br>
+            <img :src="organisation.img" style="width:700px !important; height: 150px !important; object-fit: cover !important">
+             <br><br>
+    </div>
+          <b-field label="Add a new profile picture">
+          </b-field>
+          <b-field>
+                <b-upload v-model="files" drag-drop>
+                    <a class="button is-primary">
+                        <b-icon icon="upload"></b-icon>
+                        <span>Click to upload</span>
+                    </a>
+                </b-upload>
+                    <div v-if="files && files.length">
+                        <span class="file-name">
+                            {{ files[0].name }}
+                        </span>
+                    </div>
+            </b-field>
         <div class="field">
             <div class="file is-warning is-boxed is-centered">
                 <br>
@@ -23,9 +31,15 @@
         </b-field>
         <b-field label="Description">
             <b-input v-model="description" type="textarea"></b-input>
+            <b-input v-if="$route.path=='/organisations/edit/:id'" v-model="organisation.description" type="textarea">
+                {{organisation.description}}
+            </b-input>
         </b-field>
         <b-field label="Contact">
             <b-input v-model="contact" type="Email" value="Email"></b-input>
+            <b-input v-if="$route.path=='/organisations/edit/:id'" v-model="organisation.contact" type="Email" >
+                {{organisation.contact}}
+            </b-input>
         </b-field>
         <b-field grouped>
             <b-field label=" Address">
