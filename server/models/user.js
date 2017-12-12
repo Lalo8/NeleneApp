@@ -29,7 +29,7 @@ const userSchema = new Schema({
   },
   city: {
     type: String,
-    required: true
+    required: false
   },
   expertise: {
     type: String,
