@@ -12,8 +12,15 @@ const User = require("./models/user");
 const config = require("./config");
 const { Strategy, ExtractJwt } = require("passport-jwt");
 const history = require("express-history-api-fallback");
-mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
 const imagesRoutes = require("./routes/images");
+
+//////////////////////////// À REMPLACER /////////////////////
+const momoMongoUri = "mongodb://admin:momo123@ds161336.mlab.com:61336/heroku_knff6fc6"
+mongoose.connect(momoMongoUri, {
+  useMongoClient: true
+});
+//////////////////////////////////////////////////////////////
+// mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
 
 const app = express();
 
@@ -32,6 +39,7 @@ if (app.get("env") === "development") {
 }
 
 app.use(passport.initialize());
+app.use(passport.session());
 // Create the strategy for JWT
 const strategy = new Strategy(
   {
@@ -67,17 +75,8 @@ app.use("/api", authRoutes);
 app.use("/api/organisations", organisationsRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/images", imagesRoutes);
-// This is an example of protected route
-app.get(
-  "/api/secret",
-  // this is protecting the route and giving us access to
-  // req.user
-  passport.authenticate("jwt", config.jwtSession),
-  (req, res) => {
-    // send the user his own information
-    res.json(req.user);
-  }
-);
+
+
 const clientRoot = path.join(__dirname, "../client/dist");
 app.use("/", express.static(clientRoot));
 app.use(history("index.html", { root: clientRoot }));

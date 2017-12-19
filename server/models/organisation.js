@@ -5,6 +5,7 @@ const CATEGORIES = ["startup", "incubator", "investmentfund"];
 const STATUSES_ORG = ["pending", "accepted", "rejected"];
 const NEEDS = ["recruitment", "location", "seed funding"];
 const TYPES = ["tech", "social business"];
+
 const organizationSchema = new Schema({
   name: {
     type: String,

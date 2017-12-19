@@ -3,9 +3,17 @@ const mongoose = require("mongoose");
 const User = require("../models/user");
 const Organisation = require("../models/organisation");
 
-mongoose.connect(process.env.MONGODB_URI, {
+//////////////////////////// À REMPLACER /////////////////////
+const momoMongoUri = "mongodb://admin:momo123@ds161336.mlab.com:61336/heroku_knff6fc6"
+mongoose.connect(momoMongoUri, {
   useMongoClient: true
 });
+//////////////////////////////////////////////////////////////
+
+
+// mongoose.connect(process.env.MONGODB_URI, {
+//   useMongoClient: true
+// });
 
 const admin = new User({
   name: "Elodie",

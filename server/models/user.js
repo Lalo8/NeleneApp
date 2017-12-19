@@ -13,19 +13,25 @@ const FIELD = ["Web Development", "Marketing", "Finance", "Data Analyst"];
 
 const userSchema = new Schema({
   name: {
-    type: String
+    type: String,
+    required: false
   },
   img: {
-    type: String
+    type: String,
+    required: false
   },
   email: {
-    type: String
+    type: String,
+    required: true,
+    unique: true
   },
   shortdescription: {
-    type: String
+    type: String,
+    required: false
   },
   country: {
-    type: String
+    type: String,
+    required: false
   },
   city: {
     type: String,

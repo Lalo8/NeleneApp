@@ -1,47 +1,13 @@
 const express = require("express");
-const passport = require("passport");
-const jwt = require("jwt-simple");
-const cloudinary = require("cloudinary");
-const cloudinaryStorage = require("multer-storage-cloudinary");
-const multer = require("multer");
 const router = express.Router();
-const Organisation = require("../models/organisation");
-const User = require("../models/user");
-const config = require("../config");
 
-const storage = cloudinaryStorage({
-  cloudinary,
-  folder: "users",
-  allowedFormats: ["jpg", "png", "jpeg"]
-});
-const parser = multer({ storage });
-router.patch("/:id", (req, res) => {
-  const id = req.params.id;
-  const {
-    name,
-    shortdescription,
-    contact,
-    country,
-    city,
-    expertise
-  } = req.body;
-  const changes = {
-    name,
-    shortdescription,
-    contact,
-    country,
-    city,
-    expertise
-  };
+// Controllers
+const usersCtrl = require('../controllers/users.controller')
+const authCtrl = require('../controllers/auth.controller')
+const validatorCtrl = require('../controllers/validator.controller')
 
-  Object.keys(changes).forEach(key => {
-    if (!changes[key]) {
-      delete changes[key];
-    }
-  });
+router.get("/", authCtrl.isAdmin, usersCtrl.getAll)
+router.get("/:id", authCtrl.isLoggedIn, validatorCtrl.getUser, usersCtrl.getUser)
+router.patch("/:id", authCtrl.isLoggedIn, validatorCtrl.updateUser, usersCtrl.update)
 
-  User.findByIdAndUpdate(id, changes, { new: true }).then(org => {
-    res.json(org);
-  });
-});
 module.exports = router;
