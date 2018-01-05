@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const CATEGORIES = ["startup", "incubator", "investmentfund"];
+const CATEGORIES = ["startup", "incubator", "investment fund"];
 const STATUSES_ORG = ["pending", "accepted", "rejected"];
 const NEEDS = ["recruitment", "location", "seed funding"];
 const TYPES = ["tech", "social business"];
@@ -64,6 +64,14 @@ const organizationSchema = new Schema({
   img: {
     type: String,
     default: "https://bulma.io/images/placeholders/96x96.png"
+  },
+  joboffer: {
+    label: {
+      type: String
+    },
+    file: {
+      type: String
+    }
   }
 });
 

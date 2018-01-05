@@ -11,7 +11,7 @@ const config = require("../config");
 const storage = cloudinaryStorage({
   cloudinary,
   folder: "organisations",
-  allowedFormats: ["jpg", "png", "jpeg"]
+  allowedFormats: ["jpg", "png", "jpeg", "pdf"]
 });
 
 const parser = multer({ storage });
@@ -77,48 +77,53 @@ router.post(
       .catch(err => next(err));
   }
 );
+
 router.delete("/:id", (req, res, next) => {
   Organisation.findByIdAndRemove(req.params.id)
     .then(() => {
       res.sendStatus(202);
     })
     .catch(err => next(err));
-}),
-  router.patch("/:id", (req, res) => {
-    const id = req.params.id;
-    const {
-      name,
-      description,
-      contact,
-      address,
-      country,
-      city,
-      category,
-      needs,
-      location,
-      type
-    } = req.body;
-    const changes = {
-      name,
-      description,
-      contact,
-      address,
-      country,
-      city,
-      category,
-      needs,
-      location,
-      type
-    };
+});
 
-    Object.keys(changes).forEach(key => {
-      if (!changes[key]) {
-        delete changes[key];
-      }
-    });
+router.patch("/:id", (req, res) => {
+  const id = req.params.id;
+  const {
+    name,
+    description,
+    contact,
+    address,
+    country,
+    city,
+    category,
+    needs,
+    location,
+    type,
+    joboffer
+  } = req.body;
+  const changes = {
+    name,
+    description,
+    contact,
+    address,
+    country,
+    city,
+    category,
+    needs,
+    location,
+    type,
+    joboffer
+  };
 
-    Organisation.findByIdAndUpdate(id, changes, { new: true }).then(org => {
-      res.json(org);
-    });
+  Object.keys(changes).forEach(key => {
+    if (!changes[key]) {
+      delete changes[key];
+    }
   });
+
+  Organisation.findByIdAndUpdate(id, changes, { new: true }).then(org => {
+    res.json(org);
+  });
+});
+
 module.exports = router;

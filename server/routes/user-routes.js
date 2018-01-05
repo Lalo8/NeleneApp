@@ -12,10 +12,16 @@ const config = require("../config");
 const storage = cloudinaryStorage({
   cloudinary,
   folder: "users",
-  allowedFormats: ["jpg", "png", "jpeg"]
+  allowedFormats: ["jpg", "png", "jpeg", "pdf"]
 });
 const parser = multer({ storage });
-router.patch("/:id", (req, res) => {
+
+router.get("/:id", (req, res) => {
+  // TODO récupérer le vrai user
+  res.json({ name: "Blabla" });
+});
+
+router.patch("/:id", parser.single("img"), (req, res) => {
   const id = req.params.id;
   const {
     name,
@@ -31,7 +37,8 @@ router.patch("/:id", (req, res) => {
     contact,
     country,
     city,
-    expertise
+    expertise,
+    img: req.file.secure_url
   };
 
   Object.keys(changes).forEach(key => {

@@ -7,7 +7,7 @@ const router = express.Router();
 const storage = cloudinaryStorage({
   cloudinary,
   folder: "my-images",
-  allowedFormats: ["jpg", "png", "gif"]
+  allowedFormats: ["jpg", "png", "gif", "pdf"]
 });
 
 const parser = multer({ storage });
