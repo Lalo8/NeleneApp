@@ -15,7 +15,7 @@
                   <b-icon icon="upload"></b-icon>
                   <span>Click to upload</span>
                 </a>
-             </b-upload>
+              </b-upload>
               <div v-if="files && files.length">
                   <span class="file-name">
                       {{ files[0].name }}
@@ -73,17 +73,38 @@
           </b-field>
           <b-field label="Type of needs">
             <b-select multiple native-size="3" v-model="organisation.needs" placeholder="organisation.category">
-                <option value="recruitment">recruitment</option>
-                <option value="location">location</option>
-                <option value="seed funding">seed funding</option>     
+              <option value="recruitment">recruitment</option>
+              <option value="location">location</option>
+              <option value="seed funding">seed funding</option>     
             </b-select>
           </b-field>
             <b-field label="Type of activity" >
-            <b-select placeholder="organisation.type" v-model="organisation.type">
-                <option value="tech">tech</option>
-                <option value="social business">social business</option>
-            </b-select>
-        </b-field>
+              <b-select placeholder="organisation.type" v-model="organisation.type">
+                  <option value="tech">tech</option>
+                  <option value="social business">social business</option>
+              </b-select>
+            </b-field>
+            <b-field  label="Les offres d'emplois" v-if="$root.user.isAdmin" >
+            </b-field> 
+            <b-field grouped class="file has-name is-fullwidth">
+              <b-field label="Intitulé de l'offre">
+                <b-input v-model="organisation.joboffer.label"></b-input>
+              </b-field>
+              <b-field label="">
+                <b-upload v-model="organisation.joboffer.content" drag-drop>
+                  <a class="button is-primary">
+                    <b-icon icon="upload"></b-icon>
+                    <span class="file-label">Ajouter une offre</span>
+                  </a>
+                </b-upload>
+                <div v-if="organisation.joboffer && organisation.joboffer.length">
+                  <span class="file-name">
+                    {{ organisation.joboffer[0].name }}
+                  </span>
+                </div>
+              </b-field>
+            </b-field>
+              <br>
           <button class="button is-primary">Submit information</button>
         </form>
       </div>

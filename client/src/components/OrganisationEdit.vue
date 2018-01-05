@@ -76,11 +76,12 @@
             </b-select>
           </b-field>
             <b-field label="Type of activity" >
-            <b-select placeholder="organisation.type" v-model="organisation.type">
-                <option value="tech">tech</option>
-                <option value="social business">social business</option>
-            </b-select>
-        </b-field>
+              <b-select placeholder="organisation.type" v-model="organisation.type">
+                  <option value="tech">tech</option>
+                  <option value="social business">social business</option>
+              </b-select>
+            </b-field>
+            
           <button class="button is-primary">Submit information</button>
         </form>
 </template>

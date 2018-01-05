@@ -7,7 +7,19 @@ const service = axios.create({
       : "http://localhost:3000/api/users"
 });
 export function editUser(id, userChanges) {
-  return service.patch(id, userChanges).then(res => res.data);
+  const formData = new FormData();
+  // you can add more information to the formdata
+  Object.keys(userChanges).forEach(key => {
+    formData.append(key, userChanges[key]);
+  });
+
+  return service
+    .patch(id, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    })
+    .then(res => res.data);
 }
 export function getUsers() {
   return service.get("/").then(res => res.data);

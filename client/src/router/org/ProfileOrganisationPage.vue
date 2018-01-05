@@ -26,10 +26,20 @@
                         </b-tag>
                     </div>
                 </div>
+                <p class="title">Current job offers</p>
+                <div class="trait2"></div>
+                <button @click="isjobOfferModalActive =true">{{organisation.joboffer.label}}</button>
+                <b-modal :active.sync="isjobOfferModalActive"> 
+                    <iframe class="joboffertemp" :src="organisation.joboffer.content" width="800" height="900" frameborder="0"></iframe>
+                </b-modal>
                     <br>
                     <button class="button is-primary is-medium" position:="is-centered"@click="isCardModalActive = true"> I want to help ! 
                     </button>
                     <b-modal :active.sync="isCardModalActive" :width="640">
+                        <header class="modal-card-head">
+                        <p class="modal-card-title">Let's help !</p>
+                        <button class="delete" aria-label="close" @click="isCardModalActive = false"></button>
+                        </header>
                         <div class="card">
                             <div class="card-content">
                                 <div class="content centered">
@@ -50,6 +60,7 @@ export default {
     return {
       activeTab: 0,
       isCardModalActive: false,
+      isjobOfferModalActive: false,
       organisation: null
     };
   },
@@ -62,18 +73,24 @@ export default {
 </script>
 
 <style scoped>
-.trait
-{
-background-color:rgb(121,92,210);
-height: 4pt;
-width: 54px;
-margin-top: -27px;
-margin-left: 3rem;
+.trait {
+  background-color: rgb(121, 92, 210);
+  height: 4pt;
+  width: 54px;
+  margin-top: -27px;
+  margin-left: 3rem;
+}
+.trait2 {
+  background-color: rgb(121, 92, 210);
+  height: 4pt;
+  width: 54px;
+  margin-top: -27px;
+  margin-left: 11rem;
 }
 .banner {
   width: 100%;
   height: 300px;
-  margin-top:0px;
+  margin-top: 0px;
   background-color: #cccccc;
   background-image: url("../../assets/dakar2.jpg");
   text-align: center;
@@ -83,30 +100,30 @@ margin-left: 3rem;
   font-weight: bold;
 }
 .button {
-    width: 200px;
-    margin: auto;
+  width: 200px;
+  margin: auto;
 }
 .subtitle {
   font-size: 18px;
 }
- .cardprofile{
+.cardprofile {
   padding: 50px;
-    margin-top: 40px;
-    margin-bottom: 50px;
-    max-width: 60rem;
-    background-color: white;
-    border-radius: 0.25rem;
-    -webkit-box-shadow: 0 20px 40px -14px rgba(121,92,210,0.9);
-    box-shadow: 0 20px 40px -14px rgba(121,92,210,1);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin: auto;
-    overflow: hidden;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  max-width: 60rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 20px 40px -14px rgba(121, 92, 210, 0.9);
+  box-shadow: 0 20px 40px -14px rgba(121, 92, 210, 1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: auto;
+  overflow: hidden;
 }
 .card-content {
   display: flex;
@@ -121,11 +138,15 @@ p {
   font-size: 25px;
 }
 .subtitle {
-    margin-top: 20px;
-
+  margin-top: 20px;
 }
 
-.cardprofile,article {
+.joboffertemp {
+  margin-top: 80px;
+}
+
+.cardprofile,
+article {
   width: 80%;
   margin: 30px auto;
   margin-bottom: 8rem;

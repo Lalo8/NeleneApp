@@ -20,7 +20,7 @@
                 </router-link>    
                 <router-link v-if="!$root.user" to="login" class="navbar-link">
                   Login
-                </router-link>   
+                </router-link>  
                 <router-link v-if="!$root.user" to="signup" class="navbar-link">
                   Signup
                 </router-link> 

@@ -1,10 +1,9 @@
 <template>
 <div class="containeredit">
     <section>
-      <div class="cardedit" v-if="organisation">
-            <form @submit.prevent="$emit('submit', user)">
-                <p v-if="user.image !== undefined">Your current photo</p>
-                <p v-if="user.image !== undefined" style="font-weight: bold">Your current photo</p><img :src="user.image" v-if="user.image && getURL === '/account'" style="width:100px !important; height: 100px !important; object-fit: cover !important">
+      <div class="cardedit" v-if="user">
+            <form @submit.prevent="editUser">
+                <p v-if="user.img !== undefined" style="font-weight: bold">Your current photo</p><img :src="user.img" v-if="user.image && getURL === '/account'" style="width:100px !important; height: 100px !important; object-fit: cover !important">
                         <br><br>
                 <b-field label="Add a photo">
                     <b-upload v-model="files" drag-drop>
@@ -24,17 +23,14 @@
                         <br>
                     </div>
                 </div>
+                <!-- TODO Il faut utiliser user.attr partout et enlever l'interpolation -->
                 <b-field label="Name">
-                    <b-input v-model="name">
-                        {{user.name}}
-                    </b-input> 
+                    <b-input v-model="user.name"></b-input> 
                 </b-field>
                 <b-field label="Short Description">
-                    <b-input v-model="description" type="textarea">
-                    {{user.description}} 
-                    </b-input>
-                </b-field>
-                <b-field label="Contact">
+                    <b-input v-model="user.description" type="textarea"></b-input>
+                </b-field> 
+                <!-- <b-field label="Contact">
                     <b-input v-model="contact" type="Email" value="Email">
                         {{user.contact}} 
                     </b-input>
@@ -52,16 +48,15 @@
                     </b-field>
                 </b-field>
 
-                <b-field label=" Category">
+                <b-field label="Expertise">
                     <b-select placeholder="Select your expertise" icon="person" v-model="expertise">
                         <option value="web development">Web Development</option>
                         <option value="marketing">Marketing</option>
                         <option value="finance">Finance</option>
                         <option value="data analyst">Data Analyst</option>
                     </b-select>
-                </b-field>
+                </b-field> -->
                 <button class="button is-primary">Save changes</button>
-                </b-field>
             </form>
         </div>
     </section>
@@ -69,55 +64,32 @@
 </template>
 
 <script>
+import { editUser, getUser } from "@/api/users";
 export default {
-  props: {
-    displayInputLocation: {
-      type: Boolean,
-      default: false
-    }
-  },
   data() {
     return {
-      picture: "",
-      imgUrl: "",
-      files: [],
-      name: "",
-      description: "",
-      contact: "",
-      type: "",
-      address: "",
-      country: "",
-      city: "",
-      category: "",
-      needs: [],
-      expertise: []
+      user: null,
+      errors: [],
+      selectedOptions: [],
+      files: []
     };
   },
-  computed: {
-    organisation() {
-      return {
-        name: this.name,
-        contact: this.contact,
-        address: this.address,
-        country: this.country,
-        city: this.city,
-        category: this.category,
-        needs: this.needs,
-        type: this.type,
-        img: this.files[0]
-      };
-    },
-    user() {
-      return {
-        name: this.name,
-        description: this.shortdescription,
-        contact: this.email,
-        city: this.city,
-        country: this.country,
-        expertise: this.expertise,
-        img: this.files[0]
-      };
+  methods: {
+    editUser() {
+      let { user } = this;
+      if (this.files.length > 0) {
+        user = Object.assign({}, user);
+        user.img = this.files[0];
+      }
+      editUser(this.$root.user._id, user).then(user => {
+        this.$router.push("/");
+      });
     }
+  },
+  created() {
+    getUser(this.$root.user._id).then(user => {
+      this.user = user;
+    });
   }
 };
 </script>

@@ -12,15 +12,15 @@
                 </div>
                 <div class="card-content">
                     <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-48x48">
-                        <img :src="organisation.img" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-5">{{organisation.name}}</p>
-                        <p class="subtitle is-7">{{organisation.author}}</p>
-                    </div>
+                      <div class="media-left">
+                          <figure class="image is-48x48">
+                          <img :src="organisation.img" alt="Placeholder image">
+                          </figure>
+                      </div>
+                      <div class="media-content">
+                          <p class="title is-5">{{organisation.name}}</p>
+                          <p class="subtitle is-7">{{organisation.author}}</p>
+                      </div>
                     </div>
                     <div class="content">
                         <p>{{organisation.description}}</p>
