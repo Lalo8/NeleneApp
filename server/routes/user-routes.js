@@ -17,24 +17,20 @@ const storage = cloudinaryStorage({
 const parser = multer({ storage });
 
 router.get("/:id", (req, res) => {
-  // TODO récupérer le vrai user
-  res.json({ name: "Blabla" });
+  User.findById(req.params.id)
+    .then(user => {
+      res.json(user);
+    })
+    .catch(err => next(err));
 });
 
 router.patch("/:id", parser.single("img"), (req, res) => {
   const id = req.params.id;
-  const {
-    name,
-    shortdescription,
-    contact,
-    country,
-    city,
-    expertise
-  } = req.body;
+  const { name, shortdescription, email, country, city, expertise } = req.body;
   const changes = {
     name,
     shortdescription,
-    contact,
+    email,
     country,
     city,
     expertise,
