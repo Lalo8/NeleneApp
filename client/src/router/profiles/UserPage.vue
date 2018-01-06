@@ -3,8 +3,10 @@
     <section>
       <div class="cardedit" v-if="user">
             <form @submit.prevent="editUser">
-                <p v-if="user.img !== undefined" style="font-weight: bold">Your current photo</p><img :src="user.img" v-if="user.image && getURL === '/account'" style="width:100px !important; height: 100px !important; object-fit: cover !important">
-                        <br><br>
+                <p v-if="user.img !== undefined" style="font-weight: bold">Your current photo</p>
+                <div class="profileimage"><img :src="user.img" style="width:250px !important; height: 250px !important; object-fit: cover !important">
+                </div>       
+                <br><br>
                 <b-field label="Add a photo">
                     <b-upload v-model="files" drag-drop>
                         <a class="button is-primary">
@@ -28,10 +30,10 @@
                     <b-input v-model="user.name"></b-input> 
                 </b-field>
                 <b-field label="Short Description">
-                    <b-input v-model="user.description" type="textarea"></b-input>
+                    <b-input v-model="user.shortdescription" type="textarea"></b-input>
                 </b-field> 
                 <!-- <b-field label="Contact">
-                    <b-input v-model="contact" type="Email" value="Email">
+                    <b-input v-model="user.email" type="Email" value="Email">
                         {{user.contact}} 
                     </b-input>
                 </b-field>
@@ -93,7 +95,14 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
+.profileimage {
+  display: flex;
+  justify-content: center;
+}
+img {
+  border-radius: 200px;
+}
 .form {
   max-width: 600px;
   margin: auto;
