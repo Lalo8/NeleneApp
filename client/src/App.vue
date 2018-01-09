@@ -17,7 +17,10 @@
             <div class="navbar-item">
               <router-link to="/overview" class="navbar-link">
                   Overview
-                </router-link>    
+                </router-link>
+                <router-link to="/talents" class="navbar-link">
+                  Talents
+                </router-link>       
                 <router-link v-if="!$root.user" to="login" class="navbar-link">
                   Login
                 </router-link>  
@@ -41,14 +44,16 @@
                 <router-link v-if="$root.user" to="/account" class="navbar-link">
                  My account
                 </router-link>    
-                 <a v-if="$root.user" class="navbar-link"@click.prevent="logout"href="#">Logout</a> 
-
-                <b-dropdown v-model="navigation" v-if="$root.user"position="is-bottom-left">
-                    <a class="navbar-item" slot="trigger">
-                      <b-icon class="profile" icon="address-card">
+                 <a v-if="$root.user" class="navbar-link" @click.prevent="logout" href="#">Logout</a>
+                <a v-if="$root.user" class="navbar-link"><img class="navbarimg" :src="$root.user.img"  style="width:50px !important; height: 50px !important; object-fit: cover !important"></a>
+                    <router-link v-if="$root.user" to="/account">
+                     
+                    </router-link>
+                      <!-- <b-icon class="profile" icon="address-card">
                       </b-icon> 
-                      <span class="profile">My profile</span>
-                    </a>
+                      <span class="profile">My profile</span> -->
+                  
+                    <!-- <b-dropdown v-model="navigation" v-if="$root.user" position="is-bottom-left"> -->
                     <!--<b-dropdown-item custom>
                       <b-icon icon="person">
                       </b-icon>
@@ -80,8 +85,8 @@
                       <b-icon icon="sign-out">
                       </b-icon> 
                         <a @click.prevent="logout"href="#">Logout</a> 
-                    </b-dropdown-item> -->
-                </b-dropdown>
+                    </b-dropdown-item> 
+                </b-dropdown>-->
             </div>
           </div>
         </div>
@@ -134,6 +139,7 @@
 
 <script>
 import { logout, checkUser, getOrganisation } from "@/api/auth";
+import { getUser } from "@/api/users";
 export default {
   props: {
     smallcard: {
@@ -147,6 +153,7 @@ export default {
       email: "",
       password: "",
       name: "",
+      img: "",
       active: false,
       organisations: [],
       isAdmin: true,
@@ -193,6 +200,10 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <style>
+.navbarimg {
+  border-radius: 10px;
+}
+
 body {
   margin-bottom: 80px;
 }

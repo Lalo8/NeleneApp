@@ -4,6 +4,7 @@ import HomePage from "@/router/HomePage";
 import LoginPage from "@/router/auth/LoginPage";
 import SignupPage from "@/router/auth/SignupPage";
 import AllOrganisationsPage from "@/router/org/AllOrganisationsPage";
+import TalentsPage from "@/router/profiles/TalentsPage";
 import NewOrganisationPage from "@/router/org/NewOrganisationPage";
 import ProfileOrganisationPage from "@/router/org/ProfileOrganisationPage";
 import ProfileUserPage from "@/router/profiles/ProfileUserPage";
@@ -26,6 +27,16 @@ const router = new Router({
         // about the route that you may want to use
         // elsewhere, like in beforeEach
         requiresNonAuth: true
+      }
+    },
+    {
+      path: "/talents",
+      component: TalentsPage,
+      meta: {
+        // the meta object can contain any information
+        // about the route that you may want to use
+        // elsewhere, like in beforeEach
+        requiresNonAuth: false
       }
     },
     {
