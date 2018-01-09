@@ -15,6 +15,13 @@ const storage = cloudinaryStorage({
   allowedFormats: ["jpg", "png", "jpeg", "pdf"]
 });
 const parser = multer({ storage });
+router.get("/", (req, res, next) => {
+  User.find()
+    .then(users => {
+      res.json(users);
+    })
+    .catch(err => next(err));
+});
 
 router.get("/:id", (req, res) => {
   User.findById(req.params.id)
@@ -33,9 +40,10 @@ router.patch("/:id", parser.single("img"), (req, res) => {
     email,
     country,
     city,
-    expertise,
-    img: req.file.secure_url
+    expertise
   };
+
+  if (req.file && req.file.secure_url) changes.img = req.file.secure_url;
 
   Object.keys(changes).forEach(key => {
     if (!changes[key]) {
