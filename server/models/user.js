@@ -12,7 +12,10 @@ const STATUSES = [
 const FIELD = ["Web Development", "Marketing", "Finance", "Data Analyst"];
 
 const userSchema = new Schema({
-  name: {
+  firstname: {
+    type: String
+  },
+  lastname: {
     type: String
   },
   img: {
@@ -44,6 +47,14 @@ const userSchema = new Schema({
     default: "student"
   },
   isAdmin: {
+    type: Boolean,
+    default: false
+  },
+  isJobSeeker: {
+    type: Boolean,
+    default: false
+  },
+  isStartupSeeker: {
     type: Boolean,
     default: false
   }

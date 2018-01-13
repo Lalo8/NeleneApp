@@ -33,14 +33,27 @@ router.get("/:id", (req, res) => {
 
 router.patch("/:id", parser.single("img"), (req, res) => {
   const id = req.params.id;
-  const { name, shortdescription, email, country, city, expertise } = req.body;
-  const changes = {
-    name,
+  const {
+    firstname,
+    lastname,
     shortdescription,
     email,
     country,
     city,
-    expertise
+    expertise,
+    isJobSeeker,
+    isStartupSeeker
+  } = req.body;
+  const changes = {
+    firstname,
+    lastname,
+    shortdescription,
+    email,
+    country,
+    city,
+    expertise,
+    isJobSeeker,
+    isStartupSeeker
   };
 
   if (req.file && req.file.secure_url) changes.img = req.file.secure_url;

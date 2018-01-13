@@ -8,7 +8,8 @@ mongoose.connect(process.env.MONGODB_URI, {
 });
 
 const admin = new User({
-  name: "Elodie",
+  firstname: "Elodie",
+  lastname: "Wanang",
   email: "elodie.wanang@gmail.com",
   city: "France",
   shortdescription: " Eager to help Afrcain SMEs !",
