@@ -84,7 +84,7 @@
                   <option value="social business">social business</option>
               </b-select>
             </b-field>
-            <b-field  label="Les offres d'emplois" v-if="$root.user.isAdmin" >
+            <!-- <b-field  label="Les offres d'emplois" v-if="$root.user.isAdmin" >
             </b-field> 
             <b-field grouped class="file has-name is-fullwidth">
               <b-field label="Intitulé de l'offre">
@@ -103,7 +103,7 @@
                   </span>
                 </div>
               </b-field>
-            </b-field>
+            </b-field> -->
               <br>
           <button class="button is-primary">Submit information</button>
         </form>

@@ -26,12 +26,12 @@
                         </b-tag>
                     </div>
                 </div>
-                <p class="title">Current job offers</p>
+                <!-- <p class="title">Current job offers</p>
                 <div class="trait2"></div>
                 <button @click="isjobOfferModalActive =true">{{organisation.joboffer.label}}</button>
                 <b-modal :active.sync="isjobOfferModalActive"> 
                     <iframe class="joboffertemp" :src="organisation.joboffer.content" width="800" height="900" frameborder="0"></iframe>
-                </b-modal>
+                </b-modal> -->
                     <br>
                     <button class="button is-primary is-medium" position:="is-centered"@click="isCardModalActive = true"> I want to help ! 
                     </button>

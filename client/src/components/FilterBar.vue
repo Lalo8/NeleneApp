@@ -9,25 +9,30 @@
 
 <script>
 export default {
-    props: {
-        organisations: Array,
+  props: {
+    organisations: Array,
+    users: Array
+  },
+  data() {
+    return {
+      searched: ""
+    };
+  },
+  methods: {
+    filter() {
+      this.$emit("filter", this.filterBy(this.organisations, this.searched))
+        .then;
     },
-    data() {
-        return {
-            searched: "",
-        }
-    },
-    methods: {
-        filter() {
-            this.$emit('filter', this.filterBy(this.organisations, this.searched)).then
-        }
-    },
-    watch: {
-        searched() {
-            this.filter()
-        }
+    filter() {
+      this.$emit("filter", this.filterBy(this.users, this.searched)).then;
     }
-}
+  },
+  watch: {
+    searched() {
+      this.filter();
+    }
+  }
+};
 </script>
 
 <style>

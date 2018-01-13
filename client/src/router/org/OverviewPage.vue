@@ -12,7 +12,7 @@
           </div>
         </div>
         <organisations-list :organisations="filteredOrganisations" small >
-          <organisation-card  smallimg smallcontent ></organisation-card>
+          <organisation-card smallimg smallcontent ></organisation-card>
         </organisations-list>
       </div>
       <div class="right">

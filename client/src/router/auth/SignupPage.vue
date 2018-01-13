@@ -14,10 +14,10 @@
                   required>
               </b-input>
           </b-field> 
-          <b-field label="Name">
-              <b-input v-model="name" 
-                  type="name"
-                  placeholder="Your name"
+          <b-field label="First Name">
+              <b-input v-model="firstname" 
+                  type="firstname"
+                  placeholder="Your first name"
                   required>
               </b-input>
           </b-field>
@@ -75,7 +75,7 @@ export default {
     return {
       email: "",
       password: "",
-      name: "",
+      firstname: "",
       error: null
     };
   },
@@ -84,7 +84,7 @@ export default {
       this.error = null;
       signup({
         email: this.email,
-        name: this.name,
+        firstname: this.firstname,
         password: this.password
       })
         .then(() => {

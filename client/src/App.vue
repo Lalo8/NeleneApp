@@ -45,7 +45,7 @@
                  My account
                 </router-link>    
                  <a v-if="$root.user" class="navbar-link" @click.prevent="logout" href="#">Logout</a>
-                <a v-if="$root.user" class="navbar-link"><img class="navbarimg" :src="$root.user.img"  style="width:50px !important; height: 50px !important; object-fit: cover !important"></a>
+                <a v-if="$root.user" class="navbar-link"><img class="navbarimg" :src="$root.user.img" style="width:30px !important; height: 30px !important; object-fit: cover !important"></a>
                     <router-link v-if="$root.user" to="/account">
                      
                     </router-link>
@@ -153,7 +153,7 @@ export default {
       email: "",
       password: "",
       name: "",
-      img: "",
+      img: [],
       active: false,
       organisations: [],
       isAdmin: true,

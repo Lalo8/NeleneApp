@@ -12,7 +12,7 @@
     <br><img src="https://res.cloudinary.com/hiwkem5s6/image/upload/c_scale,h_167,w_257/v1510244774/erroremoji.jpg">
     </div>
 
-    <!-- <filter-bar :organisations="organisations"></filter-bar> -->
+    <!-- <filter-bar :users="users"></filter-bar> -->
     <users-list :users="filteredUsers">
       <talent-card></talent-card>
     </users-list>

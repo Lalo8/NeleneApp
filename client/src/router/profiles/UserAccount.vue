@@ -26,38 +26,63 @@
                     </div>
                 </div>
                 <!-- TODO Il faut utiliser user.attr partout et enlever l'interpolation -->
-                <b-field label="Name">
-                    <b-input v-model="user.name"></b-input> 
+                <b-field label="First Name">
+                    <b-input v-model="user.firstname"></b-input> 
+                </b-field>
+                 <b-field label="Last Name">
+                    <b-input v-model="user.lastname"></b-input> 
                 </b-field>
                 <b-field label="Short Description">
                     <b-input v-model="user.shortdescription" type="textarea"></b-input>
                 </b-field> 
-                <!-- <b-field label="Contact">
+                <b-field label="Contact">
                     <b-input v-model="user.email" type="Email" value="Email">
-                        {{user.contact}} 
                     </b-input>
                 </b-field>
                 <b-field grouped>
                     <b-field label=" Country" expanded>
-                        <b-input v-model="country" placeholder="Sénégal, Cameroun...">
-                            {{user.country}} 
+                        <b-input v-model="user.country" placeholder="Sénégal, Cameroun...">
                         </b-input>
                     </b-field>
                     <b-field label=" City" expanded>
-                        <b-input v-model="city" placeholder="Dakar, Yaoundé...">
-                            {{user.city}} 
+                        <b-input v-model="user.city" placeholder="Dakar, Yaoundé...">
                         </b-input>
                     </b-field>
                 </b-field>
 
                 <b-field label="Expertise">
-                    <b-select placeholder="Select your expertise" icon="person" v-model="expertise">
+                    <b-select placeholder="Select your expertise" icon="person" v-model="user.expertise">
                         <option value="web development">Web Development</option>
                         <option value="marketing">Marketing</option>
                         <option value="finance">Finance</option>
                         <option value="data analyst">Data Analyst</option>
                     </b-select>
-                </b-field> -->
+                </b-field>
+
+                <b-field label= "Are you looking for a job ?" >
+                    <b-select v-model="user.isJobSeeker">
+                        <option value="True">Yes</option>
+                        <option value="False">No</option>
+                    </b-select>     
+                     <!-- <section>
+                        <div class="field">
+                            <b-checkbox>Yes</b-checkbox>
+                            <b-checkbox>No</b-checkbox>
+                        </div>
+                     </section> -->
+                </b-field>
+            <b-field label= "Are you looking for a team to create a startup ?" >
+                    <b-select v-model="user.isStartupSeeker">
+                        <option value="True">Yes</option>
+                        <option value="False">No</option>s
+                    </b-select>     
+                     <!-- <section>
+                        <div class="field">
+                            <b-checkbox value="True">Yes</b-checkbox>
+                            <b-checkbox value="False">No</b-checkbox>
+                        </div>
+                     </section> -->
+            </b-field>
                 <button class="button is-primary">Save changes</button>
             </form>
         </div>
@@ -95,6 +120,7 @@ export default {
   }
 };
 </script>
+
 <style scoped>
 .profileimage {
   display: flex;

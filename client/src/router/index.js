@@ -8,7 +8,8 @@ import TalentsPage from "@/router/profiles/TalentsPage";
 import NewOrganisationPage from "@/router/org/NewOrganisationPage";
 import ProfileOrganisationPage from "@/router/org/ProfileOrganisationPage";
 import ProfileUserPage from "@/router/profiles/ProfileUserPage";
-import UserPage from "@/router/profiles/UserPage";
+import UserOrganisationPage from "@/router/profiles/UserOrganisationPage";
+import UserAccount from "@/router/profiles/UserAccount";
 import EditOrganisationPage from "@/router/org/EditOrganisationPage";
 import AdminPage from "@/router/profiles/AdminPage";
 import OverviewPage from "@/router/org/OverviewPage";
@@ -84,8 +85,18 @@ const router = new Router({
       }
     },
     {
-      path: "/profile",
+      path: "/users/view/:id",
       component: ProfileUserPage,
+      meta: {
+        // the meta object can contain any information
+        // about the route that you may want to use
+        // elsewhere, like in beforeEach
+        requiresNonAuth: false
+      }
+    },
+    {
+      path: "/profile",
+      component: UserOrganisationPage,
       meta: {
         // the meta object can contain any information
         // about the route that you may want to use
@@ -95,7 +106,7 @@ const router = new Router({
     },
     {
       path: "/account",
-      component: UserPage,
+      component: UserAccount,
       meta: {
         // the meta object can contain any information
         // about the route that you may want to use
