@@ -21,7 +21,7 @@
                     <div class="trait"></div>
                     <p class="subtitle">{{user.shortdescription}}</p>
                     <br>
-                    <p class="title">Needs</p> 
+                    <p class="title">My professional experiences</p> 
                     <div class="trait"></div>
                 </div>
             

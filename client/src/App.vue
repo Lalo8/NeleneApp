@@ -27,17 +27,17 @@
                 <router-link v-if="!$root.user" to="signup" class="navbar-link">
                   Signup
                 </router-link> 
-                <div v-if="$root.user" >
-                 <router-link v-if="$root.user.isAdmin" to="/admin" class="navbar-link">
+               <div v-if="$root.user" >
+                <router-link v-if="$root.user.isAdmin" to="/admin" class="navbar-link">
                  All organisations
                 </router-link> 
-                 <router-link to="/" class="navbar-link" v-else>
+                <router-link to="/" class="navbar-link" v-else>
                  All organisations
-                </router-link> 
+                </router-link>  
                 </div>
-                 <router-link v-if="$root.user" to="/profile" class="navbar-link">
+                 <!-- <router-link v-if="$root.user" to="/profile" class="navbar-link">
                  My organisations
-                </router-link> 
+                </router-link>  -->
                  <router-link v-if="$root.user" to="/organisations/add" class="navbar-link">
                  Add an organisation
                 </router-link>
