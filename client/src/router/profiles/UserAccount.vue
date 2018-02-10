@@ -1,7 +1,7 @@
 <template>
     <div class="containeredit">
         <section>
-            <b-tabs v-model="activeTab" position="is-centered" class="block">
+            <b-tabs position="is-centered" class="block">
                 <b-tab-item label="My infos">
                     <div class="cardedit" v-if="user">
                         <form @submit.prevent="editUser">
@@ -42,7 +42,7 @@
                                     </b-input>
                                 </b-field>
                                 <b-field grouped>
-                                    <b-field label=" Country" expanded>
+                                    <b-field label="Country" expanded>
                                         <b-input v-model="user.country" placeholder="Sénégal, Cameroun...">
                                         </b-input>
                                     </b-field>
@@ -74,7 +74,7 @@
                                 <b-field label= "Are you looking for a team to create a startup ?" >
                                         <b-select v-model="user.isStartupSeeker">
                                             <option value="True">Yes</option>
-                                            <option value="False">No</option>s
+                                            <option value="False">No</option>
                                         </b-select>     
                                         <!-- <section>
                                             <div class="field">
@@ -83,11 +83,23 @@
                                             </div>
                                         </section> -->
                                 </b-field>
+                                 <!-- <b-field grouped label="Specify your main job experiences">
+                                    <b-field label="period" expanded>
+                                        <b-input v-model="user.jobExperience[0].period" placeholder="2016-2017">
+                                        </b-input>
+                                    </b-field>
+                                    <!-- <b-field label=" City" expanded>
+                                        <b-input v-model="user.jobexperience.country" placeholder="Sénégal, Côte d'ivoire...">
+                                        </b-input>
+                                    </b-field> -->
+                                </b-field>
                             <button class="button is-primary">Save changes</button>
                         </form>
                     </div>
                 </b-tab-item>
-                <b-tab-item v-if="$root.user.isAdmin" to="/admin" label="My Organisations">
+                <!-- <b-tab-item v-if="$root.user.isAdmin" to="/admin" label="My Organisations"> -->
+            
+                <b-tab-item label="My Organisations">
             
                 <div>
                     
