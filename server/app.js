@@ -12,7 +12,11 @@ const User = require("./models/user");
 const config = require("./config");
 const { Strategy, ExtractJwt } = require("passport-jwt");
 const history = require("express-history-api-fallback");
-mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
+
+// mongoose.Promise = Promise;
+mongoose.connect(process.env.MONGODB_URI, {
+  useMongoClient: true
+});
 const imagesRoutes = require("./routes/images");
 
 const app = express();
@@ -21,7 +25,11 @@ const app = express();
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger("dev"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+);
 
 if (app.get("env") === "development") {
   app.use(
@@ -80,7 +88,11 @@ app.get(
 );
 const clientRoot = path.join(__dirname, "../client/dist");
 app.use("/", express.static(clientRoot));
-app.use(history("index.html", { root: clientRoot }));
+app.use(
+  history("index.html", {
+    root: clientRoot
+  })
+);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

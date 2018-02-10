@@ -46,6 +46,15 @@ const userSchema = new Schema({
     enum: STATUSES,
     default: "student"
   },
+  jobExperience: [
+    {
+      period: { type: String, required: false, default: "" },
+      company: { type: String, required: false, default: "" },
+      country: { type: String, required: false, default: "" },
+      title: { type: String, required: false, default: "" },
+      description: { type: String, required: false, default: "" }
+    }
+  ],
   isAdmin: {
     type: Boolean,
     default: false
@@ -63,5 +72,18 @@ const userSchema = new Schema({
 userSchema.plugin(passportLocalMongoose, {
   usernameField: "email"
 });
+
+// userSchema.pre("save", function(next) {
+//   if (!this.jobExperience[0]) {
+//     this.jobExperience[0] = {};
+//     this.jobExperience[0].period = "";
+//     this.jobExperience[0].company = "";
+//     this.jobExperience[0].country = "";
+//     this.jobExperience[0].title = "";
+//     this.jobExperience[0].description = "";
+
+//     return next;
+//   }
+// });
 
 module.exports = mongoose.model("User", userSchema);

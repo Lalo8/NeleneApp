@@ -64,14 +64,6 @@ const organizationSchema = new Schema({
   img: {
     type: String,
     default: "https://bulma.io/images/placeholders/96x96.png"
-  },
-  joboffer: {
-    label: {
-      type: String
-    },
-    file: {
-      type: String
-    }
   }
 });
 

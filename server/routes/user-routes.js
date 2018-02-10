@@ -41,6 +41,7 @@ router.patch("/:id", parser.single("img"), (req, res) => {
     country,
     city,
     expertise,
+    jobExperience,
     isJobSeeker,
     isStartupSeeker
   } = req.body;
@@ -52,6 +53,7 @@ router.patch("/:id", parser.single("img"), (req, res) => {
     country,
     city,
     expertise,
+    jobExperience,
     isJobSeeker,
     isStartupSeeker
   };
