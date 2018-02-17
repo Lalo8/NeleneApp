@@ -98,8 +98,7 @@ router.patch("/:id", (req, res) => {
     category,
     needs,
     location,
-    type,
-    joboffer
+    type
   } = req.body;
   const changes = {
     name,
@@ -111,8 +110,7 @@ router.patch("/:id", (req, res) => {
     category,
     needs,
     location,
-    type,
-    joboffer
+    type
   };
 
   Object.keys(changes).forEach(key => {

@@ -71,9 +71,11 @@ passport.use(strategy);
 const authRoutes = require("./routes/auth");
 const organisationsRouter = require("./routes/org-routes");
 const usersRouter = require("./routes/user-routes");
+const jobsRouter = require("./routes/job-routes");
 app.use("/api", authRoutes);
 app.use("/api/organisations", organisationsRouter);
 app.use("/api/users", usersRouter);
+app.use("/api/jobs", jobsRouter);
 app.use("/api/images", imagesRoutes);
 // This is an example of protected route
 app.get(

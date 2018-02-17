@@ -15,17 +15,33 @@ const CONTRACTYPES = [
   "to define"
 ];
 
-const jobOfferSchema = new Schema({
+const jobSchema = new Schema({
   title: {
     type: String,
-    required: true
+    required: false
+  },
+  description: {
+    type: String,
+    required: false
+  },
+  contact: {
+    type: String,
+    required: false
+  },
+  country: {
+    type: String,
+    required: false
+  },
+  deadline: {
+    type: String,
+    required: false
   },
   category: {
     type: String,
     enum: CATEGORIES,
     default: "startup"
   },
-  deadline: {
+  company: {
     type: String,
     required: true
   },
@@ -33,21 +49,9 @@ const jobOfferSchema = new Schema({
     type: String,
     enum: CONTRACTYPES
   },
-  country: {
-    type: String,
-    required: true
-  },
   startdate: {
     type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  company: {
-    type: String,
-    required: true
+    required: false
   },
   img: {
     type: String,
@@ -55,4 +59,4 @@ const jobOfferSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model("jobOffer", jobOfferSchema);
+module.exports = mongoose.model("Job", jobSchema);

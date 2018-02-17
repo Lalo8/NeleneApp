@@ -2,6 +2,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const User = require("../models/user");
 const Organisation = require("../models/organisation");
+const Job = require("../models/job");
 
 mongoose.connect(process.env.MONGODB_URI, {
   useMongoClient: true
@@ -125,10 +126,34 @@ const startups = [
   })
 ];
 
+const finances = [
+  new Job({
+    title: "Finance Analyst",
+    description: "your role will be to analyze our financial strategy",
+    contact: "alice@financeteam.com",
+    country: "Cameroon",
+    category: "finance",
+    company: "finance team",
+    contract: "permanent contract",
+    img:
+      "https://res.cloudinary.com/hiwkem5s6/image/upload/v1509986679/jamii.jpg"
+  }),
+  new Job({
+    title: "M&A Analyst",
+    description: "your role will be to conclude a merger",
+    contact: "lali@financedog.com",
+    country: "Nigeria",
+    category: "finance",
+    company: "finance Dogteam",
+    contract: "permanent contract"
+  })
+];
+
 User.register(admin, "africa", (err, admin) => {
   if (err) return console.error(err);
   incubators.forEach(incubator => (incubator.ownerId = admin._id));
   startups.forEach(startup => (startup.ownerId = admin._id));
+  finances.forEach(finance => (finance.ownerId = admin._id));
 
   return Promise.all([
     ...incubators.map(i => i.save()),

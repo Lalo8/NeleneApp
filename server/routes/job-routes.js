@@ -5,12 +5,12 @@ const cloudinary = require("cloudinary");
 const cloudinaryStorage = require("multer-storage-cloudinary");
 const multer = require("multer");
 const router = express.Router();
-const JobOffer = require("../models/jobOffer");
+const Job = require("../models/job");
 const config = require("../config");
 
 const storage = cloudinaryStorage({
   cloudinary,
-  folder: "jobOffer",
+  folder: "jobs",
   allowedFormats: ["jpg", "png", "jpeg", "pdf"]
 });
 
@@ -19,29 +19,20 @@ const parser = multer({ storage });
 // Define your endpoints here
 router.get("/", (req, res, next) => {
   const dbQuery = req.query.ownerId
-    ? JobOffer.find({ ownerId: req.query.ownerId })
-    : JobOffern.find();
+    ? Job.find({ ownerId: req.query.ownerId })
+    : Job.find();
   dbQuery
-    .then(jobOffers => {
-      res.json(jobOffers);
+    .then(jobs => {
+      res.json(jobs);
     })
     .catch(err => next(err));
 });
 
 // Define your endpoints here
 router.get("/:id", (req, res, next) => {
-  JobOffer.findById(req.params.id)
-    .then(jobOffer => {
-      res.json(jobOffer);
-    })
-    .catch(err => next(err));
-});
-
-// Define your endpoints here
-router.get("/:id", (req, res, next) => {
-  Organisation.findById(req.params.id)
-    .then(organisation => {
-      res.json(organisation);
+  Job.findById(req.params.id)
+    .then(job => {
+      res.json(job);
     })
     .catch(err => next(err));
 });
@@ -59,13 +50,12 @@ router.post(
       deadline,
       category,
       company,
-      location,
       contract,
       startdate
     } = req.body;
     const ownerId = req.user ? req.user._id : null;
 
-    const jobOffer = new JobOffer({
+    const job = new Job({
       title,
       description,
       contact,
@@ -73,15 +63,62 @@ router.post(
       deadline,
       category,
       company,
-      location,
+      ownerId,
       contract,
       startdate
-      img: req.file.secure_url
     });
 
-    jobOffer
+    job
       .save()
-      .then(org => res.json(org))
+      .then(jo => res.json(jo))
       .catch(err => next(err));
   }
 );
+
+router.delete("/:id", (req, res, next) => {
+  Job.findByIdAndRemove(req.params.id)
+    .then(() => {
+      res.sendStatus(202);
+    })
+    .catch(err => next(err));
+});
+
+router.patch("/:id", (req, res) => {
+  const id = req.params.id;
+  const {
+    title,
+    description,
+    contact,
+    country,
+    deadline,
+    category,
+    company,
+    location,
+    contract,
+    startdate
+  } = req.body;
+  const changes = {
+    title,
+    description,
+    contact,
+    country,
+    deadline,
+    category,
+    company,
+    location,
+    contract,
+    startdate
+  };
+
+  Object.keys(changes).forEach(key => {
+    if (!changes[key]) {
+      delete changes[key];
+    }
+  });
+
+  Job.findByIdAndUpdate(id, changes, { new: true }).then(org => {
+    res.json(org);
+  });
+});
+
+module.exports = router;
