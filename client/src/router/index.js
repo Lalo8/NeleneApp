@@ -13,6 +13,9 @@ import UserAccount from "@/router/profiles/UserAccount";
 import EditOrganisationPage from "@/router/org/EditOrganisationPage";
 import AdminPage from "@/router/profiles/AdminPage";
 import OverviewPage from "@/router/org/OverviewPage";
+import NewJobPage from "@/router/job/NewJobPage";
+import AllJobsPage from "@/router/job/AllJobsPage";
+
 import { checkUser } from "@/api/auth";
 
 Vue.use(Router);
@@ -23,6 +26,16 @@ const router = new Router({
     {
       path: "/",
       component: AllOrganisationsPage,
+      meta: {
+        // the meta object can contain any information
+        // about the route that you may want to use
+        // elsewhere, like in beforeEach
+        requiresNonAuth: true
+      }
+    },
+    {
+      path: "/jobs",
+      component: AllJobsPage,
       meta: {
         // the meta object can contain any information
         // about the route that you may want to use
@@ -63,6 +76,13 @@ const router = new Router({
     {
       path: "/organisations/add",
       component: NewOrganisationPage,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/jobs/add",
+      component: NewJobPage,
       meta: {
         requiresAuth: true
       }
@@ -114,7 +134,6 @@ const router = new Router({
         requiresAuth: true
       }
     },
-
     {
       path: "/admin",
       component: AdminPage,

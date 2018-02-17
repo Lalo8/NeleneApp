@@ -11,6 +11,7 @@
 export default {
   props: {
     organisations: Array,
+    jobs: Array,
     users: Array
   },
   data() {
@@ -25,6 +26,9 @@ export default {
     },
     filter() {
       this.$emit("filter", this.filterBy(this.users, this.searched)).then;
+    },
+    filter() {
+      this.$emit("filter", this.filterBy(this.jobs, this.searched)).then;
     }
   },
   watch: {

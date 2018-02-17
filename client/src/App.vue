@@ -20,7 +20,10 @@
                 </router-link>
                 <router-link to="/talents" class="navbar-link">
                   Talents
-                </router-link>       
+                </router-link>
+                <router-link to="/jobs" class="navbar-link">
+                  Job Offers
+                </router-link>           
                 <router-link v-if="!$root.user" to="login" class="navbar-link">
                   Login
                 </router-link>  
@@ -40,6 +43,9 @@
                 </router-link>  -->
                  <router-link v-if="$root.user" to="/organisations/add" class="navbar-link">
                  Add an organisation
+                </router-link>
+                <router-link v-if="$root.user" to="/jobs/add" class="navbar-link">
+                 Add a job offer
                 </router-link>
                 <router-link v-if="$root.user" to="/account" class="navbar-link">
                  My account
