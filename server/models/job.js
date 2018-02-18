@@ -14,6 +14,7 @@ const CONTRACTYPES = [
   "voluntareeing",
   "to define"
 ];
+const CONDITIONS = ["remotely", "in residence", "to define"];
 
 const jobSchema = new Schema({
   title: {
@@ -26,9 +27,13 @@ const jobSchema = new Schema({
   },
   contact: {
     type: String,
-    required: false
+    required: true
   },
   country: {
+    type: String,
+    required: true
+  },
+  city: {
     type: String,
     required: false
   },
@@ -52,6 +57,11 @@ const jobSchema = new Schema({
   startdate: {
     type: String,
     required: false
+  },
+  conditions: {
+    type: String,
+    enum: CONDITIONS,
+    default: "to define"
   },
   img: {
     type: String,

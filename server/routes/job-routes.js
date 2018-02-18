@@ -47,6 +47,7 @@ router.post(
       description,
       contact,
       country,
+      city,
       deadline,
       category,
       company,
@@ -60,12 +61,14 @@ router.post(
       description,
       contact,
       country,
+      city,
       deadline,
       category,
       company,
       ownerId,
       contract,
-      startdate
+      startdate,
+      img: req.file.secure_url
     });
 
     job
@@ -90,6 +93,7 @@ router.patch("/:id", (req, res) => {
     description,
     contact,
     country,
+    city,
     deadline,
     category,
     company,
@@ -102,6 +106,7 @@ router.patch("/:id", (req, res) => {
     description,
     contact,
     country,
+    city,
     deadline,
     category,
     company,
