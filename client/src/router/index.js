@@ -7,10 +7,12 @@ import AllOrganisationsPage from "@/router/org/AllOrganisationsPage";
 import TalentsPage from "@/router/profiles/TalentsPage";
 import NewOrganisationPage from "@/router/org/NewOrganisationPage";
 import ProfileOrganisationPage from "@/router/org/ProfileOrganisationPage";
+import ProfileJobPage from "@/router/job/ProfileJobPage";
 import ProfileUserPage from "@/router/profiles/ProfileUserPage";
 import UserOrganisationPage from "@/router/profiles/UserOrganisationPage";
 import UserAccount from "@/router/profiles/UserAccount";
 import EditOrganisationPage from "@/router/org/EditOrganisationPage";
+import EditJobPage from "@/router/job/EditJobPage";
 import AdminPage from "@/router/profiles/AdminPage";
 import OverviewPage from "@/router/org/OverviewPage";
 import NewJobPage from "@/router/job/NewJobPage";
@@ -95,8 +97,25 @@ const router = new Router({
       }
     },
     {
+      path: "/jobs/edit/:id",
+      component: EditJobPage,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: "/organisations/view/:id",
       component: ProfileOrganisationPage,
+      meta: {
+        // the meta object can contain any information
+        // about the route that you may want to use
+        // elsewhere, like in beforeEach
+        requiresNonAuth: true
+      }
+    },
+    {
+      path: "/jobs/view/:id",
+      component: ProfileJobPage,
       meta: {
         // the meta object can contain any information
         // about the route that you may want to use

@@ -1,7 +1,7 @@
 <template> 
   <div class="container">
     <div class="maintitle">
-      <h1>Discover here the African entrepreunarial ecosystem at a glance !</h1>
+      <h1>What about joining an african innovative organization ?</h1>
        <div class="trait"></div>
     </div>
     <div class="searchbar">
@@ -16,8 +16,8 @@
       <job-card></job-card>
     </jobs-list>
     <footer>
-      <router-link to="/login" class="button is-primary is-outlined is-large is-focused" v-if="!$root.user">Want to add organisations ? Let's login</router-link>
-      <router-link to="/jobs/add" class="button is-primary is-outlined is-large is-focused" v-if="$root.user">I want to add an organisation !</router-link>
+      <router-link to="/login" class="button is-primary is-outlined is-large is-focused" v-if="!$root.user">Want to add a job offer ? Just email us !</router-link>
+      <router-link to="/jobs/add" class="button is-primary is-outlined is-large is-focused" v-if="$root.user"> Add a job offer !</router-link>
     </footer>
   </div>
 </template>
@@ -40,7 +40,8 @@ export default {
       jobs: [],
       filteredJobs: [],
       errors: [],
-      selected: null
+      selected: null,
+      isAdmin: true
     };
   },
   methods: {

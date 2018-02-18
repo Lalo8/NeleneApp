@@ -32,7 +32,7 @@
                 </router-link> 
                <div v-if="$root.user" >
                 <router-link v-if="$root.user.isAdmin" to="/admin" class="navbar-link">
-                 All organisations
+                 All items
                 </router-link> 
                 <router-link to="/" class="navbar-link" v-else>
                  All organisations

@@ -2,11 +2,8 @@
     <li class="sublist">
         <div class="newCard">
             <div class="card">
-                <div class="card-image" >
-                    <figure class="image is-3by2">
-                        <img src="../assets/social.png" alt="Placeholder image">
-                    </figure>
-
+                <div class="card-image image is-3by2" >
+                  {{job.contract}}
                 </div>
                 <div class="card-content">
                     <div class="media">
@@ -16,32 +13,28 @@
                           </figure>
                       </div>
                       <div class="media-content">
-                          <p class="title is-5">{{job.title}}</p>
+                          <router-link  :to="'/jobs/view/'+ job._id"><p class="title is-7">{{job.title}}</p></router-link>
                           <p class="subtitle is-7">{{job.company}}</p>
+                          <p class="titleCountry is-7">{{job.country}} - {{job.city}} </p>
                       </div>
                     </div>
-                    <!-- <div class="content">
-                        <p>{{organisation.description}}</p>
-                        <router-link class="button is-primary is-outlined is-small" :to="'/organisations/view/'+ organisation._id">
-                            Let's know more
-                        </router-link>
-                        <br>
-                        <br>
+                    <div class="content">
+                         <br>
                         <div>
-                            <b-tag rounded type="is-danger is-small">{{organisation.category}}</b-tag>
-                            <b-tag rounded type="is-warning is-small">{{organisation.type}}</b-tag>
-                            <!-- <b-tag v-for="need in organisation.needs" :key="need" rounded type="is-warning is-medium">{{need}}</b-tag>
-                            <b-tag rounded type="is-info is-small">{{organisation.country}}</b-tag>
+                            <b-tag rounded type="is-danger is-small">{{job.category}}</b-tag>
+                            <b-tag rounded type="is-warning is-small">{{job.country}}</b-tag>
+                            <!-- <b-tag v-for="need in organisation.needs" :key="need" rounded type="is-warning is-medium">{{need}}</b-tag> -->
+                            <b-tag rounded type="is-info is-small">{{job.conditions}}</b-tag>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
-                <!-- <div v-if="editable" class="card-footer">
-                </div> -->
+                <div v-if="editable" class="card-footer">
+                </div>
             </div>
-            <!-- <div class="optionAdmin" v-if="editable">
-                <router-link :to="'/organisations/edit/'+ organisation._id" class="button commandA is-warning is-small">Edit</router-link>
+            <div class="optionAdmin" v-if="editable">
+                <router-link :to="'/jobs/edit/'+ job._id" class="button commandA is-warning is-small">Edit</router-link>
                 <button v-if="$root.user.isAdmin" @click="remove" class="button commandA is-danger is-small" >Delete</button>
-            </div> -->
+            </div>
         </div>
     </li>
 </template>
@@ -80,10 +73,13 @@ export default {
   display: flex;
   flex-direction: column;
 }
+.titleCountry {
+  color: #785bd2;
+}
 
 .card {
   max-width: 20rem;
-  max-height: 32rem;
+  max-height: 25rem;
   background-color: white;
   border-radius: 0.25rem;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
@@ -100,6 +96,25 @@ export default {
   margin-top: 10px;
   border: none;
 }
+
+.card-image {
+  width: 310px;
+  height: 200px;
+  color: white;
+  background-image: url("../assets/social_jobs.jpg");
+  background-size: cover;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  z-index: px;
+  padding-top: 5rem;
+}
+
+.image_header {
+  width: 300px;
+  height: 210px;
+}
 .sublist {
   display: flex;
   margin-right: -13px;
@@ -113,17 +128,20 @@ export default {
 }
 
 .card-content {
-  height: 300px;
+  height: 210px;
 }
 
 .media-content p.title {
-  font-size: 15px;
+  font-size: 20px;
+}
+.media-content p.subtitle {
+  margin-bottom: 0px;
 }
 .media-content p {
-  font-size: 13px;
+  font-size: 15px;
 }
 .content p.title {
-  font-size: 15px;
+  font-size: 20px;
 }
 .content p {
   font-size: 13px;

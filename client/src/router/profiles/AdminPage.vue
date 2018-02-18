@@ -4,11 +4,24 @@
             <div class="title">
                 <h1>Let's do some cleanup !</h1>
             </div>
-            <div class="container3">
-                <organisations-list :organisations="organisations" :editable="true">
-                    <organisation-card></organisation-card>
-                </organisations-list>
-            </div>
+          <section>
+            <b-tabs position="is-centered" class="block">
+                <b-tab-item label="Organisations">
+                  <div class="container3">
+                      <organisations-list :organisations="organisations" :editable="true">
+                          <organisation-card></organisation-card>
+                      </organisations-list>
+                  </div>
+                </b-tab-item>
+                <b-tab-item label="Job offers">
+                  <div class="container3">
+                      <jobs-list :jobs="jobs" :editable="true">
+                          <job-card></job-card>
+                      </jobs-list>
+                  </div>
+                </b-tab-item>
+            </b-tabs>
+          </section>
         </div>
     </div>
 </template>
@@ -19,15 +32,19 @@ import {
   removeOrganisation,
   editOrganisation
 } from "@/api/organisations";
+import { getJobs, removeJob, editJob } from "@/api/jobs";
 import OrganisationsList from "@/components/OrganisationsList";
+import JobsList from "@/components/JobsList";
 
 export default {
   components: {
-    OrganisationsList
+    OrganisationsList,
+    JobsList
   },
   data() {
     return {
       organisations: [],
+      jobs: [],
       errors: [],
       selected: null,
       name: "",
@@ -50,6 +67,12 @@ export default {
     getOrganisations().then(organisations => {
       this.organisations = organisations;
     });
+
+    {
+      getJobs().then(jobs => {
+        this.jobs = jobs;
+      });
+    }
   }
 };
 </script>

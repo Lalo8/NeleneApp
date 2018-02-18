@@ -23,15 +23,23 @@
             </div>
         </div>
         <b-field label="Title">
-            <b-input v-model="title"></b-input> 
+            <b-input v-model="title" required></b-input> 
         </b-field>
-        <b-field label="Job Description">
+        <b-field label="Job Description" required>
             <b-input v-model="description" type="textarea"></b-input>
         </b-field>
-        <b-field label="Contact">
+         <b-field grouped>
+            <b-field label=" Country" expanded required>
+                <b-input v-model="country" placeholder="Sénégal, Cameroun..."></b-input>
+            </b-field>
+            <b-field label=" City" expanded>
+                <b-input v-model="city" placeholder="Dakar, Yaoundé..."></b-input>
+            </b-field>
+        </b-field>
+        <b-field label="Contact" required>
             <b-input v-model="contact" type="Email" value="Email"></b-input>
         </b-field>
-        <b-field label=" Job Contract">
+        <b-field label=" Job Contract" required>
             <b-select placeholder="Select a category" icon="person" v-model="contract">
                 <option value="permament contract">Permanent contract</option>
                 <option value="fixed-term contract">Fixed-term contract</option>
@@ -40,7 +48,14 @@
                 <option value="to define">To define</option>
             </b-select>
         </b-field>
-        <b-field label="Category" >
+        <b-field label=" Work Conditions">
+            <b-select placeholder="Select a category" icon="person" v-model="conditions">
+                <option value="remotely">Remotely</option>
+                <option value="in residence">in residence</option>
+                <option value="To define">To define </option>
+            </b-select>
+        </b-field>
+        <b-field label="Category" required >
             <!-- v-if="category===startup" -->
             <b-select multiple native-size="3" v-model="category">
                 <option value="marketing & communication">marketing & communication</option>
@@ -80,6 +95,9 @@ export default {
       title: "",
       description: "",
       contact: "",
+      country: "",
+      city: "",
+      conditions: [],
       contract: "",
       category: []
     };
@@ -93,6 +111,9 @@ export default {
         contact: this.contact,
         contract: this.contract,
         category: this.category,
+        country: this.country,
+        city: this.city,
+        conditions: this.conditions,
         img: this.files[0]
       };
     }
