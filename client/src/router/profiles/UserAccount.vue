@@ -88,11 +88,11 @@
                                         <b-input v-model="user.jobExperience[0].period" placeholder="2016-2017">
                                         </b-input>
                                     </b-field>
-                                    <!-- <b-field label=" City" expanded>
-                                        <b-input v-model="user.jobexperience.country" placeholder="Sénégal, Côte d'ivoire...">
+                                    <b-field label=" City" expanded>
+                                        <b-input v-model="user.jobExperience[0].country" placeholder="Sénégal, Côte d'ivoire...">
                                         </b-input>
-                                    </b-field> -->
-                                </b-field>
+                                    </b-field>
+                                </b-field> -->
                             <button class="button is-primary">Save changes</button>
                         </form>
                     </div>

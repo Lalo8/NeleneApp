@@ -13,7 +13,7 @@
                           </figure>
                       </div>
                       <div class="media-content">
-                          <router-link  :to="'/jobs/view/'+ job._id"><p class="title is-7">{{job.title}}</p></router-link>
+                          <router-link :to="'/jobs/view/'+ job._id"><p class="title is-7">{{job.title}}</p></router-link>
                           <p class="subtitle is-7">{{job.company}}</p>
                           <p class="titleCountry is-7">{{job.country}} - {{job.city}} </p>
                       </div>
@@ -22,7 +22,7 @@
                          <br>
                         <div>
                             <b-tag rounded type="is-danger is-small">{{job.category}}</b-tag>
-                            <b-tag rounded type="is-warning is-small">{{job.country}}</b-tag>
+                            <b-tag rounded type="is-warning is-small">{{job.country}}</b-tag>    
                             <!-- <b-tag v-for="need in organisation.needs" :key="need" rounded type="is-warning is-medium">{{need}}</b-tag> -->
                             <b-tag rounded type="is-info is-small">{{job.conditions}}</b-tag>
                         </div>

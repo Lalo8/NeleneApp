@@ -20,6 +20,13 @@
                       </jobs-list>
                   </div>
                 </b-tab-item>
+                <b-tab-item label="Talents">
+                  <div class="container3">
+                       <users-list :users="filteredUsers">
+                          <talent-card></talent-card>
+                       </users-list>
+                  </div>
+                </b-tab-item>
             </b-tabs>
           </section>
         </div>
@@ -33,18 +40,22 @@ import {
   editOrganisation
 } from "@/api/organisations";
 import { getJobs, removeJob, editJob } from "@/api/jobs";
+import { getUsers } from "@/api/users";
 import OrganisationsList from "@/components/OrganisationsList";
 import JobsList from "@/components/JobsList";
+import UsersList from "@/components/UsersList";
 
 export default {
   components: {
     OrganisationsList,
-    JobsList
+    JobsList,
+    UsersList
   },
   data() {
     return {
       organisations: [],
       jobs: [],
+      users: [],
       errors: [],
       selected: null,
       name: "",
@@ -71,6 +82,12 @@ export default {
     {
       getJobs().then(jobs => {
         this.jobs = jobs;
+      });
+    }
+
+    {
+      getUsers().then(users => {
+        this.users = users;
       });
     }
   }

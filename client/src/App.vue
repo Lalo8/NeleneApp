@@ -15,15 +15,18 @@
           
           <div class="navbar-end">
             <div class="navbar-item">
-              <router-link to="/overview" class="navbar-link">
+              <!-- <router-link to="/overview" class="navbar-link">
                   Overview
-                </router-link>
+                </router-link> -->
                 <router-link to="/talents" class="navbar-link">
                   Talents
                 </router-link>
                 <router-link to="/jobs" class="navbar-link">
                   Job Offers
-                </router-link>           
+                </router-link>  
+                <router-link to="/" class="navbar-link">
+                 Organisations
+                </router-link>        
                 <router-link v-if="!$root.user" to="login" class="navbar-link">
                   Login
                 </router-link>  
@@ -34,9 +37,6 @@
                 <router-link v-if="$root.user.isAdmin" to="/admin" class="navbar-link">
                  All items
                 </router-link> 
-                <router-link to="/" class="navbar-link" v-else>
-                 All organisations
-                </router-link>  
                 </div>
                  <!-- <router-link v-if="$root.user" to="/profile" class="navbar-link">
                  My organisations

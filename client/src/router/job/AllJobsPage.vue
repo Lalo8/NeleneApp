@@ -16,7 +16,22 @@
       <job-card></job-card>
     </jobs-list>
     <footer>
-      <router-link to="/login" class="button is-primary is-outlined is-large is-focused" v-if="!$root.user">Want to add a job offer ? Just email us !</router-link>
+      <!-- <router-link to="/login" class="button is-primary is-outlined is-large is-focused" v-if="!$root.user">Want to add a job offer ?</router-link> -->
+       <button class="button is-primary is-medium" position:="is-centered"@click="isCardModalActive = true"> Want to add a job offer ?
+                    </button>
+      <b-modal :active.sync="isCardModalActive" :width="640">
+                        <header class="modal-card-head">
+                        <p class="modal-card-title">This is the way to proceed</p>
+                        <button class="delete" aria-label="close" @click="isCardModalActive = false"></button>
+                        </header>
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="content centered">
+                                    <p class="subtitle" style="margin-top:3px">For that, you just need to send us a message with all the details of the job offer -> <a href="mailto:">hello@nelene.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </b-modal>
       <router-link to="/jobs/add" class="button is-primary is-outlined is-large is-focused" v-if="$root.user"> Add a job offer !</router-link>
     </footer>
   </div>
@@ -41,7 +56,9 @@ export default {
       filteredJobs: [],
       errors: [],
       selected: null,
-      isAdmin: true
+      isAdmin: true,
+      isCardModalActive: false,
+      isjobOfferModalActive: false
     };
   },
   methods: {
@@ -59,6 +76,9 @@ export default {
 </script>
 
  <style scoped>
+.centered {
+  margin: auto;
+}
 .container {
   margin-top: 50px;
 }
@@ -69,20 +89,6 @@ footer {
 .searchbar {
   margin: 30px auto;
   max-width: 700px;
-}
-* .card {
-  max-width: 23rem;
-  background-color: white;
-  border-radius: 0.25rem;
-  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  &:hover {
-    .card__image {
-      filter: contrast(100%);
-    }
-  }
 }
 */ ul {
   display: flex;
