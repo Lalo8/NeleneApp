@@ -17,6 +17,14 @@ router.post("/signup", (req, res, next) => {
     email,
     name
   });
+  user.jobExperience = [];
+  user.jobExperience.push({
+    period: "",
+    company: "",
+    country: "",
+    title: "",
+    description: ""
+  });
 
   User.register(user, password, err => {
     if (err) {

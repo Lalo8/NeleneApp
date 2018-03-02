@@ -22,6 +22,15 @@ const admin = new User({
     "https://res.cloudinary.com/hiwkem5s6/image/upload/v1512324000/image_CV_mei6hb.jpg"
 });
 
+admin.jobExperience = [];
+admin.jobExperience.push({
+  period: "",
+  company: "",
+  country: "",
+  title: "",
+  description: ""
+});
+
 // const admin2 = new User({
 // 	username: 'Liudmila',
 // 	password: encryptedPass2,
