@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const CATEGORIES = [
-  "marketing & communication",
+  "marketing",
+  "communication",
+  "web development",
   "finance",
   "science",
   "research",
@@ -25,6 +27,10 @@ const jobSchema = new Schema({
     type: String,
     required: false
   },
+  profile: {
+    type: String,
+    required: false
+  },
   contact: {
     type: String,
     required: true
@@ -35,7 +41,8 @@ const jobSchema = new Schema({
   },
   city: {
     type: String,
-    required: false
+    required: false,
+    default: "undefined"
   },
   deadline: {
     type: String,
@@ -61,7 +68,7 @@ const jobSchema = new Schema({
   conditions: {
     type: String,
     enum: CONDITIONS,
-    default: "to define"
+    default: "in residence"
   },
   img: {
     type: String,
