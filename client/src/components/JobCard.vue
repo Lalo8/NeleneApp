@@ -19,7 +19,9 @@
                       </div>
                     </div>
                     <div class="content">
-                         <br>
+                        <router-link class="button is-primary is-outlined is-small buttondetails" :to="'/jobs/view/'+ job._id">
+                            See details
+                        </router-link>
                         <div>
                             <b-tag rounded type="is-danger is-small">{{job.category}}</b-tag>
                             <b-tag rounded type="is-warning is-small">{{job.country}}</b-tag>    
@@ -66,6 +68,10 @@ export default {
 </script>
 
 <style scoped>
+.buttondetails {
+  margin-bottom: 15px;
+  margin-left: 23%;
+}
 .newCard {
   display: flex;
 }

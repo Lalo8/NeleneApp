@@ -49,7 +49,11 @@
                 </router-link>
                 <router-link v-if="$root.user" to="/account" class="navbar-link">
                  My account
-                </router-link>    
+                </router-link> 
+                <router-link v-if="$root.user" :active.sync="fr" to="/account" class="navbar-link">
+                Mon compte
+                </router-link> 
+                <a @click="fr=true" href="#"><i class="fa fa-flag"></i>  </a>
                  <a v-if="$root.user" class="navbar-link" @click.prevent="logout" href="#">Logout</a>
                 <a v-if="$root.user" class="navbar-link"><img class="navbarimg" :src="$root.user.img" style="width:30px !important; height: 30px !important; object-fit: cover !important"></a>
                     <router-link v-if="$root.user" to="/account">
@@ -152,6 +156,10 @@ export default {
       type: Boolean,
       default: true
     }
+    // fr: {
+    //   type: Boolean,
+    //   default: false
+    // }
   },
   name: "app",
   data() {
@@ -163,7 +171,8 @@ export default {
       active: false,
       organisations: [],
       isAdmin: true,
-      navigation: null
+      navigation: null,
+      fr: false
     };
   },
   created() {

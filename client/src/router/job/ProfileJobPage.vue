@@ -4,7 +4,22 @@
             {{job.title}}
         </div>
         <div class="cardprofile">
-                <p class="title">{{job.description}}</p> 
+
+             <div class= "header">
+                 <ul class="jobrecap">
+                     <li><i class="fa fa-globe"></i> {{job.country}} - {{job.city}}</li>
+                     <li><i class="fa fa-briefcase"></i> {{job.contract}}</li>
+                     <li><i class="fa fa-calendar"></i> {{job.deadline}}</li>
+                     <li><i class="fa fa-map-marker"></i> {{job.conditions}}</li>
+
+                 </ul>
+
+             </div>
+                <p class="title">Job Description</p> 
+                <div class="trait"></div>
+                <br>
+                {{job.description}}
+                <p class="title">Candidate Profile</p> 
                 <div class="trait"></div>
                 <br>
                 <!-- <p class="title">Needs</p> 
@@ -32,17 +47,32 @@
                     <iframe class="joboffertemp" :src="organisation.joboffer.content" width="800" height="900" frameborder="0"></iframe>
                 </b-modal> -->
                     <br>
-                    <button class="button is-primary is-medium" position:="is-centered"@click="isCardModalActive = true"> I want to apply ! 
+                    <button class="button is-primary is-medium" position:="is-centered" @click="isCardModalActive = true"> I want to apply ! 
                     </button>
-                    <b-modal :active.sync="isCardModalActive" :width="640">
+                    <b-modal v-if="!$root.user" :active.sync="isCardModalActive" :width="640">
                         <header class="modal-card-head">
-                        <p class="modal-card-title">Let's help !</p>
+                        <p class="modal-card-title">GOOD NEWS!</p>
                         <button class="delete" aria-label="close" @click="isCardModalActive = false"></button>
                         </header>
                         <div class="card">
                             <div class="card-content">
                                 <div class="content centered">
-                                    <p class="title">GREAT ! </p>
+                                    <p class="title"></p>
+                                    <p class="subtitle" style="margin-top:3px">First, you have to <a href="/login">login </a> to access the job contact</p>
+                                </div>
+                            </div>
+                        </div>
+                    </b-modal>
+        </div>
+                    <b-modal v-if="$root.user" :active.sync="isCardModalActive" :width="640">
+                        <header class="modal-card-head">
+                        <p class="modal-card-title">GOOD NEWS!</p>
+                        <button class="delete" aria-label="close" @click="isCardModalActive = false"></button>
+                        </header>
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="content centered">
+                                    <p class="title"></p>
                                     <p class="subtitle" style="margin-top:3px">For that, you just need to send a message to <a href="mailto:"></a>{{job.contact}}</p>
                                 </div>
                             </div>
@@ -72,6 +102,19 @@ export default {
 </script>
 
 <style scoped>
+.header {
+  margin: auto;
+}
+.jobrecap {
+  flex-direction: row;
+  display: flex;
+  color: #38382e;
+  margin-bottom: 30px;
+}
+.jobrecap,
+li {
+  margin-right: 20px;
+}
 .trait {
   background-color: rgb(121, 92, 210);
   height: 4pt;

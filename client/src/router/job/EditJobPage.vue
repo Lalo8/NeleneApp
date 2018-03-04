@@ -65,7 +65,8 @@
         </b-field>
           <b-field label=" Category">
             <b-select placeholder="job.category" icon="person" v-model="job.category">
-               <option value="marketing & communication">marketing & communication</option>
+              <option value="marketing">marketing</option>
+                <option value="communication">communication</option>
                 <option value="finance">finance</option>
                 <option value="science">science</option>
                 <option value="research">research</option>
