@@ -30,6 +30,26 @@
                 {{job.description}}
               </b-input>
           </b-field>
+
+         <b-field label="Select a starting date">
+          <b-datepicker v-model="startdate"
+              :first-day-of-week="1"
+              placeholder="Click to select..."
+              :min-date="minDate">
+
+              <button class="button is-primary"
+                  @click="startdate = new Date()">
+                  <b-icon icon="calendar-today"></b-icon>
+                  <span>Today</span>
+              </button>
+
+              <button class="button is-danger"
+                  @click="startdate = null">
+                  <b-icon icon="close"></b-icon>
+                  <span>Clear</span>
+              </button>
+          </b-datepicker>
+         </b-field>
             <b-field grouped>
                 <b-field label=" Country">
                     <b-input v-model="job.country">
@@ -106,10 +126,13 @@ import { editJob, getJob } from "@/api/jobs";
 
 export default {
   data() {
+    const today = new Date();
     return {
       job: null,
       errors: [],
-      selectedOptions: []
+      selectedOptions: [],
+      startdate: new Date(),
+      minDate: new Date(today.getFullYear(), today.getMonth(), today.getDate())
     };
   },
   methods: {

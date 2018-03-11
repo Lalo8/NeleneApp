@@ -107,7 +107,7 @@ export default {
   width: 310px;
   height: 200px;
   color: white;
-  background-image: url("../assets/social_jobs.jpg");
+  background-image: url("../assets/Job_Card_V7.jpg");
   background-size: cover;
   text-align: center;
   color: white;

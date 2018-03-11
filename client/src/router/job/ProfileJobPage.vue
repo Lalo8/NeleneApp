@@ -2,6 +2,10 @@
     <section v-if="job">
         <div class="banner">
             {{job.title}}
+            <div class="companyHeader">
+              {{job.company}}
+            </div>
+
         </div>
         <div class="cardprofile">
 
@@ -9,7 +13,7 @@
                  <ul class="jobrecap">
                      <li><i class="fa fa-globe"></i> {{job.country}} - {{job.city}}</li>
                      <li><i class="fa fa-briefcase"></i> {{job.contract}}</li>
-                     <li><i class="fa fa-calendar"></i> {{job.deadline}}</li>
+                     <li><i class="fa fa-calendar"></i> {{job.startdate}}</li>
                      <li><i class="fa fa-map-marker"></i> {{job.conditions}}</li>
 
                  </ul>
@@ -47,8 +51,12 @@
                     <iframe class="joboffertemp" :src="organisation.joboffer.content" width="800" height="900" frameborder="0"></iframe>
                 </b-modal> -->
                     <br>
-                    <button class="button is-primary is-medium" position:="is-centered" @click="isCardModalActive = true"> I want to apply ! 
-                    </button>
+                    <div class="buttonAction">
+                        <router-link to="/jobs" class="button is-info is-medium" position:="is-centered" @click="isCardModalActive = true"> <i class="fa fa-arrow-left"></i>  Go back to the list 
+                        </router-link> </br>
+                        <button class="button is-primary is-medium" position:="is-centered" @click="isCardModalActive = true"> I want to apply ! 
+                        </button>
+                    </div>
                     <b-modal v-if="!$root.user" :active.sync="isCardModalActive" :width="640">
                         <header class="modal-card-head">
                         <p class="modal-card-title">GOOD NEWS!</p>
@@ -73,7 +81,7 @@
                             <div class="card-content">
                                 <div class="content centered">
                                     <p class="title"></p>
-                                    <p class="subtitle" style="margin-top:3px">For that, you just need to send a message to <a href="mailto:"></a>{{job.contact}}</p>
+                                    <p class="subtitle" style="margin-top:3px">For that, you just need to send a message to <a :href="`mailto:${job.contact}`">{{job.contact}}</a></p>
                                 </div>
                             </div>
                         </div>
@@ -102,6 +110,24 @@ export default {
 </script>
 
 <style scoped>
+.buttonAction {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 437px;
+  margin: auto;
+}
+button {
+  padding: 2px;
+}
+
+i {
+  margin-right: 7px;
+}
+.companyHeader {
+  font-size: 20px;
+  font-style: italic;
+}
 .header {
   margin: auto;
 }

@@ -28,6 +28,25 @@
         <b-field label="Job Description" required>
             <b-input v-model="description" type="textarea"></b-input>
         </b-field>
+        <b-field label="Select a starting date">
+          <b-datepicker v-model="startdate"
+              :first-day-of-week="1"
+              placeholder="Click to select..."
+              :min-date="minDate">
+
+              <button class="button is-primary"
+                  @click="startdate = new Date()">
+                  <b-icon icon="calendar-today"></b-icon>
+                  <span>Today</span>
+              </button>
+
+              <button class="button is-danger"
+                  @click="startdate = null">
+                  <b-icon icon="close"></b-icon>
+                  <span>Clear</span>
+              </button>
+          </b-datepicker>
+         </b-field>
          <b-field grouped>
             <b-field label=" Country" expanded required>
                 <b-input v-model="country" placeholder="Sénégal, Cameroun..."></b-input>
@@ -88,6 +107,7 @@ export default {
     }
   },
   data() {
+    const today = new Date();
     return {
       picture: "",
       imgUrl: "",
@@ -95,12 +115,15 @@ export default {
       company: "",
       title: "",
       description: "",
+      startdate: "",
       contact: "",
       country: "",
       city: "",
       conditions: [],
       contract: "",
-      category: []
+      category: [],
+      startdate: new Date(),
+      minDate: new Date(today.getFullYear(), today.getMonth(), today.getDate())
     };
   },
   computed: {
@@ -109,6 +132,7 @@ export default {
         company: this.company,
         title: this.title,
         description: this.description,
+        startdate: this.startdate,
         contact: this.contact,
         contract: this.contract,
         category: this.category,
