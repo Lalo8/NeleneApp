@@ -1,7 +1,7 @@
 <template> 
   <div class="container">
     <div class="maintitle">
-      <h1>Discover here the African entrepreunarial ecosystem at a glance !</h1>
+      <h1>{{ $t("announce.organisation") }}</h1>
        <div class="trait"></div>
     </div>
     <div class="searchbar">

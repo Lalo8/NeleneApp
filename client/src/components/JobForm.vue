@@ -13,9 +13,11 @@
             </span>
         </div>
     </b-field>
-    <b-field label="Company">
-            <b-input v-model="company"></b-input> 
-        </b-field>
+    <b-field label="Company" required>
+        <b-select placeholder="Select a category" icon="person" v-model="company">
+            <option v-for="organisation in organisations" :value="organisation._id">{{organisation.name}}</option>
+        </b-select>
+    </b-field>
 
         <div class="field">
             <div class="file is-warning is-boxed is-centered">
@@ -99,6 +101,8 @@
 </template>
 
 <script>
+import { getOrganisations } from "@/api/organisations";
+
 export default {
   props: {
     displayInputLocation: {
@@ -123,8 +127,15 @@ export default {
       contract: "",
       category: [],
       startdate: new Date(),
-      minDate: new Date(today.getFullYear(), today.getMonth(), today.getDate())
+      minDate: new Date(today.getFullYear(), today.getMonth(), today.getDate()),
+      organisations: []
     };
+  },
+  created() {
+    getOrganisations().then(organisations => {
+      this.organisations = organisations;
+      this.organisations.sort();
+    });
   },
   computed: {
     job() {

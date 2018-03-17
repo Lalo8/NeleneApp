@@ -9,12 +9,12 @@
                     <div class="media">
                       <div class="media-left">
                           <figure class="image is-48x48">
-                          <img :src="job.img" alt="Placeholder image">
+                          <img :src="job.company.img" alt="Placeholder image">
                           </figure>
                       </div>
                       <div class="media-content">
                           <router-link :to="'/jobs/view/'+ job._id"><p class="title is-7">{{job.title}}</p></router-link>
-                          <p class="subtitle is-7">{{job.company}}</p>
+                          <p class="subtitle is-7">{{job.company.name}}</p>
                           <p class="titleCountry is-7">{{job.country}} - {{job.city}} </p>
                       </div>
                     </div>
@@ -42,6 +42,7 @@
 </template>
 
 <script>
+import { getOrganisations } from "@/api/organisations";
 export default {
   props: {
     job: Object,
@@ -58,6 +59,12 @@ export default {
     //   type: Boolean,
     //   default: true,
     // }
+  },
+  created() {
+    getOrganisations().then(organisations => {
+      this.organisations = organisations;
+      this.organisations.sort();
+    });
   },
   methods: {
     remove() {

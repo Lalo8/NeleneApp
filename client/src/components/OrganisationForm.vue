@@ -21,6 +21,9 @@
         <b-field label="Name">
             <b-input v-model="name"></b-input> 
         </b-field>
+        <b-field label="Short Description (please enter maximum 170 characters)"> 
+            <b-input v-model="shortDescription" maxlength="170" type="textarea"></b-input>
+        </b-field>
         <b-field label="Description">
             <b-input v-model="description" type="textarea"></b-input>
         </b-field>
@@ -80,6 +83,7 @@ export default {
       imgUrl: "",
       files: [],
       name: "",
+      shortDescription: "",
       description: "",
       contact: "",
       type: "",
@@ -94,6 +98,7 @@ export default {
     organisation() {
       return {
         name: this.name,
+        shortDescription: this.shortDescription,
         description: this.description,
         contact: this.contact,
         address: this.address,

@@ -3,7 +3,7 @@
         <div class="banner">
             {{job.title}}
             <div class="companyHeader">
-              {{job.company}}
+              {{job.company.name}}
             </div>
 
         </div>
@@ -22,7 +22,7 @@
                 <p class="title">Job Description</p> 
                 <div class="trait"></div>
                 <br>
-                {{job.description}}
+                <p v-html="job.description"></p>
                 <p class="title">Candidate Profile</p> 
                 <div class="trait"></div>
                 <br>
@@ -92,6 +92,7 @@
 
 <script>
 import { getJob } from "@/api/jobs";
+import { getOrganisations } from "@/api/organisations";
 export default {
   data() {
     return {
@@ -104,6 +105,10 @@ export default {
   created() {
     getJob(this.$route.params.id).then(job => {
       this.job = job;
+    });
+    getOrganisations().then(organisations => {
+      this.organisations = organisations;
+      this.organisations.sort();
     });
   }
 };

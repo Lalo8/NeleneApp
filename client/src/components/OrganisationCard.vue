@@ -23,7 +23,7 @@
                       </div>
                     </div>
                     <div class="content">
-                        <p>{{organisation.description}}</p>
+                         <p v-html="organisation.shortDescription"></p>
                         <router-link class="button is-primary is-outlined is-small" :to="'/organisations/view/'+ organisation._id">
                             Let's know more
                         </router-link>

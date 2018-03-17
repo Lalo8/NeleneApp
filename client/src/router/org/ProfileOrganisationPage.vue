@@ -6,7 +6,7 @@
         <div class="cardprofile">
                 <p class="title">Activity</p> 
                 <div class="trait"></div>
-                <p class="subtitle">{{organisation.description}}</p>
+                <p class="subtitle" v-html="organisation.description"></p>
                 <br>
                 <p class="title">Needs</p> 
                 <div class="trait"></div>
@@ -44,7 +44,7 @@
                             <div class="card-content">
                                 <div class="content centered">
                                     <p class="title">GREAT ! </p>
-                                    <p class="subtitle" style="margin-top:3px">For that, you just need to send a message to <a href="mailto:"></a>{{organisation.contact}}</p>
+                                    <p class="subtitle" style="margin-top:3px">For that, you just need to send a message to <a :href="`mailto:${organisation.contact}`">{{organisation.contact}}</a></p>
                                 </div>
                             </div>
                         </div>

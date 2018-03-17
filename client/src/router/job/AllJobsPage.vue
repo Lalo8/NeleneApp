@@ -1,7 +1,7 @@
 <template> 
   <div class="container">
     <div class="maintitle">
-      <h1>What about joining an african innovative organization ?</h1>
+      <h1>{{ $t("announce.job") }}</h1>
        <div class="trait"></div>
     </div>
     <div class="searchbar">
@@ -27,7 +27,7 @@
                         <div class="card">
                             <div class="card-content">
                                 <div class="content centered">
-                                    <p class="subtitle" style="margin-top:3px">For that, you just need to send us a message with all the details of the job offer -> <a href="mailto:">hello@nelene.com</a></p>
+                                    <p class="subtitle" style="margin-top:3px">For that, you just need to send us a message with all the details of the job offer -> <a :href="`mailto:hello@nelene.com`">hello@nelene.com</a></p>
                                 </div>
                             </div>
                         </div>
