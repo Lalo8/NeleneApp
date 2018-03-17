@@ -19,7 +19,7 @@ const parser = multer({ storage });
 // Define your endpoints here
 router.get("/", (req, res, next) => {
   const dbQuery = req.query.ownerId
-    ? Job.find({ ownerId: req.query.ownerId })
+    ? Job.find({ ownerId: req.query.ownerId }).populate("company")
     : Job.find().populate("company");
   dbQuery
     .then(jobs => {
@@ -31,6 +31,7 @@ router.get("/", (req, res, next) => {
 // Define your endpoints here
 router.get("/:id", (req, res, next) => {
   Job.findById(req.params.id)
+    .populate("company")
     .then(job => {
       res.json(job);
     })
@@ -80,6 +81,7 @@ router.post(
 
 router.delete("/:id", (req, res, next) => {
   Job.findByIdAndRemove(req.params.id)
+    .populate("company")
     .then(() => {
       res.sendStatus(202);
     })
@@ -121,9 +123,11 @@ router.patch("/:id", (req, res) => {
     }
   });
 
-  Job.findByIdAndUpdate(id, changes, { new: true }).then(org => {
-    res.json(org);
-  });
+  Job.findByIdAndUpdate(id, changes, { new: true })
+    .populate("company")
+    .then(org => {
+      res.json(org);
+    });
 });
 
 module.exports = router;
