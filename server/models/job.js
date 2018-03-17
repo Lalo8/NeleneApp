@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+var ObjectId = Schema.ObjectId;
 const CATEGORIES = [
   "marketing",
   "communication",
@@ -54,7 +55,8 @@ const jobSchema = new Schema({
     default: "startup"
   },
   company: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: "Organisation",
     required: true
   },
   contract: {
@@ -63,7 +65,8 @@ const jobSchema = new Schema({
   },
   startdate: {
     type: String,
-    required: false
+    required: false,
+    default: "30/05/2018"
   },
   conditions: {
     type: String,

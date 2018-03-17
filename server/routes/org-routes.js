@@ -44,6 +44,7 @@ router.post(
   (req, res, next) => {
     const {
       name,
+      shortDescription,
       description,
       contact,
       address,
@@ -58,6 +59,7 @@ router.post(
 
     const organisation = new Organisation({
       name,
+      shortDescription,
       description,
       contact,
       address,

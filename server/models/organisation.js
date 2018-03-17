@@ -10,6 +10,10 @@ const organizationSchema = new Schema({
     type: String,
     required: true
   },
+  shortDescription: {
+    type: String,
+    required: true
+  },
   description: {
     type: String,
     required: true
@@ -20,7 +24,7 @@ const organizationSchema = new Schema({
   },
   address: {
     type: String,
-    required: true
+    required: false
   },
   country: {
     type: String,

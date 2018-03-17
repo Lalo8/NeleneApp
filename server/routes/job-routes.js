@@ -20,7 +20,7 @@ const parser = multer({ storage });
 router.get("/", (req, res, next) => {
   const dbQuery = req.query.ownerId
     ? Job.find({ ownerId: req.query.ownerId })
-    : Job.find();
+    : Job.find().populate("company");
   dbQuery
     .then(jobs => {
       res.json(jobs);

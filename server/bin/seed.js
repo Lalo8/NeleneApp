@@ -42,6 +42,7 @@ admin.jobExperience.push({
 const incubators = [
   new Organisation({
     name: "Entrepreneur Incubator",
+    shortDescription: "Business Development Service",
     description:
       "Business Development Service. For more information - check up web site ei.co.za",
     contact: "ayanda@em-solutions.co.za",
@@ -57,6 +58,7 @@ const incubators = [
   }),
   new Organisation({
     name: "Nairobi Garage Ngong Road",
+    shortDescription: "Coworking space for startups",
     description:
       "Fully serviced, coworking office space for startups, techies and entrepreneurs. For more information - check up web site https://nairobigarage.com/",
     contact: "ngongroad@nairobigarage.com",
@@ -72,8 +74,10 @@ const incubators = [
   }),
   new Organisation({
     name: "La Fabrique",
-    description:
+    shortDescription:
       "La Fabrique is an incubator focused on social businesses mentoring in West Africa",
+    description:
+      "La Fabrique est un incubateur entièrement dédié à l’accompagnement d’entreprises sociales et responsables en Afrique de l’Ouest. Accompagnement, co-working, conseil, formations permettent de donner vie aux plus grandes ambitions !",
     contact: "contact@lafabrique-bf.com",
     address: "Ouagadougou 12 BP 4199 ",
     country: "Burkina Faso",
@@ -87,6 +91,8 @@ const incubators = [
   }),
   new Organisation({
     name: "Enspire Incubator",
+    shortDescription:
+      "A platform for facilitating the growth of viable technology businesses in Nigeria.",
     description:
       "A platform for facilitating the growth of viable technology businesses in Nigeria. For more information - check up web site http://enspire.org.ng/",
     contact: "info@enspire.org.ng",
@@ -105,6 +111,8 @@ const incubators = [
 const startups = [
   new Organisation({
     name: "Instabug",
+    shortDescription:
+      "nstabug is providing in-app feedback and bug reporting to mobile apps.",
     description:
       "Instabug is providing in-app feedback and bug reporting to mobile apps. It provides a seamless way for two-way communication with users, while providing detailed environment report for developers. For more information - check up web site instabug.org",
     contact: "info@instabug.com ",
@@ -117,21 +125,6 @@ const startups = [
     type: "tech",
     img:
       "https://res.cloudinary.com/hiwkem5s6/image/upload/v1509986568/instabug.png"
-  }),
-  new Organisation({
-    name: "Jamii Africa",
-    description:
-      "EdgePoint Digital Ltd. For more information - check up web site jamiiafrica.com",
-    contact: "info@jamiiafrica.com ",
-    address: "Plot 11 Ada Estate",
-    country: "Tanzania",
-    city: "Dar es Salaam",
-    category: "startup",
-    status: "accepted",
-    location: { type: "Point", coordinates: [39.2655765, -6.7850744] },
-    type: "tech",
-    img:
-      "https://res.cloudinary.com/hiwkem5s6/image/upload/v1509986679/jamii.jpg"
   })
 ];
 
