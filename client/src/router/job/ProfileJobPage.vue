@@ -3,7 +3,7 @@
         <div class="banner">
             {{job.title}}
             <div class="companyHeader">
-              {{job.company.name}}
+              <p>{{job.company.name}}</p>
             </div>
 
         </div>
@@ -132,6 +132,7 @@ i {
 .companyHeader {
   font-size: 20px;
   font-style: italic;
+  color: white;
 }
 .header {
   margin: auto;
