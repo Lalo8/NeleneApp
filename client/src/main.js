@@ -20,6 +20,7 @@ Vue.use(VueGoogleMaps, {
     libraries: "places"
   }
 });
+Vue.use(require("vue-moment"));
 
 Vue.use(Buefy, {
   defaultIconPack: "fa"

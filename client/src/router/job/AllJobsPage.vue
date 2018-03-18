@@ -42,6 +42,7 @@
 import { getJobs } from "@/api/jobs";
 import JobsList from "@/components/JobsList.vue";
 import FilterBar from "@/components/FilterBar";
+import moment from "moment";
 export default {
   components: {
     JobsList,

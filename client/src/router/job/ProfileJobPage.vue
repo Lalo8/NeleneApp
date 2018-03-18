@@ -13,7 +13,7 @@
                  <ul class="jobrecap">
                      <li><i class="fa fa-globe"></i> {{job.country}} - {{job.city}}</li>
                      <li><i class="fa fa-briefcase"></i> {{job.contract}}</li>
-                     <li><i class="fa fa-calendar"></i> {{job.startdate}}</li>
+                     <li><i class="fa fa-calendar"></i> {{job.startdate | moment("MMMM YYYY")}}</li>
                      <li><i class="fa fa-map-marker"></i> {{job.conditions}}</li>
 
                  </ul>
@@ -101,6 +101,11 @@ export default {
       isjobOfferModalActive: false,
       job: null
     };
+  },
+  methods: {
+    moment: function() {
+      return moment();
+    }
   },
   created() {
     getJob(this.$route.params.id).then(job => {
