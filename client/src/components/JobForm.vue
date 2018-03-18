@@ -30,6 +30,10 @@
         <b-field label="Job Description" required>
             <b-input v-model="description" type="textarea"></b-input>
         </b-field>
+          <b-field label="Candidate profile" required>
+            <b-input v-model="profile" type="textarea"></b-input>
+        </b-field>
+        
         <b-field label="Select a starting date">
           <b-datepicker v-model="startdate"
               :first-day-of-week="1"
@@ -119,6 +123,7 @@ export default {
       company: "",
       title: "",
       description: "",
+      profile: "",
       startdate: "",
       contact: "",
       country: "",
@@ -143,6 +148,7 @@ export default {
         company: this.company,
         title: this.title,
         description: this.description,
+        profile: this.profile,
         startdate: this.startdate,
         contact: this.contact,
         contract: this.contract,

@@ -23,7 +23,10 @@
                 <div class="trait"></div>
                 <br>
                 <p v-html="job.description"></p>
+                <br/>
+                <br/>
                 <p class="title">Candidate Profile</p> 
+                <p v-html="job.description"></p>
                 <div class="trait"></div>
                 <br>
                 <!-- <p class="title">Needs</p> 

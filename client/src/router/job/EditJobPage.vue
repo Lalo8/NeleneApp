@@ -22,6 +22,11 @@
                   </span>
               </div>
             </div>
+            <b-field label="Company" required>
+                <b-select placeholder="job.company" icon="person" v-model="job.company">
+                    <option v-for="organisation in organisations" :value="organisation._id">{{organisation.name}}</option>
+                </b-select>
+             </b-field>
           <b-field label="Title">
               <b-input v-model="job.title"></b-input>  
           </b-field>
@@ -30,6 +35,11 @@
                 {{job.description}}
               </b-input>
           </b-field>
+          <b-field label="Candidate profile" required>
+            <b-input v-model="job.profile" type="textarea">
+               {{job.description}}
+            </b-input>
+        </b-field>
 
          <b-field label="Select a starting date">
           <b-datepicker v-model="startdate"
@@ -68,7 +78,7 @@
               </b-input>
           </b-field>
           <b-field label=" Job Contract">
-            <b-select placeholder="job.contract" icon="person" v-model="contract">
+            <b-select placeholder="job.contract" icon="person" v-model="job.contract">
                 <option value="permament contract">Permanent contract</option>
                 <option value="fixed-term contract">Fixed-term contract</option>
                 <option value="internship">Internship </option>
@@ -77,7 +87,7 @@
             </b-select>
         </b-field>
         <b-field label=" Work Conditions">
-            <b-select placeholder="job.conditions" icon="person" v-model="conditions">
+            <b-select placeholder="job.conditions" icon="person" v-model="job.conditions">
                 <option value="remotely">Remotely</option>
                 <option value="in residence">in residence</option>
                 <option value="To define">To define </option>
@@ -123,6 +133,7 @@
 
 <script>
 import { editJob, getJob } from "@/api/jobs";
+import { getOrganisations } from "@/api/organisations";
 
 export default {
   data() {
@@ -132,7 +143,8 @@ export default {
       errors: [],
       selectedOptions: [],
       startdate: new Date(),
-      minDate: new Date(today.getFullYear(), today.getMonth(), today.getDate())
+      minDate: new Date(today.getFullYear(), today.getMonth(), today.getDate()),
+      organisations: []
     };
   },
   methods: {
@@ -145,6 +157,10 @@ export default {
   created() {
     getJob(this.$route.params.id).then(job => {
       this.job = job;
+    });
+    getOrganisations().then(organisations => {
+      this.organisations = organisations;
+      this.organisations.sort();
     });
   }
 };
