@@ -18,14 +18,17 @@
               <!-- <router-link to="/overview" class="navbar-link">
                   Overview
                 </router-link> -->
-                <router-link to="/talents" class="navbar-link">
+                <!-- <router-link to="/talents" class="navbar-link">
                   Talents
-                </router-link>
+                </router-link> -->
                 <router-link to="/jobs" class="navbar-link">
                   Job Offers
                 </router-link>  
                 <router-link to="/" class="navbar-link">
                  Organisations
+                </router-link>  
+                <router-link to="/about" class="navbar-link">
+                 Concept
                 </router-link>        
                 <router-link v-if="!$root.user" to="login" class="navbar-link">
                   Login
@@ -49,10 +52,7 @@
                 </router-link>
                 <router-link v-if="$root.user" to="/account" class="navbar-link">
                  My account
-                </router-link> 
-                <router-link v-if="$root.user" to="/account" class="navbar-link">
-                Mon compte
-                </router-link> 
+                </router-link>
                 <button  @click="setLanguage('en')">en</button>
                 <button  @click="setLanguage('fr')">fr</button>
 

@@ -6,29 +6,33 @@
                   {{job.contract}}
                 </div>
                 <div class="card-content">
-                    <div class="media">
-                      <div class="media-left">
-                          <figure class="image is-48x48">
-                          <img :src="job.company.img" alt="Placeholder image">
-                          </figure>
-                      </div>
-                      <div class="media-content">
-                          <router-link :to="'/jobs/view/'+ job._id"><p class="title is-7">{{job.title}}</p></router-link>
-                          <p class="subtitle is-7">{{job.company.name}}</p>
-                          <p class="titleCountry is-7">{{job.country}} - {{job.city}} </p>
-                      </div>
-                    </div>
-                    <div class="content">
-                        <router-link class="button is-primary is-outlined is-small buttondetails" :to="'/jobs/view/'+ job._id">
-                            See details
-                        </router-link>
-                        <div>
-                            <b-tag rounded type="is-danger is-small">{{job.category}}</b-tag>
-                            <b-tag rounded type="is-warning is-small">{{job.country}}</b-tag>    
-                            <!-- <b-tag v-for="need in organisation.needs" :key="need" rounded type="is-warning is-medium">{{need}}</b-tag> -->
-                            <b-tag rounded type="is-info is-small">{{job.conditions}}</b-tag>
+                <ul>
+                  <li>
+                      <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-48x48">
+                            <img :src="job.company.img" alt="Placeholder image">
+                            </figure>
                         </div>
-                    </div>
+                        <div class="media-content">
+                            <router-link :to="'/jobs/view/'+ job._id"><p class="title is-7">{{job.title}}</p></router-link>
+                            <p class="subtitle is-7">{{job.company.name}}</p>
+                            <p class="titleCountry is-7">{{job.country}} - {{job.city}} </p>
+                        </div>
+                      </div>
+                      <div class="content">
+                          <router-link class="button is-primary is-outlined is-small buttondetails" :to="'/jobs/view/'+ job._id">
+                              See details
+                          </router-link>
+                          <div class="tags">
+                              <b-tag rounded type="is-danger is-small">{{job.category}}</b-tag>
+                              <b-tag rounded type="is-warning is-small">{{job.country}}</b-tag>    
+                              <!-- <b-tag v-for="need in organisation.needs" :key="need" rounded type="is-warning is-medium">{{need}}</b-tag> -->
+                              <b-tag rounded type="is-info is-small">{{job.conditions}}</b-tag>
+                          </div>
+                      </div>
+                      </li>
+                    </ul>
                 </div>
                 <div v-if="editable" class="card-footer">
                 </div>
@@ -112,7 +116,7 @@ export default {
 
 .card-image {
   width: 310px;
-  height: 200px;
+  height: 170px;
   color: white;
   background-image: url("../assets/Job_Card_V7.jpg");
   background-size: cover;
@@ -141,7 +145,11 @@ export default {
 }
 
 .card-content {
-  height: 210px;
+  height: 230px;
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
 }
 
 .media-content p.title {
@@ -152,6 +160,9 @@ export default {
 }
 .media-content p {
   font-size: 15px;
+}
+.content {
+  margin-top: auto;
 }
 .content p.title {
   font-size: 20px;

@@ -17,6 +17,7 @@ import AdminPage from "@/router/profiles/AdminPage";
 import OverviewPage from "@/router/org/OverviewPage";
 import NewJobPage from "@/router/job/NewJobPage";
 import AllJobsPage from "@/router/job/AllJobsPage";
+import AboutPage from "@/router/about";
 
 import { checkUser } from "@/api/auth";
 
@@ -167,6 +168,16 @@ const router = new Router({
     {
       path: "/overview",
       component: OverviewPage,
+      meta: {
+        // the meta object can contain any information
+        // about the route that you may want to use
+        // elsewhere, like in beforeEach
+        requiresNonAuth: true
+      }
+    },
+    {
+      path: "/about",
+      component: AboutPage,
       meta: {
         // the meta object can contain any information
         // about the route that you may want to use
