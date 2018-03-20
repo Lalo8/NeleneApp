@@ -10,15 +10,15 @@
       <div class="cardform">
         <div class="maintitle">
         <h1>{{ $t("announce.concept") }}</h1>
-        <div class="trait"></div>
+        <!-- <div class="trait"></div> -->
         </div>
        <div class="conceptDescription">
            <p v-html="$t('description.concept.intro')"></p>
             <p class= "ourRole" v-html="$t('description.concept.ourole')"></p>
-            <div class="trait2"></div>
-             <div class="trait3"></div>
+            <!-- <div class="trait2"></div>
+             <div class="trait3"></div> -->
             <p v-html="$t('description.concept.service1')"></p>
-             
+
              <p v-html="$t('description.concept.service')"></p>
               <p class="verdict" v-html="$t('description.concept.verdict')"></p>
               <p class="visitorole1" v-html="$t('description.concept.visitorole1')"></p>
@@ -32,9 +32,6 @@
 <style scoped>
 .container {
   margin-top: 50px;
-  padding: 20px;
-  padding-top: 15px;
-  margin-bottom: 7rem;
 }
 .trait {
   background-color: rgb(121, 92, 210);
@@ -66,6 +63,9 @@ h1 {
   margin: auto;
   margin-bottom: 1rem;
   font-weight: bold;
+  border-bottom: 6px solid #000;
+  padding-bottom: 10px;
+  line-height: 30px;
 }
 .maintitle {
   text-align: center;

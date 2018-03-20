@@ -16,7 +16,7 @@
                         </div>
                         <div class="media-content">
                             <router-link :to="'/jobs/view/'+ job._id"><p class="title is-7">{{job.title}}</p></router-link>
-                            <p class="subtitle is-7">{{job.company.name}}</p>
+                            <router-link class="subtitle is-7" :to="'/organisations/view/'+ job.company._id">{{job.company.name}}</router-link>
                             <p class="titleCountry is-7">{{job.country}} - {{job.city}} </p>
                         </div>
                       </div>
@@ -49,6 +49,7 @@
 import { getOrganisations } from "@/api/organisations";
 export default {
   props: {
+    organisation: Object,
     job: Object,
     editable: Boolean
     // smallcard: {
@@ -149,11 +150,11 @@ export default {
   width: 310px;
   display: flex;
   flex-direction: column;
-  margin: 0px;
+  position: relative;
 }
 
 .media-content p.title {
-  font-size: 20px;
+  font-size: 18px;
 }
 .media-content p.subtitle {
   margin-bottom: 0px;
@@ -169,5 +170,19 @@ export default {
 }
 .content p {
   font-size: 13px;
+}
+
+a.subtitle {
+  font-size: 15px;
+}
+
+a.subtitle:hover {
+  color: #3675d9;
+}
+
+.tags {
+  position: absolute;
+  bottom: 12px;
+  width: auto;
 }
 </style>

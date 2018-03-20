@@ -22,5 +22,12 @@ export default {
       visitorole:
         "Thanks to ask : you just have to follow our activity on our different channels.If you have any suggestion regarding a specific job offer or an organization that fit our concept, please don’t hesitate to email us 😃 !<br/>"
     }
+  },
+  menu: {
+    tab1: "Job Offers",
+    tab2: "Organizations",
+    tab3: "Concept",
+    tab4: "Login",
+    tab5: "Sign up"
   }
 };

@@ -22,19 +22,19 @@
                   Talents
                 </router-link> -->
                 <router-link to="/jobs" class="navbar-link">
-                  Job Offers
+               {{ $t("menu.tab1") }}
                 </router-link>  
                 <router-link to="/" class="navbar-link">
-                 Organisations
+                {{ $t("menu.tab2") }}
                 </router-link>  
                 <router-link to="/about" class="navbar-link">
-                 Concept
+              {{ $t("menu.tab3") }}
                 </router-link>        
                 <router-link v-if="!$root.user" to="login" class="navbar-link">
-                  Login
+             {{ $t("menu.tab4") }}
                 </router-link>  
                 <router-link v-if="!$root.user" to="signup" class="navbar-link">
-                  Signup
+                {{ $t("menu.tab5") }}
                 </router-link> 
                <div v-if="$root.user" >
                 <router-link v-if="$root.user.isAdmin" to="/admin" class="navbar-link">
