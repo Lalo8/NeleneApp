@@ -9,14 +9,11 @@
 
       <div class="cardform">
         <div class="maintitle">
-        <h1>{{ $t("announce.concept") }}</h1>
-        <!-- <div class="trait"></div> -->
+        <h1 v-html="$t('announce.concept')"></h1>
         </div>
        <div class="conceptDescription">
            <p v-html="$t('description.concept.intro')"></p>
             <p class= "ourRole" v-html="$t('description.concept.ourole')"></p>
-            <!-- <div class="trait2"></div>
-             <div class="trait3"></div> -->
             <p v-html="$t('description.concept.service1')"></p>
 
              <p v-html="$t('description.concept.service')"></p>
@@ -33,7 +30,7 @@
 .container {
   margin-top: 50px;
 }
-.trait {
+/* .trait {
   background-color: rgb(121, 92, 210);
   height: 4pt;
   width: 28%;
@@ -47,9 +44,9 @@
   width: 28%;
   margin-top: 0px;
   margin-left: 66%;
-  width: 88px;
-}
-.trait3 {
+  width: 88px; */
+
+/* .trait3 {
   background-color: #fedc62;
   height: 4px;
   width: 28%;
@@ -57,19 +54,19 @@
   margin-bottom: -31px;
   margin-left: 36%;
   width: 112px;
-}
+} */
 h1 {
   font-size: 30px;
   margin: auto;
   margin-bottom: 1rem;
   font-weight: bold;
-  border-bottom: 6px solid #000;
   padding-bottom: 10px;
   line-height: 30px;
+  padding-top: 1rem;
 }
 .maintitle {
   text-align: center;
-  padding-top: 2rem;
+
   padding: 20px;
   background-color: #fedc62;
   border-radius: 6px;

@@ -53,8 +53,9 @@
                 <router-link v-if="$root.user" to="/account" class="navbar-link">
                  My account
                 </router-link>
-                <button  @click="setLanguage('en')">en</button>
-                <button  @click="setLanguage('fr')">fr</button>
+                <img src="/assets/fr.png" alt="">
+                <button @click="setLanguage('en')" class="image"><img src="/assets/sn.png" alt=""></button>
+                <button  @click="setLanguage('fr')">FR</button>
 
                 <a @click="fr=true" href="#"><i class="fa fa-flag"></i>  </a>
                  <a v-if="$root.user" class="navbar-link" @click.prevent="logout" href="#">Logout</a>
@@ -294,5 +295,38 @@ html {
   text-align: center;
   padding-top: 20px;
   color: white;
+}
+
+#trait-uniquement-fr {
+  border-bottom: 4px solid #fedc62;
+}
+#trait-uniquement-en {
+  border-bottom: 4px solid #fedc62;
+}
+#trait-pourvous-fr {
+  border-bottom: 4px solid #795cd2;
+}
+#trait-pourvous-en {
+  border-bottom: 4px solid #795cd2;
+}
+#trait-mythe-fr {
+  border-bottom: 6px solid #795cd2;
+}
+#trait-mythe-en {
+  border-bottom: 6px solid #795cd2;
+}
+#trait-innovation-fr {
+  border-bottom: 5px solid #795cd2;
+}
+#trait-innovation-en {
+  border-bottom: 5px solid #795cd2;
+}
+img {
+  width: 20px;
+  height: 20px;
+}
+
+button {
+  background-image: url("/assets/en.svg");
 }
 </style>

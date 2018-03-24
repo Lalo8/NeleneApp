@@ -22,7 +22,7 @@
                       </div>
                       <div class="content">
                           <router-link class="button is-primary is-outlined is-small buttondetails" :to="'/jobs/view/'+ job._id">
-                              See details
+                              {{ $t("more.infos") }}
                           </router-link>
                           <div class="tags">
                               <b-tag rounded type="is-danger is-small">{{job.category}}</b-tag>

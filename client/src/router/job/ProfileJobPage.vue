@@ -26,8 +26,9 @@
                 <br/>
                 <br/>
                 <p class="title">Candidate Profile</p> 
+                 <div class="trait"></div>
                 <p v-html="job.description"></p>
-                <div class="trait"></div>
+               
                 <br>
                 <!-- <p class="title">Needs</p> 
                 <div class="trait"></div>

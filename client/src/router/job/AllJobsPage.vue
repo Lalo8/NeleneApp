@@ -1,8 +1,7 @@
 <template> 
   <div class="container">
     <div class="maintitle">
-      <h1>{{ $t("announce.job") }}</h1>
-       <div class="trait"></div>
+      <h1 v-html="$t('announce.job')"></h1>
     </div>
     <div class="searchbar">
        <filter-bar :jobs="jobs" @filter="filteredJobs= $event"></filter-bar>
@@ -120,13 +119,6 @@ h1 {
 .maintitle {
   text-align: center;
   padding-top: 4rem;
-}
-.trait {
-  background-color: rgb(121, 92, 210);
-  height: 4pt;
-  width: 13%;
-  margin-left: 60rem;
-  margin-top: -23px;
 }
 
 .noresult {

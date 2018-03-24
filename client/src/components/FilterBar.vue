@@ -1,7 +1,7 @@
 <template>
   <div class="searchbar">
       <b-field type="is-primary" position="is-centered">
-        <b-input v-model="searched" type="search" icon="search" placeholder="Search a country, a city, a type of organisation..." expanded>
+        <b-input v-model="searched" type="search" icon="search" v-bind:placeholder="$t('filter.placeholder')" expanded>
         </b-input>
       </b-field>
     </div>
