@@ -1,7 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const CATEGORIES = ["startup", "incubator", "investment fund"];
+const CATEGORIES = [
+  "startup",
+  "incubator",
+  "innovation hub",
+  "institution",
+  "company"
+];
 const STATUSES_ORG = ["pending", "accepted", "rejected"];
 const NEEDS = ["recruitment", "location", "seed funding"];
 const TYPES = ["tech", "social business"];
