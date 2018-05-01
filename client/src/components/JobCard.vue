@@ -81,8 +81,9 @@ export default {
 
 <style scoped>
 .buttondetails {
-  margin-bottom: 15px;
-  margin-left: 23%;
+  margin-left: 20%;
+  position: absolute;
+  bottom: 65px;
 }
 .newCard {
   display: flex;

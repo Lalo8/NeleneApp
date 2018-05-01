@@ -1,5 +1,6 @@
 <template>
     <div class="containernew">
+       <b-loading :is-full-page="isFullPage" :active.sync="isLoading" :canCancel="true"></b-loading>
         <div class="header">
             <h1 class= "title">Let's create a new organisation !</h1>
              <div class="trait"></div>
@@ -23,11 +24,14 @@ export default {
   data() {
     return {
       errors: [],
-      selectedOptions: []
+      selectedOptions: [],
+      isFullPage: true,
+      isLoading: false
     };
   },
   methods: {
     addNewOrganisation(organisation) {
+      this.isLoading = true;
       // this.organisation.name = "Paps"
       // this.organisation.description = "Geolocation delivery service app"
       // this.organisation.contact = "contact@paps.com"
@@ -37,10 +41,31 @@ export default {
       // this.organisation.category = "startup"
       // this.organisation.needs = "seed funding"
       // this.organisation.ownerId = "59f0ab43c12c7c4a2bfc0918"
-      addNewOrganisation(organisation).then(organisation => {
-        console.log("Organisation created: ", organisation);
-        this.$router.push("/");
-      });
+      addNewOrganisation(organisation)
+        .then(organisation => {
+          this.$router.push("/");
+          console.log("Organisation created: ", organisation);
+        })
+        .then(
+          response => {
+            this.isLoading = false;
+          },
+          err => {
+            this.$toast.open({
+              message: "Il y a une erreur dans la soumission du questionnaire",
+              type: "is-danger",
+              position: "is-top",
+              actionText: "Réesayer",
+              indefinite: true,
+              onAction: () => {
+                this.$toast.open({
+                  message: "eeee",
+                  queue: false
+                });
+              }
+            });
+          }
+        );
     }
   }
 };

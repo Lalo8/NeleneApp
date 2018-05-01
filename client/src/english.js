@@ -1,7 +1,7 @@
 export default {
   announce: {
     organisation:
-      "Discover here the African entrepreunarial ecosystem at a glance !",
+      "Discover here the African entrepreunarial <span id='trait-sens-en'>doers</span> at a glance !",
     job:
       "What about joining an <span id='trait-innovation-en'>innovation</span> organization ? ",
     concept:
@@ -36,5 +36,26 @@ export default {
   },
   more: {
     infos: "More details"
+  },
+  button: {
+    organisation: {
+      missing: "An organisation is missing ?"
+    },
+    job: {
+      missing: "A job offer is missing ?",
+      add: "Add a job offer",
+      apply: "I apply!"
+    }
+  },
+  modal: {
+    title: "This is the way to proceed",
+    organisation: {
+      explanations:
+        "For that, you just need to send us a message with all the organisation's info -> <a href='mailto:hello@nelene.com'>hello@nelene.com</a>"
+    },
+    job: {
+      explanations:
+        "For that, you just need to send us a message with all the details of the job offer -> <a href='mailto:hello@nelene.com'>hello@nelene.com</a>"
+    }
   }
 };

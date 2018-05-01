@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  
+ <div id="app">
       <nav class="navbar is-primary is-transparent">
         <div class="navbar-brand">
            <a class="navbar-item" href="/">
@@ -175,11 +176,18 @@ export default {
       active: false,
       organisations: [],
       isAdmin: true,
-      navigation: null
+      navigation: null,
+      isFullPage: true,
+      isLoading: true
     };
   },
   created() {
     checkUser(this.$root);
+    this.isLoading = false;
+  },
+
+  ready() {
+    this.isLoading = false;
   },
   methods: {
     logout() {
@@ -321,6 +329,13 @@ html {
 #trait-innovation-en {
   border-bottom: 5px solid #795cd2;
 }
+#trait-sens-fr {
+  border-bottom: 5px solid #795cd2;
+}
+#trait-sens-en {
+  border-bottom: 5px solid #795cd2;
+}
+
 img {
   width: 20px;
   height: 20px;

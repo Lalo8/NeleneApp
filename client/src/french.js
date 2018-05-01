@@ -1,9 +1,9 @@
 export default {
   announce: {
     organisation:
-      "Découvrez les acteurs qui donnent un sens à l'innovation et à l'entrepreneuriat sur le continent africain",
+      "Découvrez les acteurs qui <span id='trait-sens-fr'>donnent un sens </span> à l'innovation et à l'entrepreneuriat <br>sur le continent africain",
     job:
-      "Trouvez votre prochain mission au sein d'un acteur de l'<span id='trait-innovation-fr'>innovation</span> !",
+      "Trouvez votre prochaine mission chez un acteur de l'<span id='trait-innovation-fr'>innovation</span> en Afrique !",
     concept:
       "L'écosystème entrepreneurial africain : <span id='trait-mythe-fr'> mythe ou réalité </span> ?"
   },
@@ -39,6 +39,28 @@ export default {
   },
   more: {
     infos: "En savoir plus"
+  },
+  button: {
+    organisation: {
+      missing: "Tu souhaites ajouter une organisation ?",
+      add: "J'ajoute une organisation"
+    },
+    job: {
+      add: "J'ajoute une offre d'emploi",
+      missing: "Tu souhaites ajouter une offre d'emploi ?",
+      apply: "Je postule !"
+    }
+  },
+  modal: {
+    title: "Pour cela, une seule action suffit !",
+    organisation: {
+      explanations:
+        "Il suffit de nous envoyer un mail contenant les informations de l'organisation à ajouter, à l'adresse suivante : <a href='mailto:hello@nelene.com'>hello@nelene.com</a>"
+    },
+    job: {
+      explanations:
+        "Il suffit de nous envoyer un mail contenant les informations de l'offre d'emploi à ajouter, à l'adresse suivante : <a href='mailto:hello@nelene.com'>hello@nelene.com</a>"
+    }
   }
 };
 

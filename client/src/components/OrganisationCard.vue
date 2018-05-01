@@ -3,12 +3,13 @@
         <div class="newCard">
             <div class="card">
                 <div class="card-image" >
-                    <figure class="image is-3by2" v-if="organisation.type === 'social business'">
-                        <img src="../assets/social.png" alt="Placeholder image">
-                    </figure>
-                    <figure class="image is-3by2" v-if="organisation.type === 'tech'">
-                        <img src="../assets/tech2.png" alt="Placeholder image">
-                    </figure>
+                    <div class="startup" v-if="organisation.category === 'startup'">
+                        {{organisation.category}}
+                    </div>
+                    <div class="institution" v-if="organisation.category === 'incubator'">
+                        {{organisation.category}}
+                    </div>
+                  
                 </div>
                 <div class="card-content">
                     <div class="media">
@@ -24,12 +25,11 @@
                     </div>
                     <div class="content">
                          <p v-html="organisation.shortDescription"></p>
-                        <router-link class="button is-primary is-outlined is-small" :to="'/organisations/view/'+ organisation._id">
-                            Let's know more
+                        <router-link class="button is-primary is-outlined is-small" :to="'/organisations/view/'+ organisation._id" v-html="$t('more.infos')">
                         </router-link>
                         <br>
                         <br>
-                        <div>
+                        <div class="tags_org">
                             <b-tag rounded type="is-danger is-small">{{organisation.category}}</b-tag>
                             <b-tag rounded type="is-warning is-small">{{organisation.type}}</b-tag>
                             <!-- <b-tag v-for="need in organisation.needs" :key="need" rounded type="is-warning is-medium">{{need}}</b-tag> -->
@@ -75,12 +75,27 @@ export default {
 </script>
 
 <style scoped>
+.institution {
+}
+.startup {
+}
 .newCard {
   display: flex;
 }
 .optionAdmin {
   display: flex;
   flex-direction: column;
+}
+
+.card-image {
+  width: 320px;
+  height: 190px;
+  background-image: url("../assets/Job_Card_Org_V6.jpg");
+  font-size: 28px;
+  padding-top: 5.3rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
 }
 
 .card {
@@ -115,11 +130,13 @@ export default {
 }
 
 .card-content {
-  height: 300px;
+  height: 280px;
+  margin-top: 10px;
 }
 
 .media-content p.title {
-  font-size: 15px;
+  font-size: 20px;
+  margin-bottom: 1?25rem;
 }
 .media-content p {
   font-size: 13px;
@@ -129,5 +146,16 @@ export default {
 }
 .content p {
   font-size: 13px;
+}
+
+.tags_org {
+  position: absolute;
+  bottom: 24px;
+  width: auto;
+}
+
+.button {
+  position: absolute;
+  bottom: 85px;
 }
 </style>

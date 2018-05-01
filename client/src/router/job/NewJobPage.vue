@@ -1,5 +1,7 @@
 <template>
     <div class="containernew">
+          <b-loading :is-full-page="isFullPage" :active.sync="isLoading" :canCancel="true"></b-loading>
+
         <div class="header">
             <h1 class= "title">Let's create a new job offer !</h1>
              <div class="trait"></div>
@@ -23,11 +25,14 @@ export default {
   data() {
     return {
       errors: [],
-      selectedOptions: []
+      selectedOptions: [],
+      isFullPage: true,
+      isLoading: false
     };
   },
   methods: {
     addNewJob(job) {
+      this.isLoading = true;
       // this.organisation.name = "Paps"
       // this.organisation.description = "Geolocation delivery service app"
       // this.organisation.contact = "contact@paps.com"
@@ -38,7 +43,7 @@ export default {
       // this.organisation.needs = "seed funding"
       // this.organisation.ownerId = "59f0ab43c12c7c4a2bfc0918"
       addNewJob(job).then(job => {
-        this.$router.push("/jobs");
+        this.$router.push("/jobs").then((this.isLoading = false));
       });
     }
   }

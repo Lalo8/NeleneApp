@@ -1,8 +1,7 @@
 <template> 
   <div class="container">
     <div class="maintitle">
-      <h1>{{ $t("announce.organisation") }}</h1>
-       <div class="trait"></div>
+      <h1 v-html="$t('announce.organisation')">}</h1>
     </div>
     <div class="searchbar">
        <filter-bar :organisations="organisations" @filter="filteredOrganisations = $event"></filter-bar>
@@ -13,12 +12,35 @@
     </div>
 
     <!-- <filter-bar :organisations="organisations"></filter-bar> -->
-    <organisations-list :organisations="filteredOrganisations">
+    <organisations-list :organisations="filteredOrganisations" >
       <organisation-card></organisation-card>
     </organisations-list>
+     <hr>
+     <b-pagination
+            :total="total"
+            :current.sync="current"
+            :order="order"
+            :size="size"
+            :simple="isSimple"
+            :rounded="isRounded"
+            :per-page="perPage">
+        </b-pagination>
     <footer>
-      <router-link to="/login" class="button is-primary is-outlined is-large is-focused" v-if="!$root.user">Want to add organisations ? Let's login</router-link>
-      <router-link to="/organisations/add" class="button is-primary is-outlined is-large is-focused" v-if="$root.user">I want to add an organisation !</router-link>
+      <button class="button is-primary is-outlined is-large is-focused" @click="isCardModalActive = true" v-html="$t('button.organisation.missing')"></button>
+        <b-modal :active.sync="isCardModalActive" :width="640">
+            <header class="modal-card-head">
+            <p class="modal-card-title" v-html="$t('modal.title')"></p>
+            <button class="delete" aria-label="close" @click="isCardModalActive = false"></button>
+            </header>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content centered">
+                        <p class="subtitle" style="margin-top:3px" v-html="$t('modal.organisation.explanations')"></p>
+                    </div>
+                </div>
+            </div>
+          </b-modal>
+      <router-link to="/organisations/add" class="button is-primary is-outlined is-large is-focused" v-if="$root.user" v-html="$t('button.organisation.add')"> </router-link>
     </footer>
   </div>
 </template>
@@ -40,7 +62,17 @@ export default {
       organisations: [],
       filteredOrganisations: [],
       errors: [],
-      selected: null
+      selected: null,
+      total: 6,
+      current: 1,
+      perPage: 5,
+      order: "",
+      size: "",
+      isSimple: false,
+      isRounded: false,
+      isCardModalActive: false,
+      isLoading: false,
+      isFullPage: true
     };
   },
   methods: {

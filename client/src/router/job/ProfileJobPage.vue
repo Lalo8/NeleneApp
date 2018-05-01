@@ -22,12 +22,13 @@
                 <p class="title">Job Description</p> 
                 <div class="trait"></div>
                 <br>
-                <p v-html="job.description"></p>
+                <p class="job_description" v-html="job.description"></p>
                 <br/>
                 <br/>
                 <p class="title">Candidate Profile</p> 
                  <div class="trait"></div>
-                <p v-html="job.description"></p>
+                    <br>
+                <p class="job_description" v-html="job.description"></p>
                
                 <br>
                 <!-- <p class="title">Needs</p> 
@@ -58,7 +59,7 @@
                     <div class="buttonAction">
                         <router-link to="/jobs" class="button is-info is-medium" position:="is-centered" @click="isCardModalActive = true"> <i class="fa fa-arrow-left"></i>  Go back to the list 
                         </router-link> </br>
-                        <button class="button is-primary is-medium" position:="is-centered" @click="isCardModalActive = true"> I want to apply ! 
+                        <button class="button is-primary is-medium" position:="is-centered" @click="isCardModalActive = true" v-html="$t('button.job.apply')"> 
                         </button>
                     </div>
                     <b-modal v-if="!$root.user" :active.sync="isCardModalActive" :width="640">
@@ -226,6 +227,12 @@ p {
 
 .joboffertemp {
   margin-top: 80px;
+}
+
+.job_description {
+  font-family: "Pavanam", sans-serif;
+  font-size: 17px;
+  font-weight: 400px;
 }
 
 .cardprofile,

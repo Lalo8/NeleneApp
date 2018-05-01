@@ -29,6 +29,7 @@
 <style scoped>
 .container {
   margin-top: 50px;
+  margin-bottom: 100px;
 }
 /* .trait {
   background-color: rgb(121, 92, 210);

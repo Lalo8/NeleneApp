@@ -16,22 +16,22 @@
     </jobs-list>
     <footer>
       <!-- <router-link to="/login" class="button is-primary is-outlined is-large is-focused" v-if="!$root.user">Want to add a job offer ?</router-link> -->
-       <button class="button is-primary is-medium" position:="is-centered"@click="isCardModalActive = true"> Want to add a job offer ?
+       <button class="button is-primary is-medium" position:="is-centered" @click="isCardModalActive = true" v-html="$t('button.job.missing')"> 
                     </button>
       <b-modal :active.sync="isCardModalActive" :width="640">
                         <header class="modal-card-head">
-                        <p class="modal-card-title">This is the way to proceed</p>
+                        <p class="modal-card-title" v-html="$t('modal.title')"></p>
                         <button class="delete" aria-label="close" @click="isCardModalActive = false"></button>
                         </header>
                         <div class="card">
                             <div class="card-content">
                                 <div class="content centered">
-                                    <p class="subtitle" style="margin-top:3px">For that, you just need to send us a message with all the details of the job offer -> <a :href="`mailto:hello@nelene.com`">hello@nelene.com</a></p>
+                                    <p class="subtitle" style="margin-top:3px" v-html="$t('modal.job.explanations')"></p>
                                 </div>
                             </div>
                         </div>
                     </b-modal>
-      <router-link to="/jobs/add" class="button is-primary is-outlined is-large is-focused" v-if="$root.user"> Add a job offer !</router-link>
+      <router-link to="/jobs/add" class="button is-primary is-outlined is-large is-focused" v-if="$root.user" v-html="$t('button.job.add')"> </router-link>
     </footer>
   </div>
 </template>
