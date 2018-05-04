@@ -54,16 +54,24 @@
                 <router-link v-if="$root.user" to="/account" class="navbar-link">
                  My account
                 </router-link>
-                <img src="/assets/fr.png" alt="">
-                <button @click="setLanguage('en')" class="image"><img src="/assets/sn.png" alt=""></button>
-                <button  @click="setLanguage('fr')">FR</button>
+                <b-dropdown position="is-bottom-left">
+                    <a class="navbar-item" slot="trigger">
+                        <span v-html="$t('menu.tab6')"></span>
+                        <b-icon icon="caret-down"></b-icon>
+                    </a>
+                    <b-dropdown-item custom>
+                      <button @click="setLanguage('en')" class="gb"></button> <p class="lang_option"> - EN</p>  
+                    </b-dropdown-item> 
+                    <b-dropdown-item custom>
+                      <button @click="setLanguage('fr')" class="france"></button> <p class="lang_option"> - FR</p> 
+                    </b-dropdown-item> 
+                </b-dropdown>
 
-                <a @click="fr=true" href="#"><i class="fa fa-flag"></i>  </a>
-                 <a v-if="$root.user" class="navbar-link" @click.prevent="logout" href="#">Logout</a>
+                 <!-- <a v-if="$root.user" class="navbar-link" @click.prevent="logout" href="#">Logout</a>
                 <a v-if="$root.user" class="navbar-link"><img class="navbarimg" :src="$root.user.img" style="width:30px !important; height: 30px !important; object-fit: cover !important"></a>
                     <router-link v-if="$root.user" to="/account">
                      
-                    </router-link>
+                    </router-link> -->
                       <!-- <b-icon class="profile" icon="address-card">
                       </b-icon> 
                       <span class="profile">My profile</span> -->
@@ -229,6 +237,31 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <style>
+.navbar-item {
+  color: white;
+}
+.france {
+  background-image: url("assets/fr_2.png");
+  width: 40px;
+  height: 25px;
+  border: 0px;
+  border-radius: 5px;
+  margin-left: 6px;
+}
+.gb {
+  background-image: url("assets/en.png");
+  width: 40px;
+  height: 25px;
+  border: 0px;
+  border-radius: 5px;
+  margin-left: 6px;
+}
+.lang_option {
+  margin-left: 10px;
+}
+img {
+  z-index: 400;
+}
 .navbarimg {
   border-radius: 10px;
 }
@@ -270,7 +303,9 @@ html {
   text-align: center;
   background-color: #795cd2;
 }
-
+.navbar-item {
+  margin-right: 30px;
+}
 .subnavbar h1 {
   padding-top: 30px;
   font-size: 80px;
@@ -278,6 +313,15 @@ html {
 }
 .subnavbar img {
   max-width: 35%;
+}
+.dropdown-item span {
+  color: white;
+}
+.dropdown-item {
+  font-weight: bold;
+}
+.dropdown-item span icon {
+  padding-top: 5px;
 }
 .navbar.is-primary .navbar-end .navbar-link:after,
 .navbar.is-primary .navbar-start .navbar-link:after {
@@ -303,6 +347,9 @@ html {
   text-align: center;
   padding-top: 20px;
   color: white;
+}
+.dropdown-item {
+  display: inline-flex;
 }
 
 #trait-uniquement-fr {
@@ -334,11 +381,6 @@ html {
 }
 #trait-sens-en {
   border-bottom: 5px solid #795cd2;
-}
-
-img {
-  width: 20px;
-  height: 20px;
 }
 
 button {

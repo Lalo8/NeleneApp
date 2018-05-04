@@ -1,7 +1,7 @@
 <template> 
   <div class="container">
     <div class="maintitle">
-      <h1 v-html="$t('announce.organisation')">}</h1>
+      <h1 v-html="$t('announce.organisation')"></h1>
     </div>
     <div class="searchbar">
        <filter-bar :organisations="organisations" @filter="filteredOrganisations = $event"></filter-bar>
@@ -63,9 +63,9 @@ export default {
       filteredOrganisations: [],
       errors: [],
       selected: null,
-      total: 6,
+      total: 8,
       current: 1,
-      perPage: 5,
+      perPage: 3,
       order: "",
       size: "",
       isSimple: false,
@@ -78,6 +78,19 @@ export default {
   methods: {
     filter() {
       this.$emit("filter", this.filterBy(this.organisations, this.searched));
+    },
+    nextPage() {
+      this.pageNumber++;
+    },
+    prevPage() {
+      this.pageNumber--;
+    }
+  },
+  computed: {
+    pageCount() {
+      let l = this.listData.length,
+        s = this.size;
+      return Math.floor(l / s);
     }
   },
   created() {

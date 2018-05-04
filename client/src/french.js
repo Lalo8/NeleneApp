@@ -31,7 +31,12 @@ export default {
     tab2: "Les acteurs",
     tab3: "Le concept",
     tab4: "Se connecter",
-    tab5: "S'inscrire"
+    tab5: "S'inscrire",
+    tab6: "Langues"
+  },
+  lang: {
+    en: "- EN",
+    fr: "- FR"
   },
   filter: {
     placeholder:
@@ -61,6 +66,12 @@ export default {
       explanations:
         "Il suffit de nous envoyer un mail contenant les informations de l'offre d'emploi à ajouter, à l'adresse suivante : <a href='mailto:hello@nelene.com'>hello@nelene.com</a>"
     }
+  },
+  category: {
+    incubator: "incubateur",
+    startup: "start-up",
+    organisation: "institution",
+    company: "PME & Grand Groupe"
   }
 };
 

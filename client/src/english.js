@@ -29,7 +29,12 @@ export default {
     tab2: "Organizations",
     tab3: "Concept",
     tab4: "Login",
-    tab5: "Sign up"
+    tab5: "Sign up",
+    tab6: "Languages"
+  },
+  lang: {
+    en: "- EN",
+    fr: "- FR"
   },
   filter: {
     placeholder: "Enter a keyword as the city, the country, expertise ..."
@@ -56,6 +61,12 @@ export default {
     job: {
       explanations:
         "For that, you just need to send us a message with all the details of the job offer -> <a href='mailto:hello@nelene.com'>hello@nelene.com</a>"
+    },
+    category: {
+      incubator: "incubator",
+      startup: "startup",
+      organisation: "institution",
+      company: "SME & Multinational"
     }
   }
 };
