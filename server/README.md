@@ -1,7 +1,5 @@
 # Authentication with JWT
 
-Last deploy
-
 ## Signup
 
 ### `User` Model
