@@ -43,7 +43,7 @@
                         <div class="card">
                             <div class="card-content">
                                 <div class="content centered">
-                                    <p class="title">GREAT ! </p>
+                                    <p class="title">GREAT  fff ! </p>
                                     <p class="subtitle" style="margin-top:3px">For that, you just need to send a message to <a :href="`mailto:${organisation.contact}`">{{organisation.contact}}</a></p>
                                 </div>
                             </div>
