@@ -46,16 +46,16 @@ const router = new Router({
         requiresNonAuth: true
       }
     },
-    {
-      path: "/talents",
-      component: TalentsPage,
-      meta: {
-        // the meta object can contain any information
-        // about the route that you may want to use
-        // elsewhere, like in beforeEach
-        requiresNonAuth: false
-      }
-    },
+    // {
+    //   path: "/talents",
+    //   component: TalentsPage,
+    //   meta: {
+    //     // the meta object can contain any information
+    //     // about the route that you may want to use
+    //     // elsewhere, like in beforeEach
+    //     requiresNonAuth: false
+    //   }
+    // },
     {
       path: "/login",
       component: LoginPage,
@@ -165,16 +165,16 @@ const router = new Router({
         isAdmin: true
       }
     },
-    {
-      path: "/overview",
-      component: OverviewPage,
-      meta: {
-        // the meta object can contain any information
-        // about the route that you may want to use
-        // elsewhere, like in beforeEach
-        requiresNonAuth: true
-      }
-    },
+    // {
+    //   path: "/overview",
+    //   component: OverviewPage,
+    //   meta: {
+    //     // the meta object can contain any information
+    //     // about the route that you may want to use
+    //     // elsewhere, like in beforeEach
+    //     requiresNonAuth: true
+    //   }
+    // },
     {
       path: "/about",
       component: AboutPage,
