@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const CATEGORIES = [
-  "startup",
-  "incubator",
+  "category.incubator",
+  "cateogry.startup",
   "innovation hub",
   "institution",
   "company"

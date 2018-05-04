@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/Lalo8/NeleneApp/issues"
   },
-  "homepage": "https://github.com/Lalo8/NeleneApp#readme"
+  "homepage": "https://github.com/Lalo8/NeleneApp#readme",
+  "dependencies": {
+    "moment": "^2.21.0",
+    "vue-i18n": "^7.6.0",
+    "vue-moment": "^3.2.0"
+  }
 }
