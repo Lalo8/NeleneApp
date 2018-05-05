@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "auth-jwt-lab",
   "version": "0.0.0",
   "private": true,
@@ -26,30 +25,5 @@
     "passport-jwt": "^3.0.0",
     "passport-local-mongoose": "^4.2.1",
     "serve-favicon": "~2.4.5"
-=======
-  "name": "NeleneApp",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "postinstall": "cd server && npm install",
-    "start": "cd server && npm start"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Lalo8/NeleneApp.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Lalo8/NeleneApp/issues"
-  },
-  "homepage": "https://github.com/Lalo8/NeleneApp#readme",
-  "dependencies": {
-    "moment": "^2.21.0",
-    "vue-i18n": "^7.6.0",
-    "vue-moment": "^3.2.0"
->>>>>>> 5ab6d0f423b75e2a508a1a72b0bf75fbeb73afd6
   }
 }
