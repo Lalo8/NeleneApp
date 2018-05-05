@@ -33,7 +33,7 @@
                     <iframe class="joboffertemp" :src="organisation.joboffer.content" width="800" height="900" frameborder="0"></iframe>
                 </b-modal> -->
                     <br>
-                    <button class="button is-primary is-medium" position:="is-centered" @click="isCardModalActive = true"> I want to help ! 
+                    <button class="button is-primary is-medium" position:="is-centered"@click="isCardModalActive = true"> I want to help ! 
                     </button>
                     <b-modal :active.sync="isCardModalActive" :width="640">
                         <header class="modal-card-head">

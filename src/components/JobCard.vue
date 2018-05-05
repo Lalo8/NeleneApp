@@ -17,7 +17,7 @@
                         <div class="media-content">
                             <router-link :to="'/jobs/view/'+ job._id"><p class="title is-7">{{job.title}}</p></router-link>
                             <router-link class="subtitle is-7" :to="'/organisations/view/'+ job.company._id">{{job.company.name}}</router-link>
-                            <p class="titleCountry is-7">{{job.country}} - {{job.city}} </p>
+                            <p class="titleCountry is-7">{{job.country}} - {{job.city}} ffffffkkkkkk </p>
                         </div>
                       </div>
                       <div class="content">
@@ -105,11 +105,11 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  /* &:hover {
+  &:hover {
     .card__image {
       filter: contrast(100%);
     }
-  } */
+  }
 }
 .card-footer {
   margin-top: 10px;

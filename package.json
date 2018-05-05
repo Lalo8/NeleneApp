@@ -6,15 +6,15 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "start": "node ./bin/www",
+    "start-dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "axios": "^0.17.0",
     "buefy": "^0.5.4",
     "dotenv": "^4.0.0",
     "install": "^0.10.1",
-    "jshint": "^2.9.5",
     "moment": "^2.21.0",
     "npm": "^5.5.1",
     "vue": "^2.5.2",
