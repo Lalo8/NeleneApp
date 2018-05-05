@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Authentication with JWT
 
 ## Signup
@@ -249,3 +250,26 @@ What about logout? Well, there's actually no such thing as a logout with JWT, **
 ```js
 delete axios.defaults.headers.common["Authorization"];
 ```
+=======
+# client
+
+> A Vue.js project
+
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+```
+
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+>>>>>>> 8481c41815e14e01679513f8c6020b0216978bdc
