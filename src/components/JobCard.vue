@@ -105,11 +105,11 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  &:hover {
+  /* &:hover {
     .card__image {
       filter: contrast(100%);
     }
-  }
+  } */
 }
 .card-footer {
   margin-top: 10px;

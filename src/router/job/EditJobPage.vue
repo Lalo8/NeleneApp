@@ -24,7 +24,7 @@
             </div>
             <b-field label="Company" required>
                 <b-select placeholder="job.company" icon="person" v-model="job.company">
-                    <option v-for="organisation in organisations" :value="organisation._id">{{organisation.name}}</option>
+                    <option :v-for="organisation in organisations" :value="organisation._id">{{organisation.name}}</option>
                 </b-select>
              </b-field>
           <b-field label="Title">

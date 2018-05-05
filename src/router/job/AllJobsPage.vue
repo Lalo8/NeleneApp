@@ -101,6 +101,7 @@ footer {
 li {
   display: flex;
   padding: 1rem;
+
   @media (min-width: 40rem) {
     width: 50%;
   }
