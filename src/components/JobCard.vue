@@ -21,7 +21,7 @@
                         </div>
                       </div>
                       <div class="content">
-                          <router-link class="button is-primary is-outlined is-small buttondetails" :to="'/jobs/view/'+ job._id">
+                          <router-link class="button is-primary is-outlined git ais-small buttondetails" :to="'/jobs/view/'+ job._id">
                               {{ $t("more.infos") }}
                           </router-link>
                           <div class="tags">
@@ -105,11 +105,11 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  &:hover {
+  /* &:hover {
     .card__image {
       filter: contrast(100%);
     }
-  }
+  } */
 }
 .card-footer {
   margin-top: 10px;
@@ -134,7 +134,7 @@ export default {
   width: 300px;
   height: 210px;
 }
-.sublist {
+/* .sublist {
   display: flex;
   margin-right: -13px;
   padding: 0.8rem;
@@ -144,7 +144,7 @@ export default {
   @media (min-width: 56rem) {
     width: 33.3333%;
   }
-}
+} */
 
 .card-content {
   height: 230px;

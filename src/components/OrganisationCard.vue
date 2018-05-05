@@ -75,10 +75,6 @@ export default {
 </script>
 
 <style scoped>
-.institution {
-}
-.startup {
-}
 .newCard {
   display: flex;
 }
@@ -107,28 +103,27 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  &:hover {
+  /* &:hover {
     .card__image {
       filter: contrast(100%);
     }
-  }
+  } */
 }
 .card-footer {
   margin-top: 10px;
   border: none;
 }
-.sublist {
+/* .sublist {
   display: flex;
   margin-right: -13px;
-  padding: 0.8rem;
+  padding: 0.8rem}
   @media (min-width: 40rem) {
     width: 50%;
   }
   @media (min-width: 56rem) {
     width: 33.3333%;
   }
-}
-
+} */
 .card-content {
   height: 280px;
   margin-top: 10px;
@@ -136,7 +131,7 @@ export default {
 
 .media-content p.title {
   font-size: 20px;
-  margin-bottom: 1?25rem;
+  margin-bottom: 125rem;
 }
 .media-content p {
   font-size: 13px;
