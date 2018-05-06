@@ -1,14 +1,14 @@
 # Authentication with JWT
 
-
 ## Signup
 
 ### `User` Model
+
 Before even adding authentication with JWT, we need to setup signup. In order to do this, we need 3 things:
 
-- A User Model
-- An `/api/signup` route
-- Saving the user to the database
+* A User Model
+* An `/api/signup` route
+* Saving the user to the database
 
 This time we're going to use `passport-local-mongoose` to make user registration and login easier.
 
@@ -23,8 +23,8 @@ _Note_: It's more than a passport strategy and we're actually going to use it fo
 Let's create the User model, `models/user.js`:
 
 ```js
-const mongoose = require('mongoose');
-const passportLocalMongoose = require('passport-local-mongoose');
+const mongoose = require("mongoose");
+const passportLocalMongoose = require("passport-local-mongoose");
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
@@ -36,7 +36,7 @@ const userSchema = new Schema({
 
 userSchema.plugin(passportLocalMongoose);
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model("User", userSchema);
 ```
 
 ### Signup Route
@@ -44,18 +44,14 @@ module.exports = mongoose.model('User', userSchema);
 Now we can use the User model to signup users. As always, let's create the `routes/auth.js`:
 
 ```js
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const User = require('../models/user');
+const User = require("../models/user");
 
-router.post('/signup', (req, res, next) => {
+router.post("/signup", (req, res, next) => {
   // extract the info we need from the body
   // of the request
-  const {
-    username,
-    name,
-    password
-  } = req.body;
+  const { username, name, password } = req.body;
 
   // create the new user
   // notice how we don't pass the password because
@@ -66,29 +62,28 @@ router.post('/signup', (req, res, next) => {
     name
   });
 
-  User.register(user, password, (err) => {
+  User.register(user, password, err => {
     if (err) {
-      return next(err)
+      return next(err);
     }
-    res.json({ success: true })
-  })
+    res.json({ success: true });
+  });
 });
-
 ```
 
 Don't forget to add the `authRoutes` to the `app` in `app.js`:
 
 ```js
-const index = require('./routes/index');
+const index = require("./routes/index");
 const authRoutes = require("./routes/auth");
 
-app.use('/', index);
-app.use('/api', authRoutes);
+app.use("/", index);
+app.use("/api", authRoutes);
 ```
 
-- _Try creating a user with Postman_
-- _What happens if you don't provide a username?_
-- _Are you able to create the same user multiple times?_
+* _Try creating a user with Postman_
+* _What happens if you don't provide a username?_
+* _Are you able to create the same user multiple times?_
 
 ## Signin
 
@@ -132,7 +127,7 @@ const { Strategy, ExtractJwt } = require("passport-jwt");
 Then, just after adding the `bodyParser` middleware and before adding our `authRoutes`, initialise passport and add the strategy:
 
 ```js
-app.use(passport.initialize())
+app.use(passport.initialize());
 // Create the strategy for JWT
 const strategy = new Strategy(
   {
@@ -212,9 +207,9 @@ router.post("/login", (req, res, next) => {
 });
 ```
 
-- _Try to login using the previously created users_
-- _Try using a bad password_
-- _Compare tokens when login in with different users_
+* _Try to login using the previously created users_
+* _Try using a bad password_
+* _Compare tokens when login in with different users_
 
 ## Protecting routes
 
@@ -234,7 +229,6 @@ app.get(
     res.json(req.user);
   }
 );
-
 ```
 
 But... how do we pass the token we got earlier when doing a request?
@@ -253,5 +247,5 @@ This will make any request send the token in the headers of such request.
 What about logout? Well, there's actually no such thing as a logout with JWT, **you just stop sending the token**. With axios that would be deleting the previously added token:
 
 ```js
-delete axios.defaults.headers.common['Authorization']
+delete axios.defaults.headers.common["Authorization"];
 ```

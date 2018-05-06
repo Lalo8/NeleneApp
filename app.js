@@ -12,11 +12,7 @@ const User = require("./models/user");
 const config = require("./config");
 const { Strategy, ExtractJwt } = require("passport-jwt");
 const history = require("express-history-api-fallback");
-
-// mongoose.Promise = Promise;
-mongoose.connect(process.env.MONGODB_URI, {
-  useMongoClient: true
-});
+mongoose.connect("mongodb://localhost/neleneapp", { useMongoClient: true });
 const imagesRoutes = require("./routes/images");
 
 const app = express();
@@ -25,11 +21,7 @@ const app = express();
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger("dev"));
 app.use(bodyParser.json());
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-);
+app.use(bodyParser.urlencoded({ extended: false }));
 
 if (app.get("env") === "development") {
   app.use(
