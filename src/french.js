@@ -31,7 +31,12 @@ export default {
     tab2: "Les acteurs",
     tab3: "Le concept",
     tab4: "Se connecter",
-    tab5: "S'inscrire"
+    tab5: "S'inscrire",
+    tab6: "Langues"
+  },
+  lang: {
+    en: "- EN",
+    fr: "- FR"
   },
   filter: {
     placeholder:

@@ -1,10 +1,10 @@
 <template> 
   <div class="container">
     <div class="maintitle">
-      <h1 v-html="$t('announce.organisation')">}</h1>
+      <h1 v-html="$t('announce.organisation')"></h1>
     </div>
     <div class="searchbar">
-       <filter-bar :organisations="organisations" @filter="filteredOrganisations = $event"></filter-bar>
+       <filter-bar :organisations="organisations" @filter="filteredOrganisations= $event"></filter-bar>
     </div>
     <div class="noresult" v-if="filteredOrganisations.length===0">
             No result : do another research
@@ -15,8 +15,8 @@
     <organisations-list :organisations="filteredOrganisations" >
       <organisation-card></organisation-card>
     </organisations-list>
-     <hr>
-     <b-pagination
+     
+     <!-- <b-pagination
             :total="total"
             :current.sync="current"
             :order="order"
@@ -24,7 +24,7 @@
             :simple="isSimple"
             :rounded="isRounded"
             :per-page="perPage">
-        </b-pagination>
+        </b-pagination> -->
     <footer>
       <button class="button is-primary is-outlined is-large is-focused" @click="isCardModalActive = true" v-html="$t('button.organisation.missing')"></button>
         <b-modal :active.sync="isCardModalActive" :width="640">
@@ -63,16 +63,7 @@ export default {
       filteredOrganisations: [],
       errors: [],
       selected: null,
-      total: 6,
-      current: 1,
-      perPage: 5,
-      order: "",
-      size: "",
-      isSimple: false,
-      isRounded: false,
-      isCardModalActive: false,
-      isLoading: false,
-      isFullPage: true
+      isCardModalActive: false
     };
   },
   methods: {

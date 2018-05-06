@@ -29,7 +29,12 @@ export default {
     tab2: "Organizations",
     tab3: "Concept",
     tab4: "Login",
-    tab5: "Sign up"
+    tab5: "Sign up",
+    tab6: "Languages"
+  },
+  lang: {
+    en: "- EN",
+    fr: "- FR"
   },
   filter: {
     placeholder: "Enter a keyword as the city, the country, expertise ..."

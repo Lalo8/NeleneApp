@@ -54,9 +54,18 @@
                 <router-link v-if="$root.user" to="/account" class="navbar-link">
                  My account
                 </router-link>
-                <img src="/assets/fr.png" alt="">
-                <button @click="setLanguage('en')" class="image"><img src="/assets/sn.png" alt=""></button>
-                <button  @click="setLanguage('fr')">FR</button>
+               <b-dropdown position="is-bottom-left">
+                    <a class="navbar-item" slot="trigger">
+                        <span v-html="$t('menu.tab6')"></span>
+                        <b-icon icon="caret-down"></b-icon>
+                    </a>
+                    <b-dropdown-item custom>
+                      <button @click="setLanguage('en')" class="gb"></button> <p class="lang_option"> - EN</p>  
+                    </b-dropdown-item> 
+                   <b-dropdown-item custom>
+                     <button @click="setLanguage('fr')" class="france"></button> <p class="lang_option"> - FR</p> 
+                    </b-dropdown-item> 
+                </b-dropdown>
 
                 <a @click="fr=true" href="#"><i class="fa fa-flag"></i>  </a>
                  <a v-if="$root.user" class="navbar-link" @click.prevent="logout" href="#">Logout</a>
@@ -229,6 +238,46 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <style>
+.navbar-item {
+  color: white;
+}
+.france {
+  background-image: url("assets/fr_2.png");
+  width: 40px;
+  height: 25px;
+  border: 0px;
+  border-radius: 5px;
+  margin-left: 6px;
+}
+.gb {
+  background-image: url("assets/en.png");
+  width: 40px;
+  height: 25px;
+  border: 0px;
+  border-radius: 5px;
+  margin-left: 6px;
+}
+.lang_option {
+  margin-left: 10px;
+}
+.navbar-item {
+  margin-right: 30px;
+}
+.dropdown-item span {
+  color: white;
+}
+.dropdown-item {
+  font-weight: bold;
+}
+.dropdown-item span icon {
+  padding-top: 5px;
+}
+img {
+  :400: ;
+}
+.dropdown-item {
+  display: inline-flex;
+}
 .navbarimg {
   border-radius: 10px;
 }
