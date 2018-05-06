@@ -101,12 +101,12 @@ footer {
 li {
   display: flex;
   padding: 1rem;
-  @media (min-width: 40rem) {
+  /* @media (min-width: 40rem) {
     width: 50%;
   }
   @media (min-width: 56rem) {
     width: 33.3333%;
-  }
+  } */
 }
 
 h1 {

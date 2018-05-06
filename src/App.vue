@@ -272,9 +272,7 @@ document.addEventListener("DOMContentLoaded", function() {
 .dropdown-item span icon {
   padding-top: 5px;
 }
-img {
-  :400: ;
-}
+
 .dropdown-item {
   display: inline-flex;
 }
